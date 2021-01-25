@@ -15,8 +15,12 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class LoginScreen extends React.Component {
+  static propTypes = {
+    logIn: PropTypes.func.isRequired,
+  }
   render() {
     return (
       <>
@@ -33,8 +37,11 @@ export default class LoginScreen extends React.Component {
           style={styles.userInput}
           placeholder="Password"
         />
-        <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginText}>Log in</Text>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={this.props.logIn}
+        >
+            <Text style={styles.loginText}>Log in</Text>
         </TouchableOpacity>
         </View>
         </>
