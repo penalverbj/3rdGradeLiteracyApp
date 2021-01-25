@@ -48,32 +48,30 @@ const styles = StyleSheet.create({
     flex: 4,
     backgroundColor: '#a7d8e8',
   },
-  welcome: {
-    fontSize: 30,
-    marginBottom: 50,
-  },
   image: {
     width: '100%',
     height: '50%',
-    marginTop: '15%',
+    marginTop: '10%',
   },
   userInput: {
     marginTop: '5%',
     borderWidth: 1,
     borderColor: 'black',
-    width: '90%',
+    width: '95%',
     height: 40,
     alignItems: 'center',
+    borderRadius: 10,
   },
   loginButton: {
-    padding: 5,
+    padding: 8,
     backgroundColor: 'green',
     borderWidth: 1,
     borderColor: 'black',
     margin: '5%',
+    borderRadius: 10,
   },
   loginText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 25,
   }
 });
