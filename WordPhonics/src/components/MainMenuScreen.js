@@ -14,13 +14,13 @@ import {
 } from 'react-native';
 
 function MainMenuScreen() {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <Text style={styles.welcome}>Main Menu Placeholder</Text>
-        </View>
-      </>
-      );
+  return (
+    <>
+      <View style={styles.startContainer}>
+        <Text style={styles.welcome}>Main Menu Placeholder</Text>
+      </View>
+    </>
+  );
 }
 
 const styles = StyleSheet.create({

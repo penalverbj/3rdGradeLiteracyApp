@@ -18,30 +18,30 @@ import {
 import PropTypes from 'prop-types';
 
 function LoginScreen(props) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-        <Image
-          source={require('../assets/phonicsLogo3.png')}
-          style={styles.image}
-        />
-        <TextInput
-          style={styles.userInput}
-          placeholder="Username"
-        />
-        <TextInput
-          style={styles.userInput}
-          placeholder="Password"
-        />
-        <TouchableOpacity
-          style={styles.loginButton}
-          onPress={props.logIn}
-        >
-            <Text style={styles.loginText}>Log in</Text>
-        </TouchableOpacity>
-        </View>
-        </>
-      );
+  return (
+    <>
+      <View style={styles.startContainer}>
+      <Image
+        source={require('../assets/phonicsLogo3.png')}
+        style={styles.image}
+      />
+      <TextInput
+        style={styles.userInput}
+        placeholder="Username"
+      />
+      <TextInput
+        style={styles.userInput}
+        placeholder="Password"
+      />
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={props.logIn}
+      >
+          <Text style={styles.loginText}>Log in</Text>
+      </TouchableOpacity>
+      </View>
+      </>
+    );
 }
 
 LoginScreen.propTypes = {
