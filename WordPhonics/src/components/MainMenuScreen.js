@@ -13,7 +13,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-function MainMenuScreen() {
+function MainMenuScreen(props) {
   return (
     <>
       <View style={styles.startContainer}>
@@ -21,6 +21,10 @@ function MainMenuScreen() {
       </View>
     </>
   );
+}
+
+MainMenuScreen.propTypes = {
+
 }
 
 const styles = StyleSheet.create({
@@ -33,5 +37,4 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
 });
-
 export default MainMenuScreen;

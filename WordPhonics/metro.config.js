@@ -11,6 +11,7 @@ module.exports = {
       transform: {
         experimentalImportSupport: false,
         inlineRequires: false,
+        sourceExts: ['js', 'json', 'ts', 'tsx'],
       },
     }),
   },

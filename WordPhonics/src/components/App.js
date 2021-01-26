@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 function App() {
   //state variables
