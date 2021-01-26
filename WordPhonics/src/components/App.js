@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -15,42 +15,31 @@ import {
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
 
-export default class App extends React.Component {
-  state = {
-    currentLesson: null, //when we implement lessons this will be the lesson to render
-    logedIn: false, //if log in is succesful this changes to true
-  }
+function App() {
+  // state = {
+  //   currentLesson: null, //when we implement lessons this will be the lesson to render
+  //   logedIn: false, //if log in is succesful this changes to true
+  // }
 
+  //state variables
+  const [currentLesson, setCurrentLesson] = useState(null);
+  const [logedIn, setLogin] = useState(false);
   logIn = () => {
-    this.setState(() => ({
-      logedIn: true,
-    }));
+    setLogin(true);
   };
   logOut = () => {
-    this.setState(() => ({
-      logedIn: false,
-    }));
+    setLogin(false);
   };
-  render() {
-    if (this.state.logedIn === false) { //not loged in
-      return (
-        <>
-          <LoginScreen
-            logIn={this.logIn}
-          />
-        </>
+      if (logedIn === false) {
+        return (
+          <LoginScreen logIn={logIn}/>
         );
-    }
-    if(this.state.logedIn === true) {
-      return (
-        <>
+      }
+      if(logedIn) {
+        return (
           <MainMenuScreen/>
-        </>
         );
-    }
-  }
+      }
 }
 
-const styles = StyleSheet.create({
-
-});
+export default App;

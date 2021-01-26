@@ -13,8 +13,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default class MainMenuScreen extends React.Component {
-  render() {
+function MainMenuScreen() {
     return (
       <>
         <View style={styles.startContainer}>
@@ -22,7 +21,6 @@ export default class MainMenuScreen extends React.Component {
         </View>
       </>
       );
-  };
 }
 
 const styles = StyleSheet.create({
@@ -35,3 +33,5 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
 });
+
+export default MainMenuScreen;

@@ -17,11 +17,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class LoginScreen extends React.Component {
-  static propTypes = {
-    logIn: PropTypes.func.isRequired,
-  }
-  render() {
+function LoginScreen(props) {
     return (
       <>
         <View style={styles.startContainer}>
@@ -39,15 +35,18 @@ export default class LoginScreen extends React.Component {
         />
         <TouchableOpacity
           style={styles.loginButton}
-          onPress={this.props.logIn}
+          onPress={props.logIn}
         >
             <Text style={styles.loginText}>Log in</Text>
         </TouchableOpacity>
         </View>
         </>
       );
-  };
 }
+
+LoginScreen.propTypes = {
+  logIn: PropTypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
   startContainer: {
@@ -82,3 +81,5 @@ const styles = StyleSheet.create({
     fontSize: 25,
   }
 });
+
+export default LoginScreen;
