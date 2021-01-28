@@ -16,8 +16,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { useNavigation } from '@react-navigation/native';
 
 function LoginScreen(props) {
+  const navigation = useNavigation();
   return (
     <>
       <View style={styles.startContainer}>
@@ -35,7 +37,7 @@ function LoginScreen(props) {
       />
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={props.logIn}
+        onPress={() => navigation.navigate('MainMenu')}
       >
           <Text style={styles.loginText}>Log in</Text>
       </TouchableOpacity>
@@ -44,8 +46,12 @@ function LoginScreen(props) {
     );
 }
 
+LoginScreen.navigationOptions = () => {(
+    title:'Login'
+)}
+
 LoginScreen.propTypes = {
-  logIn: PropTypes.func.isRequired,
+  //logIn: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

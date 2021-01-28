@@ -13,7 +13,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-function MainMenuScreen(props) {
+function MainMenuScreen(props, {navigation}) {
   return (
     <>
       <View style={styles.startContainer}>
@@ -22,6 +22,10 @@ function MainMenuScreen(props) {
     </>
   );
 }
+
+// MainMenuScreen.navigationOptions = () => {(
+//
+// )}
 
 MainMenuScreen.propTypes = {
 

@@ -11,34 +11,36 @@ import {
   View,
   Text,
   StyleSheet,
+  Image,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function App() {
-  //state variables
-  const [currentLesson, setCurrentLesson] = useState(null);
-  const [logedIn, setLogin] = useState(false);
+const Stack = createStackNavigator();
 
+function App() {
+  const [logedIn, setLogin] = useState(false);
   logIn = () => {
     setLogin(true);
   };
   logOut = () => {
     setLogin(false);
   };
-
-  if (logedIn === false) {
-    return (
-      <LoginScreen logIn={logIn}/>
-    );
-  }
-  if(logedIn) {
-    return (
-      <MainMenuScreen/>
-    );
-  }
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+        />
+        <Stack.Screen name="MainMenu" component={MainMenuScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;
