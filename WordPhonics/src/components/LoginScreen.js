@@ -17,9 +17,11 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
-
+import {Stack, AuthContext} from './App';
 function LoginScreen(props) {
-  const navigation = useNavigation();
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const { signIn } = React.useContext(AuthContext);
   return (
     <>
       <View style={styles.startContainer}>
@@ -37,7 +39,7 @@ function LoginScreen(props) {
       />
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => navigation.navigate('MainMenu')}
+        onPress={() => signIn({ username, password })}
       >
           <Text style={styles.loginText}>Log in</Text>
       </TouchableOpacity>
