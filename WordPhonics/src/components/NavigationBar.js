@@ -18,7 +18,7 @@ export default function NavigationBar() {
   return(
     <View style={styles.startContainer}>
       <Image
-        source={require('../assets/phonicsLogo3.png')}
+        source={require('../assets/plainLogo2.png')}
         style={styles.image}
       />
     </View>

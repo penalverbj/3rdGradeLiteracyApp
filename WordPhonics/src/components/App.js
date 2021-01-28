@@ -115,7 +115,10 @@ export default function App({navigation}) {
             <Stack.Screen
               name="MainMenu"
               component={MainMenuScreen}
-              options={{headerTitle: props => <NavigationBar {...props} />}}
+              options={{
+                headerTitle: props => <NavigationBar {...props} />,
+                headerStyle: {backgroundColor: '#a7d8e8'}
+              }}
             />
           )}
         </Stack.Navigator>
