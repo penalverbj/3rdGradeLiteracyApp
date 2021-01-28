@@ -17,8 +17,10 @@ import {
 } from 'react-native';
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
+import NavigationBar from './NavigationBar';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 
 export const Stack = createStackNavigator();
 export const AuthContext = React.createContext();
@@ -107,11 +109,13 @@ export default function App({navigation}) {
             <Stack.Screen
               name="Login"
               component={LoginScreen}
+              options={{headerShown: false}}
             />
           ) : (
             <Stack.Screen
               name="MainMenu"
               component={MainMenuScreen}
+              options={{headerTitle: props => <NavigationBar {...props} />}}
             />
           )}
         </Stack.Navigator>

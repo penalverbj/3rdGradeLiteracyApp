@@ -18,7 +18,8 @@ import {
 import PropTypes from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 import {Stack, AuthContext} from './App';
-function LoginScreen(props) {
+
+export default function LoginScreen(props) {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const { signIn } = React.useContext(AuthContext);
@@ -89,5 +90,3 @@ const styles = StyleSheet.create({
     fontSize: 25,
   }
 });
-
-export default LoginScreen;

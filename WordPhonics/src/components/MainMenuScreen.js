@@ -13,7 +13,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-function MainMenuScreen(props, {navigation}) {
+export default function MainMenuScreen(props, {navigation}) {
   return (
     <>
       <View style={styles.startContainer}>
@@ -41,4 +41,3 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
 });
-export default MainMenuScreen;
