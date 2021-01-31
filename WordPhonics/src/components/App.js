@@ -105,8 +105,8 @@ export default function App({navigation}) {
   return(
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        <Stack.Navigator>
-          {state.userToken == null ? (
+        <Stack.Navigator initialRouteName="MainMenu">
+          {state.userToken == null ? ( //If user is not logged in
             <Stack.Screen
               name="Login"
               component={LoginScreen}
@@ -117,12 +117,21 @@ export default function App({navigation}) {
               name="MainMenu"
               component={MainMenuScreen}
               options={{
-                headerTitle: props => <NavigationBar {...props} />,
+                headerTitle: props => <NavigationBar {...props} />, //Logo
                 headerStyle: {backgroundColor: '#a7d8e8'},
-                headerRight: () => (
+                headerRight: () => ( //log out button
                   <TouchableOpacity onPress={() => authContext.signOut()}>
                     <Image
                       source={require('../assets/log-out.png')}
+                      style={styles.image}
+                    />
+                  </TouchableOpacity>
+                ),
+                headerLeft: () => ( //back button, in main does nothing
+                  <TouchableOpacity onPress={() => null}>
+                    <Image
+                      source={require('../assets/arrow-left-circle.png')}
+                      style={styles.image}
                     />
                   </TouchableOpacity>
                 ),
@@ -134,3 +143,9 @@ export default function App({navigation}) {
     </AuthContext.Provider>
   );
 }
+
+const styles = StyleSheet.create({
+  image: {
+    marginHorizontal: 10,
+  },
+});

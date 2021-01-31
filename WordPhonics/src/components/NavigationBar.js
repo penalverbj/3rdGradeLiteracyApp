@@ -12,21 +12,30 @@ import {
   Text,
   StyleSheet,
   Image,
+  TouchableOpacity,
 } from 'react-native';
+import {Stack} from './App';
+import {useNavigation} from '@react-navigation/native';
 
 export default function NavigationBar() {
+  const navigation = useNavigation();
   return(
-      <Image
-        source={require('../assets/plainLogo2.png')}
-        style={styles.image}
-      />
+    <TouchableOpacity
+      style={styles.startContainer}
+      onPress={() => navigation.navigate("MainMenu")}>
+        <Image
+          source={require('../assets/plainLogo2.png')}
+          style={styles.image}
+        />
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   startContainer: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     flexDirection: 'row',
+    justifyContent: 'center',
   },
   image: {
     width: 50,
