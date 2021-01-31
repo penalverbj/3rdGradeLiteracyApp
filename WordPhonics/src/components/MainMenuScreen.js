@@ -11,13 +11,15 @@ import {
   View,
   Text,
   StyleSheet,
+  FlatList,
 } from 'react-native';
 
 export default function MainMenuScreen(props, {navigation}) {
   return (
     <>
       <View style={styles.startContainer}>
-        <Text style={styles.welcome}>Main Menu Placeholder</Text>
+        <Text style={styles.section}>Lessons</Text>
+        <FlatList
       </View>
     </>
   );
@@ -33,11 +35,13 @@ MainMenuScreen.propTypes = {
 
 const styles = StyleSheet.create({
   startContainer: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flex: 4,
     backgroundColor: '#FFFAF0',
   },
-  welcome: {
+  section: {
     fontSize: 30,
+    margin: 10,
+    fontWeight: 'bold',
   },
 });
