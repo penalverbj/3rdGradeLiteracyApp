@@ -16,12 +16,10 @@ import {
 
 export default function NavigationBar() {
   return(
-    <View style={styles.startContainer}>
       <Image
         source={require('../assets/plainLogo2.png')}
         style={styles.image}
       />
-    </View>
   );
 }
 
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
   startContainer: {
     alignItems: 'flex-start',
     flexDirection: 'row',
-    backgroundColor: '#a7d8e8',
   },
   image: {
     width: 50,

@@ -14,6 +14,7 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  Button,
 } from 'react-native';
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
@@ -117,7 +118,14 @@ export default function App({navigation}) {
               component={MainMenuScreen}
               options={{
                 headerTitle: props => <NavigationBar {...props} />,
-                headerStyle: {backgroundColor: '#a7d8e8'}
+                headerStyle: {backgroundColor: '#a7d8e8'},
+                headerRight: () => (
+                  <TouchableOpacity onPress={() => authContext.signOut()}>
+                    <Image
+                      source={require('../assets/log-out.png')}
+                    />
+                  </TouchableOpacity>
+                ),
               }}
             />
           )}
