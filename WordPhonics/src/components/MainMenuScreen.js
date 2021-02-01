@@ -19,7 +19,8 @@ export default function MainMenuScreen(props, {navigation}) {
     <>
       <View style={styles.startContainer}>
         <Text style={styles.section}>Lessons</Text>
-        <FlatList
+        <FlatList>
+        </FlatList>
       </View>
     </>
   );
