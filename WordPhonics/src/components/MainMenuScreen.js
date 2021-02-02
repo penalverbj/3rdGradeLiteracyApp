@@ -15,8 +15,21 @@ import {
   SafeAreaView,
   TouchableOpacity
 } from 'react-native';
+import Sound from 'react-native-sound';
 
 export default function MainMenuScreen(props, {navigation}) {
+  var playSound = (name) => {
+    var sound1 = new Sound(require("../assets/synonymsDef.mp3"),
+    (error, sound) => {
+      if (error) {
+        alert('error' + error.message);
+        return;
+      }
+      sound1.play(() => {
+        sound1.release();
+      });
+    });
+  }
   return (
     <>
       <SafeAreaView style={styles.startContainer}>
@@ -25,7 +38,7 @@ export default function MainMenuScreen(props, {navigation}) {
         <ScrollView style={styles.scrollView}>
           <TouchableOpacity
             style={[styles.lesson, {backgroundColor: '#fcf351'}]}
-            onPress={() => null}
+            onPress={playSound}
           >
             <Text style={styles.section}>12: synonyms</Text>
           </TouchableOpacity>
@@ -52,7 +65,7 @@ export default function MainMenuScreen(props, {navigation}) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '##cda1d2'}]}
+            style={[styles.lesson, {backgroundColor: '#cda1d2'}]}
             onPress={() => null}
           >
             <Text style={styles.section}>16: homographs</Text>
