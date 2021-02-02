@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFAF0',
   },
   scrollView: {
-    //alignItems: 'center',
+    
   },
   title: {
     fontSize: 40,
@@ -319,14 +319,14 @@ const styles = StyleSheet.create({
   },
   lesson: {
     borderWidth: 1,
-    //backgroundColor: 'yellow',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10
+    padding: 12,
+    margin: 7,
+    borderRadius: 30,
+    alignItems: 'center',
   },
   section: {
-    fontSize: 25,
-    margin: 5,
+    fontSize: 27,
+    padding: 5,
     fontStyle: 'italic',
   }
 });
