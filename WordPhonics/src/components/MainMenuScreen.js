@@ -179,15 +179,25 @@ export default function MainMenuScreen(props, {navigation}) {
 
     }
   }
+
+  var goToScreen = (num) => {
+    // couldn't get this working
+    //this.props.navigation.navigate('LessonScreen');
+  }
+
   return (
     <>
+
       <SafeAreaView style={styles.startContainer}>
         <Text style={styles.title}>Figures of Speech</Text>
         <Text style={styles.subtitle}>fun ways to use language</Text>
         <ScrollView style={styles.scrollView}>
           <TouchableOpacity
             style={[styles.lesson, {backgroundColor: '#fcf351'}]}
-            onPress={() => playSound(12)}
+            onPress={() => {
+              playSound(12);
+              goToScreen(12);
+              }}
           >
             <Text style={styles.section}>12: synonyms</Text>
           </TouchableOpacity>
@@ -288,9 +298,9 @@ export default function MainMenuScreen(props, {navigation}) {
   );
 }
 
-// MainMenuScreen.navigationOptions = () => {(
-//
-// )}
+MainMenuScreen.navigationOptions = () => {(
+    title:'MainMenu'
+)}
 
 MainMenuScreen.propTypes = {
 
@@ -303,7 +313,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFAF0',
   },
   scrollView: {
-    
+
   },
   title: {
     fontSize: 40,
