@@ -19,7 +19,9 @@ import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
 
 export default function L12(props, {navigation}) {
+  //counter for the example we are on
   const [example, setExample] = useState(1);
+  //plays definition of synonym
   var playDef = () => {
     var sound1 = new Sound(require("../assets/12/12intro.mp3"),
     (error, sound) => {
@@ -32,6 +34,7 @@ export default function L12(props, {navigation}) {
         });
       });
   }
+  //plays the audio associated with each example
   var playEx = (num) => {
     switch (num) {
       case 1:
@@ -204,7 +207,8 @@ export default function L12(props, {navigation}) {
       </View>
       <View style={styles.subContainer}>
         <TouchableOpacity
-          onPress={() => setExample((example - 1) > 1 ? (example - 1) : 13)}
+          onPress={() => setExample(
+            (example - 1) > 1 ? (example - 1) : 13)} //handles looping to back
           style={styles.arrow}
         >
           <Image
@@ -215,13 +219,15 @@ export default function L12(props, {navigation}) {
         <TouchableOpacity
           onPress={() => playEx(example)}
         >
+          //TODO: we need to make this dynamic with a function
           <Image
             source={require('../assets/12/begin_start.png')}
             style={styles.picture}
           />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => setExample((example + 1) < 13 ? (example + 1) : 1)}
+          onPress={() => setExample(
+            (example + 1) < 13 ? (example + 1) : 1)} //handles looping to front
           style={styles.arrow}
         >
           <Image
@@ -229,6 +235,7 @@ export default function L12(props, {navigation}) {
             style={styles.image}
           />
         </TouchableOpacity>
+        //we have to add the words related to the example dynamically too
       </View>
       </>
     );
@@ -242,8 +249,6 @@ L12.navigationOptions = () => {(
 L12.propTypes = {
 
 }
-
-
 
 const styles = StyleSheet.create({
   startContainer: {
