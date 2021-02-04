@@ -209,11 +209,11 @@ export default function L12(props, {navigation}) {
         <TouchableOpacity
           onPress={() => setExample(
             (example - 1) > 1 ? (example - 1) : 13)} //handles looping to back
-          style={styles.arrow}
+          style={styles.arrowContainer}
         >
           <Image
             source={require('../assets/arrow-left.png')}
-            style={styles.image}
+            style={styles.arrow}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -227,11 +227,11 @@ export default function L12(props, {navigation}) {
         <TouchableOpacity
           onPress={() => setExample(
             (example + 1) < 13 ? (example + 1) : 1)} //handles looping to front
-          style={styles.arrow}
+          style={styles.arrowContainer}
         >
           <Image
             source={require('../assets/arrow-right.png')}
-            style={styles.image}
+            style={styles.arrow}
           />
         </TouchableOpacity>
       </View>
@@ -254,6 +254,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
+    paddingBottom: 5,
   },
   subContainer: {
     alignItems: 'flex-start',
@@ -269,7 +270,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     fontStyle: 'italic',
   },
-  arrow: {
+  arrowContainer: {
     backgroundColor: 'green',
     borderWidth: 1,
     borderRadius: 35,
@@ -277,7 +278,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginTop: 130,
   },
-  image: {
+  arrow: {
     height: 35,
     width: 35,
   },
