@@ -16,12 +16,14 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Sound from 'react-native-sound';
+import {useNavigation} from '@react-navigation/native';
 
-export default function MainMenuScreen(props, {navigation}) {
+export default function MainMenuScreen(props) {
+  const navigation = useNavigation();
   var playSound = (num) => {
     switch (num) {
       case 12: var sound1 = new Sound(
-        require("../assets/12intro.mp3"), (error, sound) => {
+        require("../assets/12/12intro.mp3"), (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
@@ -32,7 +34,7 @@ export default function MainMenuScreen(props, {navigation}) {
         });
         break;
       case 13: var sound1 = new Sound(
-          require("../assets/13intro.mp3"), (error, sound) => {
+          require("../assets/13/13intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -43,7 +45,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 14: var sound1 = new Sound(
-          require("../assets/14intro.mp3"), (error, sound) => {
+          require("../assets/14/14intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -54,7 +56,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 15: var sound1 = new Sound(
-          require("../assets/15intro.mp3"), (error, sound) => {
+          require("../assets/15/15intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -65,7 +67,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 16: var sound1 = new Sound(
-          require("../assets/16intro.mp3"), (error, sound) => {
+          require("../assets/16/16intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -76,7 +78,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 17: var sound1 = new Sound(
-          require("../assets/17intro.mp3"), (error, sound) => {
+          require("../assets/17/17intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -87,7 +89,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 18: var sound1 = new Sound(
-          require("../assets/18intro.mp3"), (error, sound) => {
+          require("../assets/18/18intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -98,7 +100,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 19: var sound1 = new Sound(
-          require("../assets/19intro.mp3"), (error, sound) => {
+          require("../assets/19/19intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -109,7 +111,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 20: var sound1 = new Sound(
-          require("../assets/20intro.mp3"), (error, sound) => {
+          require("../assets/20/20intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -120,7 +122,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 21: var sound1 = new Sound(
-          require("../assets/21intro.mp3"), (error, sound) => {
+          require("../assets/21/21intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -131,7 +133,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 22: var sound1 = new Sound(
-          require("../assets/22intro.mp3"), (error, sound) => {
+          require("../assets/22/22intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -142,7 +144,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 23: var sound1 = new Sound(
-          require("../assets/23intro.mp3"), (error, sound) => {
+          require("../assets/23/23intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -153,7 +155,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 24: var sound1 = new Sound(
-          require("../assets/24intro.mp3"), (error, sound) => {
+          require("../assets/24 Rhyme/24intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -164,7 +166,7 @@ export default function MainMenuScreen(props, {navigation}) {
           });
           break;
       case 25: var sound1 = new Sound(
-          require("../assets/25intro.mp3"), (error, sound) => {
+          require("../assets/25 Alliteration/25intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -179,15 +181,31 @@ export default function MainMenuScreen(props, {navigation}) {
 
     }
   }
+
+  var goToScreen = (num) => {
+    switch (num) {
+      case 12:
+        navigation.navigate("L12");
+        break;
+      default:
+        break;
+    }
+
+  }
+
   return (
     <>
+
       <SafeAreaView style={styles.startContainer}>
         <Text style={styles.title}>Figures of Speech</Text>
         <Text style={styles.subtitle}>fun ways to use language</Text>
         <ScrollView style={styles.scrollView}>
           <TouchableOpacity
             style={[styles.lesson, {backgroundColor: '#fcf351'}]}
-            onPress={() => playSound(12)}
+            onPress={() => {
+              playSound(12);
+              goToScreen(12);
+              }}
           >
             <Text style={styles.section}>12: synonyms</Text>
           </TouchableOpacity>
@@ -288,9 +306,9 @@ export default function MainMenuScreen(props, {navigation}) {
   );
 }
 
-// MainMenuScreen.navigationOptions = () => {(
-//
-// )}
+MainMenuScreen.navigationOptions = () => {(
+    title:'MainMenu'
+)}
 
 MainMenuScreen.propTypes = {
 
@@ -303,10 +321,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFAF0',
   },
   scrollView: {
-    
+
   },
   title: {
-    fontSize: 40,
+    fontSize: 35,
     margin: 5,
     fontWeight: 'bold',
     fontStyle: 'italic',
