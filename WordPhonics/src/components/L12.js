@@ -200,8 +200,8 @@ export default function L12(props, {navigation}) {
       <View style={styles.startContainer}>
         <TouchableOpacity onPress={() => playDef()}>
           <Text style={styles.subtitle}>
-          Synonyms are words which have the same
-          or close to the same meaning.
+            Synonyms are words which have the same
+            or close to the same meaning.
           </Text>
         </TouchableOpacity>
       </View>
@@ -219,7 +219,6 @@ export default function L12(props, {navigation}) {
         <TouchableOpacity
           onPress={() => playEx(example)}
         >
-          //TODO: we need to make this dynamic with a function
           <Image
             source={require('../assets/12/begin_start.png')}
             style={styles.picture}
@@ -235,7 +234,6 @@ export default function L12(props, {navigation}) {
             style={styles.image}
           />
         </TouchableOpacity>
-        //we have to add the words related to the example dynamically too
       </View>
       </>
     );
