@@ -195,8 +195,9 @@ export default function L12(props, {navigation}) {
         break;
     }
   }
-  //I tried to do it dynamically so there wouldn't be so mch repeat code
+  //I tried to do it dynamically so there wouldn't be so much repeat code
   //but could not make it work. Maybe we can come back to this. -Jose
+  //make a component with props possibly
   if (example == 1) {
     return (
       <>
@@ -210,7 +211,7 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(13)} //handles looping to back
+            onPress={() => setExample(13)}
             style={styles.arrowContainer}
           >
             <Image
@@ -227,7 +228,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(2)} //handles looping to front
+            onPress={() => setExample(2)}
             style={styles.arrowContainer}
           >
             <Image
@@ -275,7 +276,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(3)} //handles looping to front
+            onPress={() => setExample(3)}
             style={styles.arrowContainer}
           >
             <Image
@@ -323,7 +324,7 @@ export default function L12(props, {navigation}) {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setExample(4)} //handles looping to front
+              onPress={() => setExample(4)}
               style={styles.arrowContainer}
             >
               <Image
@@ -371,7 +372,7 @@ export default function L12(props, {navigation}) {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setExample(5)} //handles looping to front
+              onPress={() => setExample(5)}
               style={styles.arrowContainer}
             >
               <Image
@@ -419,7 +420,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(6)} //handles looping to front
+            onPress={() => setExample(6)}
             style={styles.arrowContainer}
           >
             <Image
@@ -467,7 +468,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(7)} //handles looping to front
+            onPress={() => setExample(7)}
             style={styles.arrowContainer}
           >
             <Image
@@ -515,7 +516,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(8)} //handles looping to front
+            onPress={() => setExample(8)}
             style={styles.arrowContainer}
           >
             <Image
@@ -563,7 +564,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(9)} //handles looping to front
+            onPress={() => setExample(9)}
             style={styles.arrowContainer}
           >
             <Image
@@ -611,7 +612,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(10)} //handles looping to front
+            onPress={() => setExample(10)}
             style={styles.arrowContainer}
           >
             <Image
@@ -659,7 +660,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(11)} //handles looping to front
+            onPress={() => setExample(11)}
             style={styles.arrowContainer}
           >
             <Image
@@ -707,7 +708,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(12)} //handles looping to front
+            onPress={() => setExample(12)}
             style={styles.arrowContainer}
           >
             <Image
@@ -755,7 +756,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(13)} //handles looping to front
+            onPress={() => setExample(13)}
             style={styles.arrowContainer}
           >
             <Image
@@ -803,7 +804,7 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(1)} //handles looping to front
+            onPress={() => setExample(1)}
             style={styles.arrowContainer}
           >
             <Image
