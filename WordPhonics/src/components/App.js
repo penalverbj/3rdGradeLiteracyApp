@@ -19,7 +19,7 @@ import {
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
 import NavigationBar from './NavigationBar';
-import LessonScreen from './LessonScreen';
+import L12 from './L12';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -114,57 +114,56 @@ export default function App({navigation}) {
               options={{headerShown: false}}
             />
           ) : (
-            <Stack.Screen
-              name="MainMenu"
-              component={MainMenuScreen}
-              options={{
-                headerTitle: props => <NavigationBar {...props} />, //Logo
-                headerStyle: {backgroundColor: '#a7d8e8'},
-                headerRight: () => ( //log out button
-                  <TouchableOpacity onPress={() => authContext.signOut()}>
-                    <Image
-                      source={require('../assets/log-out.png')}
-                      style={styles.image}
-                    />
-                  </TouchableOpacity>
-                ),
-                headerLeft: () => ( //back button, in main does nothing
-                  <TouchableOpacity onPress={() => null}>
-                    <Image
-                      source={require('../assets/arrow-left-circle.png')}
-                      style={styles.image}
-                    />
-                  </TouchableOpacity>
-                )
-              }}
-            /> //,
-            // Couldnt figure this out, need to create a new stack?
-            //
-            // <Stack.Screen
-            //   name="LessonScreen"
-            //   component={LessonScreen}
-            //
-            //   options={{
-            //     headerTitle: props => <NavigationBar {...props} />, //Logo
-            //     headerStyle: {backgroundColor: '#a7d8e8'},
-            //     headerRight: () => ( //log out button
-            //       <TouchableOpacity onPress={() => authContext.signOut()}>
-            //         <Image
-            //           source={require('../assets/log-out.png')}
-            //           style={styles.image}
-            //         />
-            //       </TouchableOpacity>
-            //     ),
-            //     headerLeft: () => ( //back button, in main does nothing
-            //       <TouchableOpacity onPress={() => null}>
-            //         <Image
-            //           source={require('../assets/arrow-left-circle.png')}
-            //           style={styles.image}
-            //         />
-            //       </TouchableOpacity>
-            //     )
-            //   }}
-            // />
+            <>
+              <Stack.Screen
+                name="MainMenu"
+                component={MainMenuScreen}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                  headerLeft: () => ( //back button, in main does nothing
+                    <TouchableOpacity onPress={() => null}>
+                      <Image
+                        source={require('../assets/arrow-left-circle.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  )
+                }}
+              />
+              <Stack.Screen
+                name="L12"
+                component={L12}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                  headerLeft: () => ( //back button, in main does nothing
+                    <TouchableOpacity onPress={() => null}>
+                      <Image
+                        source={require('../assets/arrow-left-circle.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  )
+                }}
+              />
+            </>
           )}
         </Stack.Navigator>
       </NavigationContainer>

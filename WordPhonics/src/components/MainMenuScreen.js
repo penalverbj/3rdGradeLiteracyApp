@@ -16,8 +16,10 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Sound from 'react-native-sound';
+import {useNavigation} from '@react-navigation/native';
 
-export default function MainMenuScreen(props, {navigation}) {
+export default function MainMenuScreen(props) {
+  const navigation = useNavigation();
   var playSound = (num) => {
     switch (num) {
       case 12: var sound1 = new Sound(
@@ -181,8 +183,14 @@ export default function MainMenuScreen(props, {navigation}) {
   }
 
   var goToScreen = (num) => {
-    // couldn't get this working
-    //this.props.navigation.navigate('LessonScreen');
+    switch (num) {
+      case 12:
+        navigation.navigate("L12");
+        break;
+      default:
+        break;
+    }
+
   }
 
   return (

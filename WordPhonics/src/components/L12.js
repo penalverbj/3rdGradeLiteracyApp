@@ -17,22 +17,22 @@ import {
 import PropTypes from 'prop-types';
 
 
-export default function LessonScreen(props, {navigation}) {
+export default function L12(props, {navigation}) {
   return (
     <>
-      <View>
-        //empty view
+      <View style={styles.startContainer}>
+        <Text>Lesson 12 Temp</Text>
       </View>
       </>
     );
 }
 
-LessonScreen.navigationOptions = () => {(
-    title:'LessonScreen'
+L12.navigationOptions = () => {(
+    title:'L12'
 )}
 
 
-LessonScreen.propTypes = {
+L12.propTypes = {
 
 }
 
