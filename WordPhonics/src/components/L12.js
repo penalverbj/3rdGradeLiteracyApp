@@ -195,48 +195,103 @@ export default function L12(props, {navigation}) {
         break;
     }
   }
-  return (
-    <>
-      <View style={styles.startContainer}>
-        <TouchableOpacity onPress={() => playDef()}>
-          <Text style={styles.subtitle}>
-            Synonyms are words which have the same
-            or close to the same meaning.
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.subContainer}>
-        <TouchableOpacity
-          onPress={() => setExample(
-            (example - 1) > 1 ? (example - 1) : 13)} //handles looping to back
-          style={styles.arrowContainer}
-        >
-          <Image
-            source={require('../assets/arrow-left.png')}
-            style={styles.arrow}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => playEx(example)}
-        >
-          <Image
-            source={require('../assets/12/begin_start.png')}
-            style={styles.picture}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => setExample(
-            (example + 1) < 13 ? (example + 1) : 1)} //handles looping to front
-          style={styles.arrowContainer}
-        >
-          <Image
-            source={require('../assets/arrow-right.png')}
-            style={styles.arrow}
-          />
-        </TouchableOpacity>
-      </View>
-      </>
+  if (example == 1) {
+    return (
+      <>
+        <View style={styles.startContainer}>
+          <TouchableOpacity onPress={() => playDef()}>
+            <Text style={styles.subtitle}>
+              Synonyms are words which have the same
+              or close to the same meaning.
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.subContainer}>
+          <TouchableOpacity
+            onPress={() => setExample(13)} //handles looping to back
+            style={styles.arrowContainer}
+          >
+            <Image
+              source={require('../assets/arrow-left.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => playEx(example)}
+          >
+            <Image
+              source={require('../assets/12/begin_start.png')}
+              style={styles.picture}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setExample(2)} //handles looping to front
+            style={styles.arrowContainer}
+          >
+            <Image
+              source={require('../assets/arrow-right.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          <Text style={styles.words}>begin</Text>
+          <Text style={styles.words}>start</Text>
+        </View>
+        <View style={styles.quizContainer}>
+          <TouchableOpacity onPress={null} style={styles.quizButton}>
+            <Text style={styles.quiz}>?</Text>
+          </TouchableOpacity>
+        </View>
+        </>
     );
+  } else if (example == 2) {
+    return (
+      <>
+        <View style={styles.startContainer}>
+          <TouchableOpacity onPress={() => playDef()}>
+            <Text style={styles.subtitle}>
+              Synonyms are words which have the same
+              or close to the same meaning.
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.subContainer}>
+          <TouchableOpacity
+            onPress={() => setExample(1)}
+            style={styles.arrowContainer}
+          >
+            <Image
+              source={require('../assets/arrow-left.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => playEx(example)}
+          >
+            <Image
+              source={require('../assets/12/easy_simple.png')}
+              style={styles.picture}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setExample(3)} //handles looping to front
+            style={styles.arrowContainer}
+          >
+            <Image
+              source={require('../assets/arrow-right.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          <Text style={styles.words}>easy</Text>
+          <Text style={styles.words}>simple</Text>
+        </View>
+        <View style={styles.quizContainer}>
+          <TouchableOpacity onPress={null} style={styles.quizButton}>
+            <Text style={styles.quiz}>?</Text>
+          </TouchableOpacity>
+        </View>
+        </>
+      );
+  }
 }
 
 L12.navigationOptions = () => {(
@@ -254,7 +309,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingBottom: 5,
+    paddingBottom: 50,
   },
   subContainer: {
     alignItems: 'flex-start',
@@ -263,6 +318,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     paddingTop: 50,
+    flexWrap: 'wrap',
   },
   subtitle: {
     fontSize: 20,
@@ -273,17 +329,43 @@ const styles = StyleSheet.create({
   arrowContainer: {
     backgroundColor: 'green',
     borderWidth: 1,
-    borderRadius: 35,
-    padding: 15,
-    marginHorizontal: 5,
+    borderRadius: 30,
+    padding: 5,
+    //marginHorizontal: 5,
     marginTop: 130,
   },
   arrow: {
-    height: 35,
-    width: 35,
+    height: 30,
+    width: 30,
   },
   picture: {
     height: 300,
-    width: 200,
-  }
+    width: 275,
+  },
+  words: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 30,
+  },
+  quizContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFAF0',
+    paddingBottom: 50,
+    flexDirection: 'row',
+  },
+  quizButton: {
+    backgroundColor: '#ADFF2F',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderRadius: 30,
+    width: 50,
+    height: 50,
+  },
+  quiz: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
