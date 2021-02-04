@@ -132,7 +132,7 @@ export default function App({navigation}) {
                   headerLeft: () => ( //back button, in main does nothing
                     <TouchableOpacity onPress={() => null}>
                       <Image
-                        source={require('../assets/arrow-left-circle.png')}
+                        source={require('../assets/arrow-left.png')}
                         style={styles.image}
                       />
                     </TouchableOpacity>
