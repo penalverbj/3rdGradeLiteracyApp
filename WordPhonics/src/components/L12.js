@@ -32,6 +32,166 @@ export default function L12(props, {navigation}) {
         });
       });
   }
+  var playEx = (num) => {
+    switch (num) {
+      case 1:
+        var sound1 = new Sound(require("../assets/12/begin_start.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 2:
+        var sound1 = new Sound(require("../assets/12/easy_simple.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 3:
+        var sound1 = new Sound(require("../assets/12/end_finish.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 4:
+        var sound1 = new Sound(require("../assets/12/evening_dusk.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 5:
+        var sound1 = new Sound(require("../assets/12/fix_mend.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 6:
+        var sound1 = new Sound(require("../assets/12/hard_difficult.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 7:
+        var sound1 = new Sound(require("../assets/12/morning_dawn.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 8:
+        var sound1 = new Sound(require("../assets/12/sad_unhappy.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 9:
+        var sound1 = new Sound(require("../assets/12/shove_push.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 10:
+        var sound1 = new Sound(require("../assets/12/shut_close.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 11:
+        var sound1 = new Sound(require("../assets/12/small_little.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 12:
+        var sound1 = new Sound(require("../assets/12/stop_halt.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+      case 13:
+        var sound1 = new Sound(require("../assets/12/yell_shout.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+            });
+          });
+        break;
+    }
+  }
   return (
     <>
       <View style={styles.startContainer}>
@@ -44,7 +204,7 @@ export default function L12(props, {navigation}) {
       </View>
       <View style={styles.subContainer}>
         <TouchableOpacity
-          onPress={() => setExample(13)}
+          onPress={() => setExample((example - 1) > 1 ? (example - 1) : 13)}
           style={styles.arrow}
         >
           <Image
@@ -53,8 +213,7 @@ export default function L12(props, {navigation}) {
           />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => setExample(13)}
-          //style={styles.arrow}
+          onPress={() => playEx(example)}
         >
           <Image
             source={require('../assets/12/begin_start.png')}
@@ -62,7 +221,7 @@ export default function L12(props, {navigation}) {
           />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => setExample(2)}
+          onPress={() => setExample((example + 1) < 13 ? (example + 1) : 1)}
           style={styles.arrow}
         >
           <Image
