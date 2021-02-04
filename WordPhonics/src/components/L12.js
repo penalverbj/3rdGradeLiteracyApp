@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+<<<<<<< HEAD
 import Sound from 'react-native-sound';
 
 export default function L12(props, {navigation}) {
@@ -40,6 +41,14 @@ export default function L12(props, {navigation}) {
         or close to the same meaning.
         </Text>
       </TouchableOpacity>
+=======
+
+export default function L12(props, {navigation}) {
+  return (
+    <>
+      <View style={styles.startContainer}>
+        <Text>Lesson 12 Temp</Text>
+>>>>>>> d88503b94f98675cb7ba46d81780a1f86f47a695
       </View>
       </>
     );
@@ -59,6 +68,7 @@ L12.propTypes = {
 const styles = StyleSheet.create({
   startContainer: {
     alignItems: 'center',
+<<<<<<< HEAD
     flex: 1,
     backgroundColor: '#FFFAF0',
   },
@@ -68,4 +78,9 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     fontStyle: 'italic',
   },
+=======
+    flex: 4,
+    backgroundColor: '#a7d8e8',
+  }
+>>>>>>> d88503b94f98675cb7ba46d81780a1f86f47a695
 });
