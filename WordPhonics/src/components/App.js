@@ -129,16 +129,6 @@ export default function App({navigation}) {
                       />
                     </TouchableOpacity>
                   ),
-<<<<<<< HEAD
-                  // headerLeft: () => ( //back button, in main does nothing
-                  //   <TouchableOpacity onPress={() => null}>
-                  //     <Image
-                  //       source={require('../assets/arrow-left-circle.png')}
-                  //       style={styles.image}
-                  //     />
-                  //   </TouchableOpacity>
-                  //)
-=======
                   headerLeft: () => ( //back button, in main does nothing
                     <TouchableOpacity onPress={() => null}>
                       <Image
@@ -147,7 +137,6 @@ export default function App({navigation}) {
                       />
                     </TouchableOpacity>
                   )
->>>>>>> d88503b94f98675cb7ba46d81780a1f86f47a695
                 }}
               />
               <Stack.Screen
@@ -163,18 +152,7 @@ export default function App({navigation}) {
                         style={styles.image}
                       />
                     </TouchableOpacity>
-<<<<<<< HEAD
-=======
                   ),
-                  headerLeft: () => ( //back button, in main does nothing
-                    <TouchableOpacity onPress={() => null}>
-                      <Image
-                        source={require('../assets/arrow-left-circle.png')}
-                        style={styles.image}
-                      />
-                    </TouchableOpacity>
->>>>>>> d88503b94f98675cb7ba46d81780a1f86f47a695
-                  )
                 }}
               />
             </>
