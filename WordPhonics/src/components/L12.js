@@ -211,7 +211,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(13)}
+            onPress={() => {
+              setExample(13);
+              playEx(13);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -228,7 +231,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(2)}
+            onPress={() => {
+              setExample(2);
+              playEx(2);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -259,7 +265,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(1)}
+            onPress={() => {
+              setExample(1);
+              playEx(1);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -276,7 +285,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(3)}
+            onPress={() => {
+              setExample(3);
+              playEx(3);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -307,7 +319,10 @@ export default function L12(props, {navigation}) {
           </View>
           <View style={styles.subContainer}>
             <TouchableOpacity
-              onPress={() => setExample(2)}
+              onPress={() => {
+                setExample(2);
+                playEx(2);
+              }}
               style={styles.arrowContainer}
             >
               <Image
@@ -324,7 +339,10 @@ export default function L12(props, {navigation}) {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setExample(4)}
+              onPress={() => {
+                setExample(4);
+                playEx(4);
+              }}
               style={styles.arrowContainer}
             >
               <Image
@@ -355,7 +373,10 @@ export default function L12(props, {navigation}) {
           </View>
           <View style={styles.subContainer}>
             <TouchableOpacity
-              onPress={() => setExample(3)}
+              onPress={() => {
+                setExample(3);
+                playEx(3);
+              }}
               style={styles.arrowContainer}
             >
               <Image
@@ -372,7 +393,10 @@ export default function L12(props, {navigation}) {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setExample(5)}
+              onPress={() => {
+                setExample(5);
+                playEx(5);
+              }}
               style={styles.arrowContainer}
             >
               <Image
@@ -403,7 +427,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(4)}
+            onPress={() => {
+              setExample(4);
+              playEx(4);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -420,7 +447,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(6)}
+            onPress={() => {
+              setExample(6);
+              playEx(6);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -451,7 +481,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(5)}
+            onPress={() => {
+              setExample(5);
+              playEx(5);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -468,7 +501,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(7)}
+            onPress={() => {
+              setExample(7);
+              playEx(7);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -499,7 +535,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(6)}
+            onPress={() => {
+              setExample(6);
+              playEx(6);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -516,7 +555,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(8)}
+            onPress={() => {
+              setExample(8);
+              playEx(8);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -547,7 +589,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(7)}
+            onPress={() => {
+              setExample(7);
+              playEx(7);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -564,7 +609,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(9)}
+            onPress={() => {
+              setExample(9);
+              playEx(9);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -595,7 +643,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(8)}
+            onPress={() => {
+              setExample(8);
+              playEx(8);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -612,7 +663,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(10)}
+            onPress={() => {
+              setExample(10);
+              playEx(10);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -643,7 +697,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(9)}
+            onPress={() => {
+              setExample(9);
+              playEx(9);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -660,7 +717,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(11)}
+            onPress={() => {
+              setExample(11);
+              playEx(11);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -691,7 +751,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(10)}
+            onPress={() => {
+              setExample(10);
+              playEx(10);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -708,7 +771,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(12)}
+            onPress={() => {
+              setExample(12);
+              playEx(12);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -739,7 +805,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(11)}
+            onPress={() => {
+              setExample(11);
+              playEx(11);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -756,7 +825,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(13)}
+            onPress={() => {
+              setExample(13);
+              playEx(13);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -787,7 +859,10 @@ export default function L12(props, {navigation}) {
         </View>
         <View style={styles.subContainer}>
           <TouchableOpacity
-            onPress={() => setExample(12)}
+            onPress={() => {
+              setExample(12);
+              playEx(12);
+            }}
             style={styles.arrowContainer}
           >
             <Image
@@ -804,7 +879,10 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setExample(1)}
+            onPress={() => {
+              setExample(1);
+              playEx(1);
+            }}
             style={styles.arrowContainer}
           >
             <Image
