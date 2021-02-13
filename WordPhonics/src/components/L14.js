@@ -66,8 +66,9 @@ export default function L14({navigation}) {
   //sound variables
   var Sound = require('react-native-sound');
   //Sound.setCategory('Playback');
-  var sound0, sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,
-      sound9,sound10,sound11,sound12,sound13;
+  var sound0,sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,
+      sound9,sound10,sound101,sound102,sound103,sound104,
+      sound105,sound106,sound107,sound108,sound109,sound110;
   //plays definition of synonym
   const playDef = () => {
     sound0 = new Sound(require("../assets/14/14intro.mp3"),
@@ -86,7 +87,7 @@ export default function L14({navigation}) {
     stopSounds();
     switch (num) {
       case 1:
-        sound1 = new Sound(require("../assets/12/begin_start.mp3"),
+        sound1 = new Sound(require("../assets/14/be_bee.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -94,11 +95,21 @@ export default function L14({navigation}) {
             }
             sound1.play(() => {
               sound1.release();
+              sound101 = new Sound(require("../assets/14/be_bee_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound101.play(() => {
+                    sound101.release();
+                  });
+                });
             });
           });
         break;
       case 2:
-        sound2 = new Sound(require("../assets/12/easy_simple.mp3"),
+        sound2 = new Sound(require("../assets/14/horse-hoarse.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -106,11 +117,21 @@ export default function L14({navigation}) {
             }
             sound2.play(() => {
               sound2.release();
+              sound102 = new Sound(require("../assets/14/horse-hoarse_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound102.play(() => {
+                    sound102.release();
+                  });
+                });
             });
           });
         break;
       case 3:
-        sound3 = new Sound(require("../assets/12/end_finish.mp3"),
+        sound3 = new Sound(require("../assets/14/I-eye.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -118,11 +139,21 @@ export default function L14({navigation}) {
             }
             sound3.play(() => {
               sound3.release();
+              sound103 = new Sound(require("../assets/14/I_eye_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound103.play(() => {
+                    sound103.release();
+                  });
+                });
             });
           });
         break;
       case 4:
-        sound4 = new Sound(require("../assets/12/evening_dusk.mp3"),
+        sound4 = new Sound(require("../assets/14/meet_meat.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -130,11 +161,21 @@ export default function L14({navigation}) {
             }
             sound4.play(() => {
               sound4.release();
+              sound104 = new Sound(require("../assets/14/meet-meat_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound104.play(() => {
+                    sound104.release();
+                  });
+                });
             });
           });
         break;
       case 5:
-        sound5 = new Sound(require("../assets/12/fix_mend.mp3"),
+        sound5 = new Sound(require("../assets/14/one-won.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -142,11 +183,21 @@ export default function L14({navigation}) {
             }
             sound5.play(() => {
               sound5.release();
+              sound105 = new Sound(require("../assets/14/one-won_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound105.play(() => {
+                    sound105.release();
+                  });
+                });
             });
           });
         break;
       case 6:
-        sound6 = new Sound(require("../assets/12/hard_difficult.mp3"),
+        sound6 = new Sound(require("../assets/14/peek-peak.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -154,11 +205,21 @@ export default function L14({navigation}) {
             }
             sound6.play(() => {
              sound6.release();
+             sound106 = new Sound(require("../assets/14/peek-peak_2.mp3"),
+             (error, sound) => {
+                 if (error) {
+                   alert('error' + error.message);
+                   return;
+                 }
+                 sound106.play(() => {
+                   sound106.release();
+                 });
+               });
             });
           });
         break;
       case 7:
-        sound7 = new Sound(require("../assets/12/morning_dawn.mp3"),
+        sound7 = new Sound(require("../assets/14/plane-plain_Idontneedtofly.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -166,11 +227,21 @@ export default function L14({navigation}) {
             }
             sound7.play(() => {
               sound7.release();
+              sound107 = new Sound(require("../assets/14/plane-plain_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound107.play(() => {
+                    sound107.release();
+                  });
+                });
             });
           });
         break;
       case 8:
-        sound8 = new Sound(require("../assets/12/sad_unhappy.mp3"),
+        sound8 = new Sound(require("../assets/14/sale-sail.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -178,11 +249,21 @@ export default function L14({navigation}) {
             }
             sound8.play(() => {
               sound8.release();
+              sound108 = new Sound(require("../assets/14/sale_sail_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound108.play(() => {
+                    sound108.release();
+                  });
+                });
             });
           });
         break;
       case 9:
-        sound9 = new Sound(require("../assets/12/shove_push.mp3"),
+        sound9 = new Sound(require("../assets/14/see-sea.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -190,11 +271,21 @@ export default function L14({navigation}) {
             }
             sound9.play(() => {
               sound9.release();
+              sound109 = new Sound(require("../assets/14/see-sea_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound109.play(() => {
+                    sound109.release();
+                  });
+                });
             });
           });
         break;
       case 10:
-        sound10 = new Sound(require("../assets/12/shut_close.mp3"),
+        sound10 = new Sound(require("../assets/14/wood-would.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -202,42 +293,16 @@ export default function L14({navigation}) {
             }
             sound10.play(() => {
               sound10.release();
-            });
-          });
-        break;
-      case 11:
-        sound11 = new Sound(require("../assets/12/small_little.mp3"),
-        (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound11.play(() => {
-              sound11.release();
-            });
-          });
-        break;
-      case 12:
-        sound12 = new Sound(require("../assets/12/stop_halt.mp3"),
-        (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound12.play(() => {
-              sound12.release();
-            });
-          });
-        break;
-      case 13:
-        sound13 = new Sound(require("../assets/12/yell_shout.mp3"),
-        (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound13.play(() => {
-              sound13.release();
+              sound110 = new Sound(require("../assets/14/wood-would_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound110.play(() => {
+                    sound110.release();
+                  });
+                });
             });
           });
         break;
@@ -256,9 +321,16 @@ export default function L14({navigation}) {
     if (sound8) {sound8.stop();}
     if (sound9) {sound9.stop();}
     if (sound10) {sound10.stop();}
-    if (sound11) {sound11.stop();}
-    if (sound12) {sound12.stop();}
-    if (sound13) {sound13.stop();}
+    if (sound101) {sound101.stop();}
+    if (sound102) {sound101.stop();}
+    if (sound103) {sound101.stop();}
+    if (sound104) {sound101.stop();}
+    if (sound105) {sound101.stop();}
+    if (sound106) {sound101.stop();}
+    if (sound107) {sound101.stop();}
+    if (sound108) {sound101.stop();}
+    if (sound109) {sound101.stop();}
+    if (sound110) {sound101.stop();}
   }
     return (
       <>
