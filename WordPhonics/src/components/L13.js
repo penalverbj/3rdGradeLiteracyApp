@@ -18,59 +18,59 @@ import PropTypes from 'prop-types';
 
 import Sound from 'react-native-sound';
 
-export default function L12({navigation}) {
+export default function L13({navigation}) {
   //counter for the example we are on. 1-13
   const [example, setExample] = useState(1);
   //images for rendering
   const imgs =
     [
-      require('../assets/12/begin_start.png'),
-      require('../assets/12/easy_simple.png'),
-      require('../assets/12/end_finish.png'),
-      require('../assets/12/evening_dusk.png'),
-      require('../assets/12/fix_mend.png'),
-      require('../assets/12/hard_difficult.png'),
-      require('../assets/12/morning_dawn.png'),
-      require('../assets/12/sad_unhappy.png'),
-      require('../assets/12/shove_push.png'),
-      require('../assets/12/shut_close.png'),
-      require('../assets/12/small_little.png'),
-      require('../assets/12/stop_halt.png'),
-      require('../assets/12/yell_shout.png'),
+      require('../assets/13/ascend_descend.png'),
+      require('../assets/13/big_little.png'),
+      require('../assets/13/boring_exciting.png'),
+      require('../assets/13/cold_hot.png'),
+      require('../assets/13/day_night.png'),
+      require('../assets/13/naughty_nice.png'),
+      require('../assets/13/polite_rude.png'),
+      require('../assets/13/rise_fall.png'),
+      require('../assets/13/sunrise_sunset.png'),
+      require('../assets/13/sweet_sour.png'),
+      require('../assets/13/tighten_loosen.png'),
+      require('../assets/13/whisper_yell.png'),
+      require('../assets/13/young_old.png'),
     ];
   //list of words that come first
   const words1 =
     [
-      'begin',
-      'easy',
-      'end',
-      'evening',
-      'fix',
-      'hard',
-      'morning',
-      'sad',
-      'shove',
-      'shut',
-      'small',
-      'stop',
-      'yell',
+      'ascend',
+      'big',
+      'boring',
+      'cold',
+      'day',
+      'naughty',
+      'polite',
+      'rise',
+      'sunrise',
+      'sweet',
+      'tighten',
+      'whisper',
+      'young',
     ];
   //list of words that come second
   const words2 =
     [
-      'start',
-      'simple',
-      'finish',
-      'dusk',
-      'mend',
-      'difficult',
-      'dawn',
-      'unhappy',
-      'push',
-      'close',
+      'descend',
       'little',
-      'halt',
-      'shout',
+      'exciting',
+      'hot',
+      'night',
+      'nice',
+      'rude',
+      'fall',
+      'sunset',
+      'sour',
+      'loosen',
+      'yell',
+      'old',
     ];
   //sound variables
   var Sound = require('react-native-sound');
@@ -79,7 +79,7 @@ export default function L12({navigation}) {
       sound9,sound10,sound11,sound12,sound13;
   //plays definition of synonym
   const playDef = () => {
-    sound0 = new Sound(require("../assets/12/12intro.mp3"),
+    sound0 = new Sound(require("../assets/13/13intro.mp3"),
     (error, sound) => {
         if (error) {
           alert('error' + error.message);
@@ -95,7 +95,7 @@ export default function L12({navigation}) {
     stopSounds();
     switch (num) {
       case 1:
-        sound1 = new Sound(require("../assets/12/begin_start.mp3"),
+        sound1 = new Sound(require("../assets/13/ascend_descend.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -107,7 +107,7 @@ export default function L12({navigation}) {
           });
         break;
       case 2:
-        sound2 = new Sound(require("../assets/12/easy_simple.mp3"),
+        sound2 = new Sound(require("../assets/13/big_little.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -119,7 +119,7 @@ export default function L12({navigation}) {
           });
         break;
       case 3:
-        sound3 = new Sound(require("../assets/12/end_finish.mp3"),
+        sound3 = new Sound(require("../assets/13/boring_exciting.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -131,7 +131,7 @@ export default function L12({navigation}) {
           });
         break;
       case 4:
-        sound4 = new Sound(require("../assets/12/evening_dusk.mp3"),
+        sound4 = new Sound(require("../assets/13/cold_hot.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -143,7 +143,7 @@ export default function L12({navigation}) {
           });
         break;
       case 5:
-        sound5 = new Sound(require("../assets/12/fix_mend.mp3"),
+        sound5 = new Sound(require("../assets/13/day_night.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -155,7 +155,7 @@ export default function L12({navigation}) {
           });
         break;
       case 6:
-        sound6 = new Sound(require("../assets/12/hard_difficult.mp3"),
+        sound6 = new Sound(require("../assets/13/naughty_nice.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -167,7 +167,7 @@ export default function L12({navigation}) {
           });
         break;
       case 7:
-        sound7 = new Sound(require("../assets/12/morning_dawn.mp3"),
+        sound7 = new Sound(require("../assets/13/polite_rude.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -179,7 +179,7 @@ export default function L12({navigation}) {
           });
         break;
       case 8:
-        sound8 = new Sound(require("../assets/12/sad_unhappy.mp3"),
+        sound8 = new Sound(require("../assets/13/rise_fall.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -191,7 +191,7 @@ export default function L12({navigation}) {
           });
         break;
       case 9:
-        sound9 = new Sound(require("../assets/12/shove_push.mp3"),
+        sound9 = new Sound(require("../assets/13/sunrise_sunset.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -203,7 +203,7 @@ export default function L12({navigation}) {
           });
         break;
       case 10:
-        sound10 = new Sound(require("../assets/12/shut_close.mp3"),
+        sound10 = new Sound(require("../assets/13/sweet_sour.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -215,7 +215,7 @@ export default function L12({navigation}) {
           });
         break;
       case 11:
-        sound11 = new Sound(require("../assets/12/small_little.mp3"),
+        sound11 = new Sound(require("../assets/13/tighten_loosen.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -227,7 +227,7 @@ export default function L12({navigation}) {
           });
         break;
       case 12:
-        sound12 = new Sound(require("../assets/12/stop_halt.mp3"),
+        sound12 = new Sound(require("../assets/13/whisper_yell.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -239,7 +239,7 @@ export default function L12({navigation}) {
           });
         break;
       case 13:
-        sound13 = new Sound(require("../assets/12/yell_shout.mp3"),
+        sound13 = new Sound(require("../assets/13/young_old.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -277,8 +277,8 @@ export default function L12({navigation}) {
             playDef();
           }}>
             <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
+              Antonyms are words which have opposite
+              or close to opposite meanings.
             </Text>
           </TouchableOpacity>
         </View>
@@ -332,8 +332,8 @@ export default function L12({navigation}) {
     );
 }
 
-L12.navigationOptions = () => {(
-    title:'L12'
+L13.navigationOptions = () => {(
+    title:'L13'
 )}
 
 const styles = StyleSheet.create({

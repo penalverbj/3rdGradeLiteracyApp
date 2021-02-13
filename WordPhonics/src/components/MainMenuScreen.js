@@ -187,6 +187,9 @@ export default function MainMenuScreen(props) {
       case 12:
         navigation.navigate("L12");
         break;
+      case 13:
+        navigation.navigate('L13');
+        break;
       default:
         break;
     }
@@ -210,7 +213,10 @@ export default function MainMenuScreen(props) {
 
           <TouchableOpacity
             style={[styles.lesson, {backgroundColor: '#f3b2c8'}]}
-            onPress={() => {playSound(13)}}
+            onPress={() => {
+              playSound(13);
+              goToScreen(13);
+            }}
           >
             <Text style={styles.section}>13: antonyms</Text>
           </TouchableOpacity>
