@@ -38,6 +38,7 @@ export default function L12(props, {navigation}) {
       require('../assets/12/stop_halt.png'),
       require('../assets/12/yell_shout.png'),
     ];
+  //list of words that come first
   const words1 =
     [
       'begin',
@@ -54,6 +55,7 @@ export default function L12(props, {navigation}) {
       'stop',
       'yell',
     ];
+  //list of words that come second
   const words2 =
     [
       'start',
@@ -70,6 +72,7 @@ export default function L12(props, {navigation}) {
       'halt',
       'shout',
     ];
+  //sound variables
   var sound0, sound1, sound2, sound3, sound4, sound5,
       sound6, sound7, sound8, sound9, sound10, sound11,
       sound12, sound13;
