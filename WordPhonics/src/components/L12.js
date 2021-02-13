@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 
 import Sound from 'react-native-sound';
 
-export default function L12(props, {navigation}) {
+export default function L12({ route, navigation}) {
   //counter for the example we are on. 1-13
   const [example, setExample] = useState(1);
   //images for rendering
@@ -73,9 +73,8 @@ export default function L12(props, {navigation}) {
       'shout',
     ];
   //sound variables
-  var sound0, sound1, sound2, sound3, sound4, sound5,
-      sound6, sound7, sound8, sound9, sound10, sound11,
-      sound12, sound13;
+  var sound0, sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,
+      sound9,sound10,sound11,sound12,sound13;
   //plays definition of synonym
   const playDef = () => {
     sound0 = new Sound(require("../assets/12/12intro.mp3"),
@@ -160,7 +159,7 @@ export default function L12(props, {navigation}) {
               return;
             }
             sound6.play(() => {
-              sound6.release();
+             sound6.release();
             });
           });
         break;
@@ -252,20 +251,20 @@ export default function L12(props, {navigation}) {
   }
   //stops any sound playing
   const stopSounds = () => {
-    if (sound0) {sound0.stop();}
-    if (sound1) {sound1.stop();}
-    if (sound2) {sound2.stop();}
-    if (sound3) {sound3.stop();}
-    if (sound4) {sound4.stop();}
-    if (sound5) {sound5.stop();}
-    if (sound6) {sound6.stop();}
-    if (sound7) {sound7.stop();}
-    if (sound8) {sound8.stop();}
-    if (sound9) {sound9.stop();}
-    if (sound10) {sound10.stop();}
-    if (sound11) {sound11.stop();}
-    if (sound12) {sound12.stop();}
-    if (sound13) {sound13.stop();}
+    if (sound0) {sound0.stop()};
+    if (sound1) {sound1.stop()};
+    if (sound2) {sound2.stop()};
+    if (sound3) {sound3.stop()};
+    if (sound4) {sound4.stop()};
+    if (sound5) {sound5.stop()};
+    if (sound6) {sound6.stop()};
+    if (sound7) {sound7.stop()};
+    if (sound8) {sound8.stop()};
+    if (sound9) {sound9.stop()};
+    if (sound10) {sound10.stop()};
+    if (sound11) {sound11.stop()};
+    if (sound12) {sound12.stop()};
+    if (sound13) {sound13.stop()};
   }
     return (
       <>
@@ -340,7 +339,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingBottom: 50,
+    paddingVertical: 15,
   },
   subContainer: {
     alignItems: 'flex-start',
