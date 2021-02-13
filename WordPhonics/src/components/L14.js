@@ -70,7 +70,7 @@ export default function L14({navigation}) {
       sound9,sound10,sound11,sound12,sound13;
   //plays definition of synonym
   const playDef = () => {
-    sound0 = new Sound(require("../assets/12/12intro.mp3"),
+    sound0 = new Sound(require("../assets/14/14intro.mp3"),
     (error, sound) => {
         if (error) {
           alert('error' + error.message);
@@ -330,10 +330,11 @@ L14.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 1,
+    flex: 2,
+    flexWrap: 'wrap',
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingVertical: 15,
+    paddingVertical: 12,
   },
   subContainer: {
     alignItems: 'flex-start',
@@ -341,7 +342,7 @@ const styles = StyleSheet.create({
     flex: 10,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingTop: 40,
+    paddingTop: 10,
     flexWrap: 'wrap',
   },
   subtitle: {
