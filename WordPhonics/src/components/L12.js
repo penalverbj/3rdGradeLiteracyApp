@@ -396,7 +396,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   quizButton: {
-    backgroundColor: '#ADFF2F',
+    backgroundColor: '#bfe54e',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
@@ -405,7 +405,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   quiz: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
 });

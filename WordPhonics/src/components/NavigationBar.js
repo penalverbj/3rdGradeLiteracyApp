@@ -24,7 +24,7 @@ export default function NavigationBar() {
       style={styles.startContainer}
       onPress={() => navigation.navigate("MainMenu")}>
         <Image
-          source={require('../assets/plainLogo2.png')}
+          source={require('../assets/home.png')}
           style={styles.image}
         />
     </TouchableOpacity>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 27,
+    height: 27,
   },
 });
