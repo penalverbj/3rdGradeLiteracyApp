@@ -21,24 +21,76 @@ import Sound from 'react-native-sound';
 export default function L12(props, {navigation}) {
   //counter for the example we are on. 1-13
   const [example, setExample] = useState(1);
+  //images for rendering
+  const imgs =
+    [
+      require('../assets/12/begin_start.png'),
+      require('../assets/12/easy_simple.png'),
+      require('../assets/12/end_finish.png'),
+      require('../assets/12/evening_dusk.png'),
+      require('../assets/12/fix_mend.png'),
+      require('../assets/12/hard_difficult.png'),
+      require('../assets/12/morning_dawn.png'),
+      require('../assets/12/sad_unhappy.png'),
+      require('../assets/12/shove_push.png'),
+      require('../assets/12/shut_close.png'),
+      require('../assets/12/small_little.png'),
+      require('../assets/12/stop_halt.png'),
+      require('../assets/12/yell_shout.png'),
+    ];
+  const words1 =
+    [
+      'begin',
+      'easy',
+      'end',
+      'evening',
+      'fix',
+      'hard',
+      'morning',
+      'sad',
+      'shove',
+      'shut',
+      'small',
+      'stop',
+      'yell',
+    ];
+  const words2 =
+    [
+      'start',
+      'simple',
+      'finish',
+      'dusk',
+      'mend',
+      'difficult',
+      'dawn',
+      'unhappy',
+      'push',
+      'close',
+      'little',
+      'halt',
+      'shout',
+    ];
+  var sound0, sound1, sound2, sound3, sound4, sound5,
+      sound6, sound7, sound8, sound9, sound10, sound11,
+      sound12, sound13;
   //plays definition of synonym
-  var playDef = () => {
-    var sound1 = new Sound(require("../assets/12/12intro.mp3"),
+  const playDef = () => {
+    sound0 = new Sound(require("../assets/12/12intro.mp3"),
     (error, sound) => {
         if (error) {
           alert('error' + error.message);
           return;
         }
-        sound1.play(() => {
-          sound1.release();
+        sound0.play(() => {
+          sound0.release();
         });
       });
   }
   //plays the audio associated with each example
-  var playEx = (num) => {
+  const playEx = (num) => {
     switch (num) {
       case 1:
-        var sound1 = new Sound(require("../assets/12/begin_start.mp3"),
+        sound1 = new Sound(require("../assets/12/begin_start.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -50,159 +102,175 @@ export default function L12(props, {navigation}) {
           });
         break;
       case 2:
-        var sound1 = new Sound(require("../assets/12/easy_simple.mp3"),
+        sound2 = new Sound(require("../assets/12/easy_simple.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound2.play(() => {
+              sound2.release();
             });
           });
         break;
       case 3:
-        var sound1 = new Sound(require("../assets/12/end_finish.mp3"),
+        sound3 = new Sound(require("../assets/12/end_finish.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound3.play(() => {
+              sound3.release();
             });
           });
         break;
       case 4:
-        var sound1 = new Sound(require("../assets/12/evening_dusk.mp3"),
+        sound4 = new Sound(require("../assets/12/evening_dusk.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound4.play(() => {
+              sound4.release();
             });
           });
         break;
       case 5:
-        var sound1 = new Sound(require("../assets/12/fix_mend.mp3"),
+        sound5 = new Sound(require("../assets/12/fix_mend.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound5.play(() => {
+              sound5.release();
             });
           });
         break;
       case 6:
-        var sound1 = new Sound(require("../assets/12/hard_difficult.mp3"),
+        sound6 = new Sound(require("../assets/12/hard_difficult.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound6.play(() => {
+              sound6.release();
             });
           });
         break;
       case 7:
-        var sound1 = new Sound(require("../assets/12/morning_dawn.mp3"),
+        sound7 = new Sound(require("../assets/12/morning_dawn.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound7.play(() => {
+              sound7.release();
             });
           });
         break;
       case 8:
-        var sound1 = new Sound(require("../assets/12/sad_unhappy.mp3"),
+        sound8 = new Sound(require("../assets/12/sad_unhappy.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound8.play(() => {
+              sound8.release();
             });
           });
         break;
       case 9:
-        var sound1 = new Sound(require("../assets/12/shove_push.mp3"),
+        sound9 = new Sound(require("../assets/12/shove_push.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound9.play(() => {
+              sound9.release();
             });
           });
         break;
       case 10:
-        var sound1 = new Sound(require("../assets/12/shut_close.mp3"),
+        sound10 = new Sound(require("../assets/12/shut_close.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound10.play(() => {
+              sound10.release();
             });
           });
         break;
       case 11:
-        var sound1 = new Sound(require("../assets/12/small_little.mp3"),
+        sound11 = new Sound(require("../assets/12/small_little.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound11.play(() => {
+              sound11.release();
             });
           });
         break;
       case 12:
-        var sound1 = new Sound(require("../assets/12/stop_halt.mp3"),
+        sound12 = new Sound(require("../assets/12/stop_halt.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound12.play(() => {
+              sound12.release();
             });
           });
         break;
       case 13:
-        var sound1 = new Sound(require("../assets/12/yell_shout.mp3"),
+        sound13 = new Sound(require("../assets/12/yell_shout.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
             }
-            sound1.play(() => {
-              sound1.release();
+            sound13.play(() => {
+              sound13.release();
             });
           });
         break;
     }
   }
-  //I tried to do it dynamically so there wouldn't be so much repeat code
-  //but could not make it work. Maybe we can come back to this. -Jose
-  //make a component with props possibly
-  if (example == 1) {
+  //stops any sound playing
+  const stopSounds = () => {
+    if (sound0) {sound0.stop();}
+    if (sound1) {sound1.stop();}
+    if (sound2) {sound2.stop();}
+    if (sound3) {sound3.stop();}
+    if (sound4) {sound4.stop();}
+    if (sound5) {sound5.stop();}
+    if (sound6) {sound6.stop();}
+    if (sound7) {sound7.stop();}
+    if (sound8) {sound8.stop();}
+    if (sound9) {sound9.stop();}
+    if (sound10) {sound10.stop();}
+    if (sound11) {sound11.stop();}
+    if (sound12) {sound12.stop();}
+    if (sound13) {sound13.stop();}
+  }
     return (
       <>
         <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
+          <TouchableOpacity onPress={() => {
+            stopSounds();
+            playDef();
+          }}>
             <Text style={styles.subtitle}>
               Synonyms are words which have the same
               or close to the same meaning.
@@ -212,8 +280,9 @@ export default function L12(props, {navigation}) {
         <View style={styles.subContainer}>
           <TouchableOpacity
             onPress={() => {
-              setExample(13);
-              playEx(13);
+              stopSounds();
+              setExample(example === 1 ? imgs.length : example - 1);
+              playEx(example === 1 ? imgs.length : example - 1);
             }}
             style={styles.arrowContainer}
           >
@@ -223,17 +292,21 @@ export default function L12(props, {navigation}) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => playEx(example)}
+            onPress={() => {
+              stopSounds();
+              playEx(example);
+            }}
           >
             <Image
-              source={require('../assets/12/begin_start.png')}
+              source={imgs[example - 1]}
               style={styles.picture}
             />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              setExample(2);
-              playEx(2);
+              stopSounds();
+              setExample(example === imgs.length ? 1 : example + 1);
+              playEx(example === imgs.length ? 1 : example + 1);
             }}
             style={styles.arrowContainer}
           >
@@ -242,8 +315,8 @@ export default function L12(props, {navigation}) {
               style={styles.arrow}
             />
           </TouchableOpacity>
-          <Text style={styles.words}>begin</Text>
-          <Text style={styles.words}>start</Text>
+          <Text style={styles.words}>{words1[example - 1]}</Text>
+          <Text style={styles.words}>{words2[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
           <TouchableOpacity onPress={null} style={styles.quizButton}>
@@ -252,655 +325,6 @@ export default function L12(props, {navigation}) {
         </View>
         </>
     );
-  } else if (example == 2) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(1);
-              playEx(1);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/easy_simple.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(3);
-              playEx(3);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>easy</Text>
-          <Text style={styles.words}>simple</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 3) {
-      return (
-        <>
-          <View style={styles.startContainer}>
-            <TouchableOpacity onPress={() => playDef()}>
-              <Text style={styles.subtitle}>
-                Synonyms are words which have the same
-                or close to the same meaning.
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.subContainer}>
-            <TouchableOpacity
-              onPress={() => {
-                setExample(2);
-                playEx(2);
-              }}
-              style={styles.arrowContainer}
-            >
-              <Image
-                source={require('../assets/arrow-left.png')}
-                style={styles.arrow}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => playEx(example)}
-            >
-              <Image
-                source={require('../assets/12/end_finish.png')}
-                style={styles.picture}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                setExample(4);
-                playEx(4);
-              }}
-              style={styles.arrowContainer}
-            >
-              <Image
-                source={require('../assets/arrow-right.png')}
-                style={styles.arrow}
-              />
-            </TouchableOpacity>
-            <Text style={styles.words}>end</Text>
-            <Text style={styles.words}>finish</Text>
-          </View>
-          <View style={styles.quizContainer}>
-            <TouchableOpacity onPress={null} style={styles.quizButton}>
-              <Text style={styles.quiz}>?</Text>
-            </TouchableOpacity>
-          </View>
-          </>
-        );
-  } else if (example == 4) {
-      return (
-        <>
-          <View style={styles.startContainer}>
-            <TouchableOpacity onPress={() => playDef()}>
-              <Text style={styles.subtitle}>
-                Synonyms are words which have the same
-                or close to the same meaning.
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.subContainer}>
-            <TouchableOpacity
-              onPress={() => {
-                setExample(3);
-                playEx(3);
-              }}
-              style={styles.arrowContainer}
-            >
-              <Image
-                source={require('../assets/arrow-left.png')}
-                style={styles.arrow}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => playEx(example)}
-            >
-              <Image
-                source={require('../assets/12/evening_dusk.png')}
-                style={styles.picture}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                setExample(5);
-                playEx(5);
-              }}
-              style={styles.arrowContainer}
-            >
-              <Image
-                source={require('../assets/arrow-right.png')}
-                style={styles.arrow}
-              />
-            </TouchableOpacity>
-            <Text style={styles.words}>evening</Text>
-            <Text style={styles.words}>dusk</Text>
-          </View>
-          <View style={styles.quizContainer}>
-            <TouchableOpacity onPress={null} style={styles.quizButton}>
-              <Text style={styles.quiz}>?</Text>
-            </TouchableOpacity>
-          </View>
-          </>
-        );
-  } else if (example == 5) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(4);
-              playEx(4);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/fix_mend.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(6);
-              playEx(6);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>fix</Text>
-          <Text style={styles.words}>mend</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 6) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(5);
-              playEx(5);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/hard_difficult.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(7);
-              playEx(7);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>hard</Text>
-          <Text style={styles.words}>difficult</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 7) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(6);
-              playEx(6);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/morning_dawn.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(8);
-              playEx(8);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>morning</Text>
-          <Text style={styles.words}>dawn</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 8) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(7);
-              playEx(7);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/sad_unhappy.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(9);
-              playEx(9);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>sad</Text>
-          <Text style={styles.words}>unhappy</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 9) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(8);
-              playEx(8);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/shove_push.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(10);
-              playEx(10);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>shove</Text>
-          <Text style={styles.words}>push</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 10) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(9);
-              playEx(9);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/shut_close.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(11);
-              playEx(11);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>shut</Text>
-          <Text style={styles.words}>close</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 11) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(10);
-              playEx(10);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/small_little.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(12);
-              playEx(12);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>small</Text>
-          <Text style={styles.words}>little</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 12) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(11);
-              playEx(11);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/stop_halt.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(13);
-              playEx(13);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>stop</Text>
-          <Text style={styles.words}>halt</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  } else if (example == 13) {
-    return (
-      <>
-        <View style={styles.startContainer}>
-          <TouchableOpacity onPress={() => playDef()}>
-            <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.subContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(12);
-              playEx(12);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-left.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => playEx(example)}
-          >
-            <Image
-              source={require('../assets/12/yell_shout.png')}
-              style={styles.picture}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setExample(1);
-              playEx(1);
-            }}
-            style={styles.arrowContainer}
-          >
-            <Image
-              source={require('../assets/arrow-right.png')}
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-          <Text style={styles.words}>yell</Text>
-          <Text style={styles.words}>shout</Text>
-        </View>
-        <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
-        </View>
-        </>
-      );
-  }
 }
 
 L12.navigationOptions = () => {(
