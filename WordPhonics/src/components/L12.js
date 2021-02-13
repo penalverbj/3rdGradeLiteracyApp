@@ -334,11 +334,6 @@ L12.navigationOptions = () => {(
     title:'L12'
 )}
 
-
-L12.propTypes = {
-
-}
-
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',

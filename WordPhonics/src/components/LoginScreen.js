@@ -53,10 +53,6 @@ LoginScreen.navigationOptions = () => {(
     title:'Login'
 )}
 
-LoginScreen.propTypes = {
-  //logIn: PropTypes.func.isRequired,
-};
-
 const styles = StyleSheet.create({
   startContainer: {
     alignItems: 'center',

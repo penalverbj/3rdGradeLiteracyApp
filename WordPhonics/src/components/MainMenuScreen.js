@@ -190,12 +190,10 @@ export default function MainMenuScreen(props) {
       default:
         break;
     }
-
   }
 
   return (
     <>
-
       <SafeAreaView style={styles.startContainer}>
         <Text style={styles.title}>Figures of Speech</Text>
         <Text style={styles.subtitle}>fun ways to use language</Text>
@@ -309,10 +307,6 @@ export default function MainMenuScreen(props) {
 MainMenuScreen.navigationOptions = () => {(
     title:'MainMenu'
 )}
-
-MainMenuScreen.propTypes = {
-
-}
 
 const styles = StyleSheet.create({
   startContainer: {
