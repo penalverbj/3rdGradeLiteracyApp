@@ -24,51 +24,54 @@ export default function L16({navigation}) {
   //images for rendering
   const imgs =
     [
-      require('../assets/14/be-bee.png'),
-      require('../assets/14/horse-hoarse.png'),
-      require('../assets/14/I-eye.png'),
-      require('../assets/14/meet-meat.png'),
-      require('../assets/14/one-won.png'),
-      require('../assets/14/peek-peak.png'),
-      require('../assets/14/plane-plain.png'),
-      require('../assets/14/sale-sail.png'),
-      require('../assets/14/see-sea.png'),
-      require('../assets/14/wood-would.png'),
+      require('../assets/16/bark-bark.png'),
+      require('../assets/16/bat-bat.png'),
+      require('../assets/16/fly-fly.png'),
+      require('../assets/16/gum-gum.png'),
+      require('../assets/16/jam-jam.png'),
+      require('../assets/16/pen-pen.png'),
+      require('../assets/16/pitcher-pitcher.png'),
+      require('../assets/16/rest-rest.png'),
+      require('../assets/16/seal-seal.png'),
+      require('../assets/16/second-second.png'),
+      require('../assets/16/watch-watch.png'),
     ];
   //list of words that come first
   const words1 =
     [
-      'be, bee',
-      'horse, hoarse',
-      'I, eye',
-      'meet, meat',
-      'one, won',
-      'peek, peak',
-      'plane, plain',
-      'sale, sail',
-      'see, sea',
-      'would, wood',
+      'bark',
+      'bat',
+      'fly',
+      'gum',
+      'jam',
+      'pen',
+      'pitcher',
+      'rest',
+      'seal',
+      'second',
+      'watch',
     ];
   //list of words that come second
   const words2 =
     [
-      "What if I don't want to be as busy as a bee?",
-      "My horse didn't come when I called because my voice was too hoarse.",
-      'I stuck my finger in my eye',
-      "Meet me at the car and we'll go buy some buffalo meat.",
-      'Which one won?',
-      "If you peek through the clouds you can see the tip top of the mountain peak.",
-      "I don't need to fly in a fancy plane just a plain plane will be good enough for me.",
-      "I bought my boat's sail at a boat sale",
-      'I can see the sea from here.',
-      'Would you rather cook hot dogs on a wood fire or in a microwave?',
+      "My dog will bark when i throw a piece of tree bark for him to chase.",
+      "He used his baseball bat to chase away a bat.",
+      'Did you see the fly fly in his mouth?',
+      "A piece of bubble gum got stuck between two teeth on my gum.",
+      'I ate my bread and jam when our car was stopped in a traffic jam.',
+      "With his pen he counted how many pigs were in the pen.",
+      "The pitcher was so thirsty he drank a whole pitcher of lemonade.",
+      "Rest quietly until the rest of the children come.",
+      'After you seal each letter use the stamps with the seal balancing a ball.',
+      'She came in second in the race and lost by only one second.',
+      "Watch me while i hide my dad's watch in his shoe.",
     ];
   //sound variables
   var Sound = require('react-native-sound');
   //Sound.setCategory('Playback');
   var sound0,sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,
-      sound9,sound10,sound101,sound102,sound103,sound104,
-      sound105,sound106,sound107,sound108,sound109,sound110;
+      sound9,sound10,sound11,sound101,sound102,sound103,sound104,
+      sound105,sound106,sound107,sound108,sound109,sound110,sound111;
   //plays definition of synonym
   const playDef = () => {
     sound0 = new Sound(require("../assets/14/14intro.mp3"),
@@ -87,7 +90,7 @@ export default function L16({navigation}) {
     stopSounds();
     switch (num) {
       case 1:
-        sound1 = new Sound(require("../assets/14/be_bee.mp3"),
+        sound1 = new Sound(require("../assets/16/bark.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -95,7 +98,7 @@ export default function L16({navigation}) {
             }
             sound1.play(() => {
               sound1.release();
-              sound101 = new Sound(require("../assets/14/be_bee_2.mp3"),
+              sound101 = new Sound(require("../assets/16/bark_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -109,7 +112,7 @@ export default function L16({navigation}) {
           });
         break;
       case 2:
-        sound2 = new Sound(require("../assets/14/horse-hoarse.mp3"),
+        sound2 = new Sound(require("../assets/16/bat.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -117,7 +120,7 @@ export default function L16({navigation}) {
             }
             sound2.play(() => {
               sound2.release();
-              sound102 = new Sound(require("../assets/14/horse-hoarse_2.mp3"),
+              sound102 = new Sound(require("../assets/16/bat_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -131,7 +134,7 @@ export default function L16({navigation}) {
           });
         break;
       case 3:
-        sound3 = new Sound(require("../assets/14/I-eye.mp3"),
+        sound3 = new Sound(require("../assets/16/fly.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -139,7 +142,7 @@ export default function L16({navigation}) {
             }
             sound3.play(() => {
               sound3.release();
-              sound103 = new Sound(require("../assets/14/I_eye_2.mp3"),
+              sound103 = new Sound(require("../assets/16/fly_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -153,7 +156,7 @@ export default function L16({navigation}) {
           });
         break;
       case 4:
-        sound4 = new Sound(require("../assets/14/meet_meat.mp3"),
+        sound4 = new Sound(require("../assets/16/gum.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -161,7 +164,7 @@ export default function L16({navigation}) {
             }
             sound4.play(() => {
               sound4.release();
-              sound104 = new Sound(require("../assets/14/meet-meat_2.mp3"),
+              sound104 = new Sound(require("../assets/16/gum_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -175,7 +178,7 @@ export default function L16({navigation}) {
           });
         break;
       case 5:
-        sound5 = new Sound(require("../assets/14/one-won.mp3"),
+        sound5 = new Sound(require("../assets/16/jam.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -183,7 +186,7 @@ export default function L16({navigation}) {
             }
             sound5.play(() => {
               sound5.release();
-              sound105 = new Sound(require("../assets/14/one-won_2.mp3"),
+              sound105 = new Sound(require("../assets/16/jam_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -197,7 +200,7 @@ export default function L16({navigation}) {
           });
         break;
       case 6:
-        sound6 = new Sound(require("../assets/14/peek-peak.mp3"),
+        sound6 = new Sound(require("../assets/16/pen.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -205,7 +208,7 @@ export default function L16({navigation}) {
             }
             sound6.play(() => {
              sound6.release();
-             sound106 = new Sound(require("../assets/14/peek-peak_2.mp3"),
+             sound106 = new Sound(require("../assets/16/pen_2.mp3"),
              (error, sound) => {
                  if (error) {
                    alert('error' + error.message);
@@ -219,7 +222,7 @@ export default function L16({navigation}) {
           });
         break;
       case 7:
-        sound7 = new Sound(require("../assets/14/plane-plain_Idontneedtofly.mp3"),
+        sound7 = new Sound(require("../assets/16/pitcher.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -227,7 +230,7 @@ export default function L16({navigation}) {
             }
             sound7.play(() => {
               sound7.release();
-              sound107 = new Sound(require("../assets/14/plane-plain_2.mp3"),
+              sound107 = new Sound(require("../assets/16/pitcher_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -241,7 +244,7 @@ export default function L16({navigation}) {
           });
         break;
       case 8:
-        sound8 = new Sound(require("../assets/14/sale-sail.mp3"),
+        sound8 = new Sound(require("../assets/16/rest.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -249,7 +252,7 @@ export default function L16({navigation}) {
             }
             sound8.play(() => {
               sound8.release();
-              sound108 = new Sound(require("../assets/14/sale_sail_2.mp3"),
+              sound108 = new Sound(require("../assets/16/rest_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -263,7 +266,7 @@ export default function L16({navigation}) {
           });
         break;
       case 9:
-        sound9 = new Sound(require("../assets/14/see-sea.mp3"),
+        sound9 = new Sound(require("../assets/16/seal.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -271,7 +274,7 @@ export default function L16({navigation}) {
             }
             sound9.play(() => {
               sound9.release();
-              sound109 = new Sound(require("../assets/14/see-sea_2.mp3"),
+              sound109 = new Sound(require("../assets/16/seal_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -285,7 +288,7 @@ export default function L16({navigation}) {
           });
         break;
       case 10:
-        sound10 = new Sound(require("../assets/14/wood-would.mp3"),
+        sound10 = new Sound(require("../assets/16/second.mp3"),
         (error, sound) => {
             if (error) {
               alert('error' + error.message);
@@ -293,7 +296,7 @@ export default function L16({navigation}) {
             }
             sound10.play(() => {
               sound10.release();
-              sound110 = new Sound(require("../assets/14/wood-would_2.mp3"),
+              sound110 = new Sound(require("../assets/16/second_2.mp3"),
               (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
@@ -301,6 +304,28 @@ export default function L16({navigation}) {
                   }
                   sound110.play(() => {
                     sound110.release();
+                  });
+                });
+            });
+          });
+        break;
+      case 11:
+        sound11 = new Sound(require("../assets/16/watch.mp3"),
+        (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound11.play(() => {
+              sound11.release();
+              sound111 = new Sound(require("../assets/16/watch_2.mp3"),
+              (error, sound) => {
+                  if (error) {
+                    alert('error' + error.message);
+                    return;
+                  }
+                  sound111.play(() => {
+                    sound111.release();
                   });
                 });
             });
@@ -321,6 +346,7 @@ export default function L16({navigation}) {
     if (sound8) {sound8.stop();}
     if (sound9) {sound9.stop();}
     if (sound10) {sound10.stop();}
+    if (sound11) {sound11.stop();}
     if (sound101) {sound101.stop();}
     if (sound102) {sound101.stop();}
     if (sound103) {sound101.stop();}
@@ -331,6 +357,7 @@ export default function L16({navigation}) {
     if (sound108) {sound101.stop();}
     if (sound109) {sound101.stop();}
     if (sound110) {sound101.stop();}
+    if (sound111) {sound111.stop();}
   }
     return (
       <>
@@ -342,6 +369,7 @@ export default function L16({navigation}) {
             <Text style={styles.subtitle}>
               Homophones or Homonyms are words that sound the
               same but have different spellings and meanings.
+              Homo means same and graph means writing or picture.
             </Text>
           </TouchableOpacity>
         </View>
@@ -402,11 +430,12 @@ L16.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 2,
+    flex: 3,
     flexWrap: 'wrap',
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingVertical: 12,
+    paddingTop: 2,
+    paddingBottom: 14,
   },
   subContainer: {
     alignItems: 'flex-start',
@@ -429,7 +458,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 35,
     padding: 5,
-    //marginHorizontal: 5,
     marginTop: 130,
   },
   arrow: {
@@ -444,7 +472,7 @@ const styles = StyleSheet.create({
   words: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 15,
+    marginTop: 5,
     marginHorizontal: 20,
     textAlign: 'center',
   },
