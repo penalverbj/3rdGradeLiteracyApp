@@ -245,7 +245,7 @@ export default function MainMenuScreen(props) {
           <TouchableOpacity
             style={[styles.lesson, {backgroundColor: '#f3b88c'}]}
             onPress={() => {
-              playSound(17);
+              //playSound(17);
               goToScreen(17);
             }}
           >
