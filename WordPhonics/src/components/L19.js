@@ -217,7 +217,34 @@ export default function L19({navigation}) {
             <Text style={styles.subtitle}>
               Irony or sarcasm is saying something the reader or
               listener is supposed to know is not really true,
-              and is usually the opposite of what's true.Irony or sarcasm is saying something the reader or listener is supposed to know is not really true, and is usually the opposite of what's true.
+              and is usually the opposite of what's true.
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.subContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              setExample(example === 1 ? imgs.length : example - 1);
+              playEx(example=== 1 ? imgs.length : example - 1);
+              stopSounds();
+            }}
+            style={styles.arrowContainer}
+          >
+            <Image
+              source={require('../assets/arrow-left.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              stopSounds();
+              playEx(example);
+            }}
+          >
+            <Image
+              source={imgs[example - 1]}
+              style={styles.picture}
+            />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
