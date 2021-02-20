@@ -24,10 +24,11 @@ import L13 from './L13';
 import L14 from './L14';
 import L16 from './L16';
 import L17 from './L17';
-import L18 from './L18';
 import L17S from './L17S';
 import L17M from './L17M';
 import L17SM from './L17SM';
+import L18 from './L18';
+import L19 from './L19';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -278,6 +279,22 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="L18"
                 component={L18}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="L19"
+                component={L19}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
