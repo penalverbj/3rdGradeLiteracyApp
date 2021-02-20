@@ -338,15 +338,15 @@ export default function L17SM({navigation}) {
     if (sound7) {sound7.stop();}
     if (sound8) {sound8.stop();}
     if (sound9) {sound9.stop();}
-    if (sound10) {sound9.stop();}
-    if (sound11) {sound9.stop();}
-    if (sound12) {sound9.stop();}
-    if (sound13) {sound9.stop();}
-    if (sound14) {sound9.stop();}
-    if (sound15) {sound9.stop();}
-    if (sound16) {sound9.stop();}
-    if (sound17) {sound9.stop();}
-    if (sound18) {sound9.stop();}
+    if (sound10) {sound10.stop();}
+    if (sound11) {sound11.stop();}
+    if (sound12) {sound12.stop();}
+    if (sound13) {sound13.stop();}
+    if (sound14) {sound14.stop();}
+    if (sound15) {sound15.stop();}
+    if (sound16) {sound16.stop();}
+    if (sound17) {sound17.stop();}
+    if (sound18) {sound18.stop();}
   }
     return (
       <>
@@ -467,7 +467,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFAF0',
-    paddingBottom: 70,
+    paddingBottom: 90,
     flexDirection: 'row',
   },
   quizButton: {
