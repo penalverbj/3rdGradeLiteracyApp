@@ -134,55 +134,110 @@ export default function L24(props) {
     <>
       <SafeAreaView style={styles.startContainer}>
       <TouchableOpacity
-        onPress={() => {playSound(0);}}>
-        <Text style={styles.section}>
-          Words rhyme when their last vowel sound is the same,
-          and any sound after the vowel is the same. The letters
-          that spell the words don't have to be the same,
-          just the sounds.
-        </Text>
+        onPress={() => {playSound(0);}}
+        style={styles.subtitle}
+      >
       </TouchableOpacity>
         <ScrollView style={styles.scrollView}>
+          <Text
+            style={styles.section}
+          >
+            Words rhyme when their last vowel sound is the same,
+            and any sound after the vowel is the same. The letters
+            that spell the words don't have to be the same,
+            just the sounds.
+          </Text>
+          <View style={styles.subContainer}>
+            <TouchableOpacity
+              style={styles.words}
+              onPress={() => {playSound(1);}}>
+              <Text style={styles.section}>
+                no  go
+              </Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity
+              style={styles.words}
+              onPress={() => {playSound(2);}}>
+              <Text style={styles.section}>
+                hot  pot
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.words}
+              onPress={() => {playSound(3);}}>
+              <Text style={styles.section}>
+                be  he
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.words}
+              onPress={() => {playSound(4);}}>
+              <Text style={styles.section}>
+                bed  said
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.words}
+              onPress={() => {playSound(5);}}>
+              <Text style={styles.section}>
+                pie  sky
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.subContainer}>
+            <TouchableOpacity
+              style={styles.hr}
+              onPress={() => {playSound(6);}}>
+              <Text style={styles.section}>
+                Half-Rhyme
+              </Text>
+              <Text style={styles.section}>
+                or
+              </Text>
+              <Text style={styles.section}>
+                Near-Rhyme
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.nr}
+              onPress={() => {}}>
+              <Text style={styles.section}>
+                Nursery
+              </Text>
+              <Text style={styles.section}>
+                Rhymes
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.poems}
+              onPress={() => {}}>
+              <Text style={styles.section}>
+                Poems
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.subContainer}>
           <TouchableOpacity
-            style={styles.words}
-            onPress={() => {playSound(1);}}>
+            style={styles.quiz}
+            onPress={() => {}}>
             <Text style={styles.section}>
-              no  go
+              Which Words Rhyme
             </Text>
           </TouchableOpacity>
-
           <TouchableOpacity
-            style={styles.words}
-            onPress={() => {playSound(2);}}>
+            style={styles.quiz}
+            onPress={() => {}}>
             <Text style={styles.section}>
-              hot  pot
+              Which Don't Words Rhyme
             </Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.words}
-            onPress={() => {playSound(3);}}>
-            <Text style={styles.section}>
-              be  he
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.words}
-            onPress={() => {playSound(4);}}>
-            <Text style={styles.section}>
-              bed  said
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.words}
-            onPress={() => {playSound(5);}}>
-            <Text style={styles.section}>
-              pie  sky
-            </Text>
-          </TouchableOpacity>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </>
@@ -195,30 +250,61 @@ L24.navigationOptions = () => {(
 
 const styles = StyleSheet.create({
   startContainer: {
-    //alignItems: 'center',
-    justifyContent: 'center',
     flex: 1,
     backgroundColor: '#FFFAF0',
-    //flexDirection: 'row',
-    flexWrap: 'wrap',
   },
   scrollView: {
     padding: 5,
+  },
+  subContainer: {
+    marginVertical: 15,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignContent: 'space-around',
+    justifyContent: 'space-around',
   },
   section: {
-    fontSize: 20,
-    padding: 3,
+    fontSize: 23,
     fontStyle: 'italic',
     textAlign: 'center',
   },
   words: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     backgroundColor: '#6abad7',
-    width: 100,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
     margin: 4,
   },
+  hr: {
+    borderWidth: 3,
+    borderColor: '#b87cbe',
+    backgroundColor: '#cda1d2',
+    borderRadius: 10,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+  },
+  nr: {
+    borderWidth: 3,
+    borderColor: '#66cf69',
+    backgroundColor: '#96e4a2',
+    borderRadius: 10,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+  },
+  poems: {
+    borderWidth: 3,
+    borderColor: '#ee7af8',
+    backgroundColor: '#f3b2c8',
+    borderRadius: 10,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+  },
+  quiz: {
+    borderWidth: 3,
+    borderColor: '#e0696b',
+    borderRadius: 10,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+    margin: 5
+  }
 });
