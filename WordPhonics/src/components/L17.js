@@ -18,7 +18,7 @@ import {
 import Sound from 'react-native-sound';
 import {useNavigation} from '@react-navigation/native';
 
-export default function MainMenuScreen(props) {
+export default function L17(props) {
   const navigation = useNavigation();
   var sound1, sound2;
   var playSound = (num) => {
@@ -134,8 +134,8 @@ export default function MainMenuScreen(props) {
   );
 }
 
-MainMenuScreen.navigationOptions = () => {(
-    title:'MainMenu'
+L17.navigationOptions = () => {(
+    title:'L17'
 )}
 
 const styles = StyleSheet.create({
