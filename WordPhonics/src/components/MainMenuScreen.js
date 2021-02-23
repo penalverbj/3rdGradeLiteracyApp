@@ -155,7 +155,7 @@ export default function MainMenuScreen(props) {
           });
           break;
       case 24: var sound1 = new Sound(
-          require("../assets/24 Rhyme/24intro.mp3"), (error, sound) => {
+          require("../assets/24/24intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -166,7 +166,7 @@ export default function MainMenuScreen(props) {
           });
           break;
       case 25: var sound1 = new Sound(
-          require("../assets/25 Alliteration/25intro.mp3"), (error, sound) => {
+          require("../assets/25/25intro.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;

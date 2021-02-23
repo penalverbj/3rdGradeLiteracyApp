@@ -26,7 +26,7 @@ export default function L24(props) {
     switch (num) {
       case 0:
       sound0 = new Sound(
-        require("../assets/24 Rhyme/24intro.mp3"), (error, sound) => {
+        require("../assets/24/24intro.mp3"), (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
@@ -38,7 +38,7 @@ export default function L24(props) {
         break;
       case 1:
       sound1 = new Sound(
-        require("../assets/24 Rhyme/Rhyme/1R_no_go.mp3"), (error, sound) => {
+        require("../assets/24/Rhyme/1R_no_go.mp3"), (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
@@ -50,7 +50,7 @@ export default function L24(props) {
         break;
       case 2:
         sound2 = new Sound(
-        require("../assets/24 Rhyme/Rhyme/2R_hot_pot.mp3"), (error, sound) => {
+        require("../assets/24/Rhyme/2R_hot_pot.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -62,7 +62,7 @@ export default function L24(props) {
         break;
       case 3:
           sound3 = new Sound(
-          require("../assets/24 Rhyme/Rhyme/3R_be_he.mp3"), (error, sound) => {
+          require("../assets/24/Rhyme/3R_be_he.mp3"), (error, sound) => {
               if (error) {
                 alert('error' + error.message);
                 return;
@@ -74,7 +74,7 @@ export default function L24(props) {
           break;
         case 4:
             sound4 = new Sound(
-            require("../assets/24 Rhyme/Rhyme/4R_bed_said.mp3"), (error, sound) => {
+            require("../assets/24/Rhyme/4R_bed_said.mp3"), (error, sound) => {
                 if (error) {
                   alert('error' + error.message);
                   return;
@@ -86,7 +86,7 @@ export default function L24(props) {
             break;
         case 5:
               sound5 = new Sound(
-              require("../assets/24 Rhyme/Rhyme/6R_pie_sky.mp3"), (error, sound) => {
+              require("../assets/24/Rhyme/6R_pie_sky.mp3"), (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
                     return;
@@ -98,7 +98,7 @@ export default function L24(props) {
               break;
         case 6:
             sound6 = new Sound(
-            require("../assets/24 Rhyme/Half-rhyme/HRintro.mp3"), (error, sound) => {
+            require("../assets/24/Half-rhyme/HRintro.mp3"), (error, sound) => {
                 if (error) {
                   alert('error' + error.message);
                   return;
@@ -133,20 +133,20 @@ export default function L24(props) {
   return (
     <>
       <SafeAreaView style={styles.startContainer}>
-      <TouchableOpacity
-        onPress={() => {playSound(0);}}
-        style={styles.subtitle}
-      >
-      </TouchableOpacity>
         <ScrollView style={styles.scrollView}>
-          <Text
-            style={styles.section}
+          <TouchableOpacity
+            onPress={() => {playSound(0);}}
+            style={styles.subtitle}
           >
-            Words rhyme when their last vowel sound is the same,
-            and any sound after the vowel is the same. The letters
-            that spell the words don't have to be the same,
-            just the sounds.
-          </Text>
+            <Text
+              style={styles.section}
+            >
+              Words rhyme when their last vowel sound is the same,
+              and any sound after the vowel is the same. The letters
+              that spell the words don't have to be the same,
+              just the sounds.
+            </Text>
+          </TouchableOpacity>
           <View style={styles.subContainer}>
             <TouchableOpacity
               style={styles.words}
