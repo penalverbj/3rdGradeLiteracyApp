@@ -13,12 +13,13 @@ import {
   StyleSheet,
   ScrollView,
   SafeAreaView,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import Sound from 'react-native-sound';
 import {useNavigation} from '@react-navigation/native';
 
-export default function L24(props) {
+export default function HalfRhyme(props) {
   const navigation = useNavigation();
   var sound0, sound1,sound2,sound3,sound4,sound5, sound6;
   var playSound = (num) => {
@@ -26,7 +27,7 @@ export default function L24(props) {
     switch (num) {
       case 0:
       sound0 = new Sound(
-        require("../assets/24/24intro.mp3"), (error, sound) => {
+        require("../assets/24/Half-rhyme/HRintro.mp3"), (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
@@ -38,7 +39,7 @@ export default function L24(props) {
         break;
       case 1:
       sound1 = new Sound(
-        require("../assets/24/Rhyme/1R_no_go.mp3"), (error, sound) => {
+        require("../assets/24/Half-rhyme/1H_car_for.mp3"), (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
@@ -50,7 +51,7 @@ export default function L24(props) {
         break;
       case 2:
         sound2 = new Sound(
-        require("../assets/24/Rhyme/2R_hot_pot.mp3"), (error, sound) => {
+        require("../assets/24/Half-rhyme/2H_hill_pull.mp3"), (error, sound) => {
             if (error) {
               alert('error' + error.message);
               return;
@@ -62,7 +63,7 @@ export default function L24(props) {
         break;
       case 3:
           sound3 = new Sound(
-          require("../assets/24/Rhyme/3R_be_he.mp3"), (error, sound) => {
+          require("../assets/24/Half-rhyme/3H_cub_cup.mp3"), (error, sound) => {
               if (error) {
                 alert('error' + error.message);
                 return;
@@ -74,7 +75,7 @@ export default function L24(props) {
           break;
         case 4:
             sound4 = new Sound(
-            require("../assets/24/Rhyme/4R_bed_said.mp3"), (error, sound) => {
+            require("../assets/24/Half-rhyme/4H_pet_sit.mp3"), (error, sound) => {
                 if (error) {
                   alert('error' + error.message);
                   return;
@@ -86,7 +87,7 @@ export default function L24(props) {
             break;
         case 5:
               sound5 = new Sound(
-              require("../assets/24/Rhyme/6R_pie_sky.mp3"), (error, sound) => {
+              require("../assets/24/Half-rhyme/5H_meat_mean.mp3"), (error, sound) => {
                   if (error) {
                     alert('error' + error.message);
                     return;
@@ -98,7 +99,7 @@ export default function L24(props) {
               break;
         case 6:
             sound6 = new Sound(
-            require("../assets/24/Half-rhyme/HRintro.mp3"), (error, sound) => {
+            require("../assets/24/Half-rhyme/6H_seem_seen.mp3"), (error, sound) => {
                 if (error) {
                   alert('error' + error.message);
                   return;
@@ -117,17 +118,6 @@ export default function L24(props) {
     if (sound4) {sound4.stop();}
     if (sound5) {sound5.stop();}
     if (sound6) {sound6.stop();}
-  }
-  var goToScreen = (num) => {
-    stopSounds();
-      switch (num) {
-        case 1:
-
-        case 2:
-
-        case 3:
-
-      }
   }
 
   return (
@@ -148,98 +138,72 @@ export default function L24(props) {
             </Text>
           </TouchableOpacity>
           <View style={styles.subContainer}>
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/car.png")}
+            />
             <TouchableOpacity
               style={styles.words}
               onPress={() => {playSound(1);}}>
               <Text style={styles.section}>
-                no  go
+                car  for
               </Text>
             </TouchableOpacity>
-
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/hill.png")}
+            />
             <TouchableOpacity
               style={styles.words}
               onPress={() => {playSound(2);}}>
               <Text style={styles.section}>
-                hot  pot
+                hill  pull
               </Text>
             </TouchableOpacity>
-
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/cub.png")}
+            />
             <TouchableOpacity
               style={styles.words}
               onPress={() => {playSound(3);}}>
               <Text style={styles.section}>
-                be  he
+                cub  cup
               </Text>
             </TouchableOpacity>
-
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/pet.png")}
+            />
             <TouchableOpacity
               style={styles.words}
               onPress={() => {playSound(4);}}>
               <Text style={styles.section}>
-                bed  said
+                pet  sit
               </Text>
             </TouchableOpacity>
-
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/meat.png")}
+            />
             <TouchableOpacity
               style={styles.words}
               onPress={() => {playSound(5);}}>
               <Text style={styles.section}>
-                pie  sky
+                meat  mean
               </Text>
             </TouchableOpacity>
-          </View>
-          <View style={styles.subContainer}>
+            <Image
+              style={styles.picture}
+              source={require("../assets/24/Half-rhyme/seem.png")}
+            />
             <TouchableOpacity
-              style={styles.hr}
-              onPress={() => {
-                  playSound(6);
-                  navigation.navigate("HalfRhyme");
-                }}>
+              style={styles.words}
+              onPress={() => {playSound(6);}}>
               <Text style={styles.section}>
-                Half-Rhyme
-              </Text>
-              <Text style={styles.section}>
-                or
-              </Text>
-              <Text style={styles.section}>
-                Near-Rhyme
+                seem  seen
               </Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-              style={styles.nr}
-              onPress={() => {}}>
-              <Text style={styles.section}>
-                Nursery
-              </Text>
-              <Text style={styles.section}>
-                Rhymes
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={styles.poems}
-              onPress={() => {}}>
-              <Text style={styles.section}>
-                Poems
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.subContainer}>
-          <TouchableOpacity
-            style={styles.quiz}
-            onPress={() => {}}>
-            <Text style={styles.section}>
-              Which Words Rhyme
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.quiz}
-            onPress={() => {}}>
-            <Text style={styles.section}>
-              Which Words Don't Rhyme
-            </Text>
-          </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -247,23 +211,23 @@ export default function L24(props) {
   );
 }
 
-L24.navigationOptions = () => {(
-    title:'L24'
+HalfRhyme.navigationOptions = () => {(
+    title:'HalfRhyme'
 )}
 
 const styles = StyleSheet.create({
   startContainer: {
     flex: 1,
     backgroundColor: '#FFFAF0',
+    alignItems: 'center',
   },
   scrollView: {
     padding: 5,
   },
   subContainer: {
     marginVertical: 15,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   section: {
     fontSize: 23,
@@ -271,43 +235,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   words: {
-    borderWidth: 2,
+    borderWidth: 3,
     borderRadius: 10,
-    backgroundColor: '#6abad7',
+    borderColor: '#ee8640',
+    backgroundColor: '#f3b88c',
     paddingHorizontal: 10,
     paddingVertical: 3,
     margin: 4,
   },
-  hr: {
-    borderWidth: 3,
-    borderColor: '#b87cbe',
-    backgroundColor: '#cda1d2',
-    borderRadius: 10,
-    justifyContent: 'center',
-    paddingHorizontal: 5,
+  picture: {
+    alignSelf: 'center',
+    resizeMode: 'stretch',
+    marginTop: 20
   },
-  nr: {
-    borderWidth: 3,
-    borderColor: '#66cf69',
-    backgroundColor: '#96e4a2',
-    borderRadius: 10,
-    justifyContent: 'center',
-    paddingHorizontal: 5,
-  },
-  poems: {
-    borderWidth: 3,
-    borderColor: '#ee7af8',
-    backgroundColor: '#f3b2c8',
-    borderRadius: 10,
-    justifyContent: 'center',
-    paddingHorizontal: 5,
-  },
-  quiz: {
-    borderWidth: 3,
-    borderColor: '#e0696b',
-    borderRadius: 10,
-    justifyContent: 'center',
-    paddingHorizontal: 5,
-    margin: 5
-  }
 });
