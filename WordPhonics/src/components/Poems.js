@@ -191,7 +191,7 @@ export default function Poems(props) {
       <SafeAreaView style={styles.startContainer}>
         <ScrollView style={styles.scrollView}>
         <Text style={styles.section}>
-          Can you find the rhyming words in these rhymes?
+          Can you find the rhyming words in these poems?
         </Text>
             <TouchableOpacity
               onPress={() => {
