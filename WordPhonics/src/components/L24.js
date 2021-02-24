@@ -219,7 +219,7 @@ export default function L24(props) {
 
             <TouchableOpacity
               style={styles.poems}
-              onPress={() => {}}>
+              onPress={() => {navigation.navigate("Poems")}}>
               <Text style={styles.section}>
                 Poems
               </Text>

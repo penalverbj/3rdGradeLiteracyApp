@@ -47,6 +47,7 @@ import Sixpence from './Sixpence';
 import Kittens from './Kittens';
 import House from './House';
 import Nursery from './Nursery';
+import Poems from './Poems';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -601,6 +602,22 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="House"
                 component={House}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Poems"
+                component={Poems}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
