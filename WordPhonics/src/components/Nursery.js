@@ -76,7 +76,7 @@ export default function Nursery(props) {
           break;
         case 4:
             sound4 = new Sound(
-            require("../assets/24/Nursery-Rhymes/JackSprat.mp3"), (error, sound) => {
+            require("../assets/24/Nursery-Rhymes/star.mp3"), (error, sound) => {
                 if (error) {
                   alert('error' + error.message);
                   return;
@@ -220,43 +220,68 @@ export default function Nursery(props) {
                 source={require("../assets/24/Nursery-Rhymes/OldWoman.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(4);}}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(4);
+              navigation.navigate("Star");
+            }}>
               <Image
                 style={styles.picture}
-                source={require("../assets/24/Nursery-Rhymes/JackSprat.png")}
+                source={require("../assets/24/Nursery-Rhymes/star.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(5);}}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(5);
+              navigation.navigate("Willie");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Willie.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(6);}}>
+            <TouchableOpacity onPress={() => {
+              playSound(6);
+              navigation.navigate("KingCole");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/KingCole.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(7);}}>
+            <TouchableOpacity onPress={() => {
+              playSound(7);
+              navigation.navigate("Peter");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Peter.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(8);}}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(8);
+              navigation.navigate("Sixpence");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Sixpence.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(9);}}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(9);
+              navigation.navigate("Kittens");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Kittens.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {playSound(10);}}>
+            <TouchableOpacity onPress={() => {
+              playSound(10);
+              navigation.navigate("House");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/House.png")}
