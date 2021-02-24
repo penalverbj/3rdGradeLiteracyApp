@@ -180,67 +180,83 @@ export default function Nursery(props) {
         <Text style={styles.section}>
           Can you find the rhyming words in these rhymes?
         </Text>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity
+              onPress={() => {
+                playSound(0);
+                navigation.navigate("LittleJack");
+              }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/LittleJack.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(1);
+              navigation.navigate("Dumpty");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Dumpty.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(2);
+              navigation.navigate("Diddle");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Diddle.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity
+            onPress={() => {
+              playSound(3);
+              navigation.navigate("OldWoman");
+            }}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/OldWoman.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(4);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/JackSprat.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(5);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Willie.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(6);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/KingCole.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(7);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Peter.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(8);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Sixpence.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(9);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/Kittens.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
+            <TouchableOpacity onPress={() => {playSound(10);}}>
               <Image
                 style={styles.picture}
                 source={require("../assets/24/Nursery-Rhymes/House.png")}
