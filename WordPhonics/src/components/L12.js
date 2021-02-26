@@ -324,7 +324,7 @@ export default function L12({navigation}) {
           <Text style={styles.words}>{words2[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
+          <TouchableOpacity onPress={() => navigation.navigate("Q12")} style={styles.quizButton}>
             <Text style={styles.quiz}>?</Text>
           </TouchableOpacity>
         </View>
