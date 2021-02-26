@@ -60,7 +60,7 @@ import Blacksmith from './Blacksmith';
 import Casey from './Casey';
 import Lochinvar from './Lochinvar';
 import Christmas from './Christmas';
-import Q12 from './Q12';
+import Q12M1 from './Q12M1';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -837,8 +837,8 @@ export default function App({navigation}) {
                 }}
               />
               <Stack.Screen
-                name="Q12"
-                component={Q12}
+                name="Q12M1"
+                component={Q12M1}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
