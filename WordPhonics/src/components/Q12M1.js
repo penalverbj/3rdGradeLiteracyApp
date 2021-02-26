@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
 
 export default function Q12M1({navigation}) {
-
+  const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
 
   // list of correct answers
   const correctPairs =
@@ -30,10 +30,10 @@ export default function Q12M1({navigation}) {
       'hard difficult',
       'morning dawn',
       'sad unhappy',
-      'begin  start',
-      'shut  close',
-      'fix  mend',
-      'easy  simple',
+      'begin start',
+      'shut close',
+      'fix mend',
+      'easy simple',
       'shove push',
       'stop halt',
       'yell shout',
@@ -56,10 +56,6 @@ export default function Q12M1({navigation}) {
 
       ];
 
-    //const currentPairs = [];
-    const [answerPair, setAnswerPair] = useState(1);
-
-
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
     const question = "Which two words are synonyms with similar meanings?";
@@ -78,6 +74,8 @@ export default function Q12M1({navigation}) {
       currentPairs[pickRandom(0,4)] = correctPairs[pickRandom(0, correctPairs.length)];
 
       setAnswerPair(currentPairs);
+
+      return currentPairs;
     }
 
     const checkAnswer = (index) => {
@@ -90,6 +88,7 @@ export default function Q12M1({navigation}) {
         return Math.floor(Math.random() * (max - min) + min);
         //The maximum is exclusive and the minimum is inclusive
     }
+
 
 
 
