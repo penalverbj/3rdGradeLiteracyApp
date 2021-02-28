@@ -373,15 +373,15 @@ export default function L18({navigation}) {
     if (sound10) {sound10.stop();}
     if (sound11) {sound11.stop();}
     if (sound101) {sound101.stop();}
-    if (sound102) {sound101.stop();}
-    if (sound103) {sound101.stop();}
-    if (sound104) {sound101.stop();}
-    if (sound105) {sound101.stop();}
-    if (sound106) {sound101.stop();}
-    if (sound107) {sound101.stop();}
-    if (sound108) {sound101.stop();}
-    if (sound109) {sound101.stop();}
-    if (sound110) {sound101.stop();}
+    if (sound102) {sound102.stop();}
+    if (sound103) {sound103.stop();}
+    if (sound104) {sound104.stop();}
+    if (sound105) {sound105.stop();}
+    if (sound106) {sound106.stop();}
+    if (sound107) {sound107.stop();}
+    if (sound108) {sound108.stop();}
+    if (sound109) {sound109.stop();}
+    if (sound110) {sound110.stop();}
     if (sound111) {sound111.stop();}
   }
     return (

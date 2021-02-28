@@ -20,170 +20,55 @@ import {useNavigation} from '@react-navigation/native';
 
 export default function MainMenuScreen(props) {
   const navigation = useNavigation();
+
+  const soundAssets = [
+    require("../assets/12/12intro.mp3"),
+    require("../assets/13/13intro.mp3"),
+    require("../assets/14/14intro.mp3"),
+    require("../assets/15/15intro.mp3"),
+    require("../assets/16/16intro.mp3"),
+    require("../assets/17/17intro.mp3"),
+    require("../assets/18/18intro.mp3"),
+    require("../assets/19/19intro.mp3"),
+    require("../assets/20/20intro.mp3"),
+    require("../assets/21/21intro.mp3"),
+    require("../assets/22/22intro.mp3"),
+    require("../assets/23/23intro.mp3"),
+    require("../assets/24/24intro.mp3"),
+    require("../assets/25/25intro.mp3"),
+  ]
+
   var playSound = (num) => {
-    switch (num) {
-      case 12: var sound1 = new Sound(
-        require("../assets/12/12intro.mp3"), (error, sound) => {
+    let index = num - 12
+    var sound1 = new Sound(
+      soundAssets[index], (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
           }
           sound1.play(() => {
             sound1.release();
-          });
         });
-        break;
-      case 13: var sound1 = new Sound(
-          require("../assets/13/13intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 14: var sound1 = new Sound(
-          require("../assets/14/14intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 15: var sound1 = new Sound(
-          require("../assets/15/15intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 16: var sound1 = new Sound(
-          require("../assets/16/16intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 17: var sound1 = new Sound(
-          require("../assets/17/17intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 18: var sound1 = new Sound(
-          require("../assets/18/18intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 19: var sound1 = new Sound(
-          require("../assets/19/19intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 20: var sound1 = new Sound(
-          require("../assets/20/20intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 21: var sound1 = new Sound(
-          require("../assets/21/21intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 22: var sound1 = new Sound(
-          require("../assets/22/22intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 23: var sound1 = new Sound(
-          require("../assets/23/23intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 24: var sound1 = new Sound(
-          require("../assets/24/24intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      case 25: var sound1 = new Sound(
-          require("../assets/25/25intro.mp3"), (error, sound) => {
-            if (error) {
-              alert('error' + error.message);
-              return;
-            }
-            sound1.play(() => {
-              sound1.release();
-            });
-          });
-          break;
-      default:
-          break;
-
-    }
+      });
   }
 
   var goToScreen = (num) => {
       navigation.navigate(`L${num}`);
+  }
+
+  function LessonButton(props) {
+    return(
+      <TouchableOpacity
+        style={[styles.lesson, {backgroundColor: props.color}]}
+        onPress={() => {
+          playSound(props.num);
+          goToScreen(props.num);
+        }}
+      >
+
+        <Text style={styles.section}>{props.text}</Text>
+      </TouchableOpacity>
+    );
   }
 
   return (
@@ -192,145 +77,20 @@ export default function MainMenuScreen(props) {
         <Text style={styles.title}>Figures of Speech</Text>
         <Text style={styles.subtitle}>fun ways to use language</Text>
         <ScrollView style={styles.scrollView}>
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#fcf351'}]}
-            onPress={() => {
-              playSound(12);
-              goToScreen(12);
-            }}
-          >
-            <Text style={styles.section}>12: synonyms</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#f3b2c8'}]}
-            onPress={() => {
-              playSound(13);
-              goToScreen(13);
-            }}
-          >
-            <Text style={styles.section}>13: antonyms</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#bfe54e'}]}
-            onPress={() => {
-              playSound(14);
-              goToScreen(14);
-            }}
-          >
-            <Text style={styles.section}>14: homophones</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#e0696b'}]}
-            onPress={() => {
-              playSound(15);
-              goToScreen(15);
-            }}
-          >
-            <Text style={styles.section}>15: puns</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#cda1d2'}]}
-            onPress={() => {
-              playSound(16);
-              goToScreen(16);
-            }}
-          >
-            <Text style={styles.section}>16: homographs</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#f3b88c'}]}
-            onPress={() => {
-              //playSound(17);
-              goToScreen(17);
-            }}
-          >
-            <Text style={styles.section}>17: similies & metaphors</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#c3c3c3'}]}
-            onPress={() => {
-              playSound(18);
-              goToScreen(18);
-            }}
-          >
-            <Text style={styles.section}>18: onomatopeia</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#fdf885'}]}
-            onPress={() => {
-              playSound(19);
-              goToScreen(19);
-            }}
-          >
-            <Text style={styles.section}>19: irony or sarcasm</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#a7d8e8'}]}
-            onPress={() => {
-              playSound(20);
-              goToScreen(20);
-            }}
-          >
-            <Text style={styles.section}>20: personification</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#f6cb47'}]}
-            onPress={() => {
-              playSound(21);
-              goToScreen(21);
-            }}
-          >
-            <Text style={styles.section}>21: hyperbole</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#ddc0e1'}]}
-            onPress={() => {
-              playSound(22);
-              goToScreen(22);
-            }}
-          >
-            <Text style={styles.section}>22: euphemism</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#b87cbe'}]}
-            onPress={() => {
-              playSound(23);
-              goToScreen(23);
-            }}
-          >
-            <Text style={styles.section}>23: oxymoron</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#66cf69'}]}
-            onPress={() => {
-              playSound(24);
-              goToScreen(24);
-            }}
-          >
-            <Text style={styles.section}>24: rhyme</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.lesson, {backgroundColor: '#ee7af8'}]}
-            onPress={() => {
-              playSound(25);
-              goToScreen(25);
-            }}
-          >
-            <Text style={styles.section}>25: alliteration</Text>
-          </TouchableOpacity>
+          <LessonButton num={12} color={'#fcf351'} text={"12: synonyms"}/>
+          <LessonButton num={13} color={'#f3b2c8'} text={"13: antonyms"}/>
+          <LessonButton num={14} color={'#bfe54e'} text={"14: homophones"}/>
+          <LessonButton num={15} color={'#e0696b'} text={"15: puns"}/>
+          <LessonButton num={16} color={'#cda1d2'} text={"16: homographs"}/>
+          <LessonButton num={17} color={'#f3b88c'} text={"17: similies & metaphors"}/>
+          <LessonButton num={18} color={'#c3c3c3'} text={"18: onomatopeia"}/>
+          <LessonButton num={19} color={'#fdf885'} text={"19: irony or sarcasm"}/>
+          <LessonButton num={20} color={'#a7d8e8'} text={"20: personification"}/>
+          <LessonButton num={21} color={'#f6cb47'} text={"21: hyperbole"}/>
+          <LessonButton num={22} color={'#ddc0e1'} text={"22: euphemism"}/>
+          <LessonButton num={23} color={'#b87cbe'} text={"23: oxymoron"}/>
+          <LessonButton num={24} color={'#66cf69'} text={"24: rhyme"}/>
+          <LessonButton num={25} color={'#ee7af8'} text={"25: alliteration"}/>
         </ScrollView>
       </SafeAreaView>
     </>
