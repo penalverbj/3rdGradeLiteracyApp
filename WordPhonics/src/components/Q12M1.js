@@ -63,6 +63,17 @@ export default function Q12M1({navigation}) {
     // quiz screen
     const question = "Which two words are synonyms with similar meanings?";
 
+    React.useEffect(() => {
+      const unsubscribe = navigation.addListener('focus', () => {
+        // The screen is focused
+        // Call any action
+        generateQuestion();
+      });
+  
+      // Return the function to unsubscribe from the event so it gets removed on unmount
+      return unsubscribe;
+    }, [navigation]);
+
 
     // runs when you click the question for testing
     const generateQuestion = () => {
