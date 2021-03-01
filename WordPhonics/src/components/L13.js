@@ -339,7 +339,7 @@ L13.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     paddingVertical: 15,
