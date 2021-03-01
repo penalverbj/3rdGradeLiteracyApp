@@ -56,7 +56,11 @@ export default function Q12M1({navigation}) {
         'whisper yell',
         'rise fall',
         'polite rude',
-
+        'big little',
+        'boring exciting',
+        'day night',
+        'naughty nice',
+        'young old'
       ];
 
     // question to be asked at top -- maybe we could generalize this
@@ -80,15 +84,22 @@ export default function Q12M1({navigation}) {
       // clears message
       setMessage("");
 
-      // fills with random incorect
+      //fills with random incorect
       let currentPairs = [
-          incorrectPairs[pickRandom(0, incorrectPairs.length)],
-          incorrectPairs[pickRandom(1, incorrectPairs.length)],
-          incorrectPairs[pickRandom(2, incorrectPairs.length)],
-          incorrectPairs[pickRandom(3, incorrectPairs.length)]
+          incorrectPairs[pickRandom(0, incorrectPairs.length)]
       ];
 
+      //ensures that no duplicates are added to the pairs array
+      for (var i = 0; i < 3; i++) {
+        const newPair = incorrectPairs[pickRandom(0, incorrectPairs.length)];
+        while (currentPairs.includes(newPair)) {
+          newPair = incorrectPairs[pickRandom(0, incorrectPairs.length)];
+        }
+        currentPairs.push(newPair);
+      }
+
       let answer = correctPairs[pickRandom(0, correctPairs.length)]
+
       // randomizes the location of random pair and picks a random answer
       currentPairs[pickRandom(0,4)] = answer;
       setCorrectAnswer(answer);
@@ -249,9 +260,13 @@ const styles = StyleSheet.create({
   },
   answer: {
     fontSize: 40,
-    margin: 20,
+    margin: 10,
     marginHorizontal: 30,
     backgroundColor: "#bfe54e",
+    borderWidth: 1,
+    borderRadius: 30,
+    overflow: 'hidden',
+    padding: 10,
     color: "black",
     fontWeight: '800',
     fontStyle: 'italic',
