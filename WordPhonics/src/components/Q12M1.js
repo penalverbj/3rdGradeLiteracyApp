@@ -18,50 +18,47 @@ import PropTypes from 'prop-types';
 
 import Sound from 'react-native-sound';
 
+// list of correct answers
+var correctPairs =
+  [
+    'end finish',
+    'evening dusk',
+    'fix mend',
+    'hard difficult',
+    'morning dawn',
+    'sad unhappy',
+    'begin start',
+    'shut close',
+    'easy simple',
+    'shove push',
+    'stop halt',
+    'yell shout',
+    'small little',
+  ];
+
+// list of incorrect answers
+const incorrectPairs =
+  [
+    'sweet sour',
+    'ascend descend',
+    'sunrise sunset',
+    'cold hot',
+    'tighten loosen',
+    'whisper yell',
+    'rise fall',
+    'polite rude',
+    'big little',
+    'boring exciting',
+    'day night',
+    'naughty nice',
+    'young old'
+  ];
+
 export default function Q12M1({navigation}) {
     const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
     const [correctAnswer, setCorrectAnswer] = useState("null");
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
-
-    // list of correct answers
-    const correctPairs =
-      [
-        'end finish',
-        'evening dusk',
-        'fix mend',
-        'hard difficult',
-        'morning dawn',
-        'sad unhappy',
-        'begin start',
-        'shut close',
-        'fix mend',
-        'easy simple',
-        'shove push',
-        'stop halt',
-        'yell shout',
-        'morning dawn',
-        'evening sunset',
-        'small little',
-      ];
-
-    // list of incorrect answers
-    const incorrectPairs =
-      [
-        'sweet sour',
-        'ascend descend',
-        'sunrise sunset',
-        'cold hot',
-        'tighten loosen',
-        'whisper yell',
-        'rise fall',
-        'polite rude',
-        'big little',
-        'boring exciting',
-        'day night',
-        'naughty nice',
-        'young old'
-      ];
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -73,7 +70,7 @@ export default function Q12M1({navigation}) {
         // Call any action
         generateQuestion();
       });
-  
+
       // Return the function to unsubscribe from the event so it gets removed on unmount
       return unsubscribe;
     }, [navigation]);
@@ -83,6 +80,27 @@ export default function Q12M1({navigation}) {
     const generateQuestion = () => {
       // clears message
       setMessage("");
+
+      if(correctPairs.length == 0) {
+        //resets quiz before going to mode 2
+        correctPairs =
+          [
+            'end finish',
+            'evening dusk',
+            'fix mend',
+            'hard difficult',
+            'morning dawn',
+            'sad unhappy',
+            'begin start',
+            'shut close',
+            'easy simple',
+            'shove push',
+            'stop halt',
+            'yell shout',
+            'small little',
+          ];
+        navigation.navigate("Q12M2");
+      }
 
       //fills with random incorect
       let currentPairs = [
@@ -98,7 +116,11 @@ export default function Q12M1({navigation}) {
         currentPairs.push(newPair);
       }
 
-      let answer = correctPairs[pickRandom(0, correctPairs.length)]
+      let answer = correctPairs[pickRandom(0, correctPairs.length)];
+
+      //removes the asked pairs from the array so there arent repeats and the quiz can end
+      var index = correctPairs.indexOf(answer);
+      correctPairs.splice(index, 1);
 
       // randomizes the location of random pair and picks a random answer
       currentPairs[pickRandom(0,4)] = answer;
@@ -113,10 +135,17 @@ export default function Q12M1({navigation}) {
     const checkAnswer = (string) => {
         // just sets message for now
         if (string == correctAnswer) {
-          if (message != "Correct! Click next to continue!") {
-            setScore(score + 1);
+          if(correctPairs.length == 0) {
+            if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
+              setScore(score + 1);
+            }
+            setMessage("Correct! You are done with this quiz! Click to go to the next quiz!");
+          } else {
+            if (message != "Correct! Click next to continue!") {
+              setScore(score + 1);
+            }
+            setMessage("Correct! Click next to continue!");
           }
-          setMessage("Correct! Click next to continue!");
         } else {
           setMessage("Incorrect, please try again.");
         }
@@ -210,10 +239,10 @@ Q12M1.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingVertical: 15,
+    paddingTop: 15,
     height: 100,
   },
   subContainer: {
@@ -222,13 +251,12 @@ const styles = StyleSheet.create({
     flex: 6,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingTop: 20,
     flexWrap: 'wrap',
   },
   subtitle: {
     flex: 1,
     flexDirection: 'row',
-    fontSize: 20,
+    fontSize: 25,
     margin: 5,
     fontWeight: '800',
     fontStyle: 'italic',
@@ -273,19 +301,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   messageContainer: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
+    flexWrap: 'wrap',
     justifyContent: 'center',
     backgroundColor: '#FFFAF0',
-    paddingBottom: 70,
+    paddingBottom: 5,
     flexDirection: 'row',
   },
   message: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 30,
     marginHorizontal: 50,
     textAlign: 'center',
+
   },
   scoreContainer: {
     flex: 1,
