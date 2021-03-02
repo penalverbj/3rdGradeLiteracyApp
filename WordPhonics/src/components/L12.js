@@ -277,8 +277,8 @@ export default function L12({navigation}) {
             playDef();
           }}>
             <Text style={styles.subtitle}>
-              Synonyms are words which have the same
-              or close to the same meaning.
+              Synonyms are words which have the
+              same or close to the same meaning.
             </Text>
           </TouchableOpacity>
         </View>
@@ -339,7 +339,7 @@ L12.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     paddingVertical: 15,

@@ -80,7 +80,7 @@ export default function L17(props) {
               goToScreen(1);
             }}
           >
-            <Text style={styles.section}>Similies</Text>
+            <Text style={styles.section}>Similes</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -90,9 +90,9 @@ export default function L17(props) {
             }}
           >
             <Text style={styles.section}>
-            A similie compares two different things
+            A simile compares two different things
             and says they are similar using comparitive
-            words such as like, as, or seems
+            words such as like, as, or seems.
             </Text>
 
           </TouchableOpacity>
@@ -126,7 +126,7 @@ export default function L17(props) {
               goToScreen(3);
             }}
           >
-            <Text style={styles.section}>Similies and Metaphors</Text>
+            <Text style={styles.section}>Similes and Metaphors</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>

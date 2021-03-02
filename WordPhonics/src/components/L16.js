@@ -367,8 +367,8 @@ export default function L16({navigation}) {
             playDef();
           }}>
             <Text style={styles.subtitle}>
-              Homophones or Homonyms are words that sound the
-              same but have different spellings and meanings.
+              Homographs are words that are spelled the same
+              but have different meanings and sometimes different sounds.
               Homo means same and graph means writing or picture.
             </Text>
           </TouchableOpacity>
