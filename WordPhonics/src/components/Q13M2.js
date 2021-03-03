@@ -66,7 +66,18 @@ export default function Q13M1({navigation}) {
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
     const question = "Which two words are NOT antonyms and instead have similar meanings?";
-
+    var playDef = () => {
+      var sound1 = new Sound(
+        require("../assets/13/13Q2.mp3"), (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+          });
+        });
+    }
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
         // The screen is focused
@@ -160,7 +171,10 @@ export default function Q13M1({navigation}) {
     return (
         <>
         <View style={styles.startContainer}>
-            <TouchableOpacity onPress = {() => {generateQuestion();}}>
+            <TouchableOpacity onPress = {() => {
+              generateQuestion();
+              playDef();
+            }}>
                 <Text style={styles.subtitle}>
                   {question}
                 </Text>

@@ -78,7 +78,18 @@ export default function Q12M2({navigation}) {
       return unsubscribe;
     }, [navigation]);
 
-
+    var playDef = () => {
+      var sound1 = new Sound(
+        require("../assets/12/12Q2.mp3"), (error, sound) => {
+            if (error) {
+              alert('error' + error.message);
+              return;
+            }
+            sound1.play(() => {
+              sound1.release();
+          });
+        });
+    }
     // runs when you click the question for testing
     const generateQuestion = () => {
       // clears message
@@ -160,7 +171,10 @@ export default function Q12M2({navigation}) {
     return (
         <>
         <View style={styles.startContainer}>
-            <TouchableOpacity onPress = {() => {generateQuestion();}}>
+            <TouchableOpacity onPress = {() => {
+              generateQuestion();
+              playDef();
+              }}>
                 <Text style={styles.subtitle}>
                   {question}
                 </Text>
