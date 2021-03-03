@@ -62,6 +62,8 @@ import Lochinvar from './Lochinvar';
 import Christmas from './Christmas';
 import Q12M1 from './Q12M1';
 import Q12M2 from './Q12M2';
+import Q13M1 from './Q13M1';
+import Q13M2 from './Q13M2';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -856,6 +858,38 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="Q12M2"
                 component={Q12M2}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Q13M1"
+                component={Q13M1}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Q13M2"
+                component={Q13M2}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
