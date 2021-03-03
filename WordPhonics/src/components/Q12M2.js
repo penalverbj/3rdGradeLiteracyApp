@@ -203,7 +203,7 @@ export default function Q12M2({navigation}) {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.messageContainer}>
+        <View style={styles.scoreContainer}>
             <TouchableOpacity
               onPress={() => {generateQuestion()}}
               style={styles.arrowContainer}
@@ -238,16 +238,14 @@ Q12M2.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 2,
+    flex: 3,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
-    paddingTop: 15,
-    height: 100,
   },
   subContainer: {
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    flex: 6,
+    flex: 9,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     flexWrap: 'wrap',
@@ -256,7 +254,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     fontSize: 25,
-    margin: 5,
+    marginHorizontal: 5,
     fontWeight: '800',
     fontStyle: 'italic',
     textAlign: 'center',
@@ -266,8 +264,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 35,
     padding: 5,
-    //marginHorizontal: 5,
-    marginTop: 130,
   },
   arrow: {
     height: 35,
@@ -286,8 +282,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   answer: {
-    fontSize: 40,
-    margin: 10,
+    fontSize: 30,
+    margin: 5,
     marginHorizontal: 30,
     backgroundColor: "#bfe54e",
     borderWidth: 1,
@@ -300,7 +296,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   messageContainer: {
-    flex: 2,
+    flex: 3,
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',

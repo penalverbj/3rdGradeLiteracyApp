@@ -325,7 +325,10 @@ export default function L12({navigation}) {
         </View>
         <View style={styles.quizContainer}>
           <TouchableOpacity onPress={() => navigation.navigate("Q12M1")} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
+            <Text style={styles.quiz}>Q1</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Q12M2")} style={styles.quizButton}>
+            <Text style={styles.quiz}>Q2</Text>
           </TouchableOpacity>
         </View>
         </>
@@ -387,7 +390,7 @@ const styles = StyleSheet.create({
   quizContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     backgroundColor: '#FFFAF0',
     paddingBottom: 70,
     flexDirection: 'row',
