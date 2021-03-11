@@ -21,37 +21,44 @@ import Sound from 'react-native-sound';
 // list of correct answers
 var correctPairs =
   [
-    'sweet sour',
-    'ascend descend',
-    'sunrise sunset',
-    'cold hot',
-    'tighten loosen',
-    'whisper yell',
-    'rise fall',
-    'polite rude',
-    'big little',
-    'boring exciting',
-    'day night',
-    'naughty nice',
-    'young old'
+    'Wreck',
+    'Shelf',
+    'Freight',
+    'Napped',
+    'Shelf',
+    'Gnat',
+    'Collision',
+    'Explore',
+    'Pixie',
+    'Gnome',
+    'Vanilla',
+    'Kindergarten',
+    'Wiggle',
+    'Cologne',
+    'Kite',
+    'Around',
+    'Gossip',
+    'Machine',
+    'Acrobat',
+    'Silence',
+    'Stick',
+    'Android',
   ];
 
 // list of incorrect answers
 const incorrectPairs =
   [
-    'end finish',
-    'evening dusk',
-    'fix mend',
-    'hard difficult',
-    'morning dawn',
-    'sad unhappy',
-    'begin start',
-    'shut close',
-    'easy simple',
-    'shove push',
-    'stop halt',
-    'yell shout',
-    'small little'
+    'Bark',
+    'Bat',
+    'Fly',
+    'Gum',
+    'Jam',
+    'Pen',
+    'Pitcher',
+    'Rest',
+    'Seal',
+    'Second',
+    'Watch',
   ];
 
   //keep track of asked questions
@@ -65,7 +72,7 @@ export default function Q16M2({navigation}) {
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
-    const question = "Which two words are NOT synonyms and instead have different meanings?";
+    const question = "Which word is NOT a homograph?";
 
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
@@ -252,7 +259,7 @@ Q16M2.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 3,
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
@@ -298,7 +305,7 @@ const styles = StyleSheet.create({
   answer: {
     fontSize: 30,
     margin: 5,
-    marginHorizontal: 30,
+    marginHorizontal: 60,
     backgroundColor: "#bfe54e",
     borderWidth: 1,
     borderRadius: 30,

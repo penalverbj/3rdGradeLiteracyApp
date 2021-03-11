@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
   answer: {
     fontSize: 30,
     margin: 5,
-    marginHorizontal: 30,
+    marginHorizontal: 60,
     backgroundColor: "#bfe54e",
     borderWidth: 1,
     borderRadius: 30,
