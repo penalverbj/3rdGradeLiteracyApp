@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
 
 // list of correct answers
-var incorrectPairs =
+const incorrectPairs =
   [
     'sweet sour',
     'ascend descend',
@@ -37,7 +37,7 @@ var incorrectPairs =
   ];
 
 // list of incorrect answers
-const correctPairs =
+var correctPairs =
   [
     'end finish',
     'evening dusk',

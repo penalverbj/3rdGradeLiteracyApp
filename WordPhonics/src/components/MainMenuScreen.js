@@ -53,7 +53,12 @@ export default function MainMenuScreen(props) {
   }
 
   var goToScreen = (num) => {
+    if (num == 15) {
+      navigation.navigate("Q15");
+    }
+    else {
       navigation.navigate(`L${num}`);
+    }
   }
 
   function LessonButton(props) {

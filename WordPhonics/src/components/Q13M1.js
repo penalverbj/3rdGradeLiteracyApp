@@ -99,21 +99,21 @@ export default function Q13M1({navigation}) {
         //resets quiz before going back to main menu
         correctPairs =
           [
-          'end finish',
-          'evening dusk',
-          'fix mend',
-          'hard difficult',
-          'morning dawn',
-          'sad unhappy',
-          'begin start',
-          'shut close',
-          'easy simple',
-          'shove push',
-          'stop halt',
-          'yell shout',
-          'small little'
+          'sweet sour',
+          'ascend descend',
+          'sunrise sunset',
+          'cold hot',
+          'tighten loosen',
+          'whisper yell',
+          'rise fall',
+          'polite rude',
+          'big little',
+          'boring exciting',
+          'day night',
+          'naughty nice',
+          'young old'
           ];
-        navigation.navigate("MainMenu");
+        navigation.navigate("Q13M2");
       }
 
       //fills with random incorect

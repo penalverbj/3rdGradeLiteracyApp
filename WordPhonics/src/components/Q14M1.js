@@ -109,21 +109,18 @@ export default function Q14M1({navigation}) {
         //resets quiz before going back to main menu
         correctPairs =
           [
-          'end finish',
-          'evening dusk',
-          'fix mend',
-          'hard difficult',
-          'morning dawn',
-          'sad unhappy',
-          'begin start',
-          'shut close',
-          'easy simple',
-          'shove push',
-          'stop halt',
-          'yell shout',
-          'small little'
+          'be, bee',
+          'horse, hoarse',
+          'I, eye',
+          'meet, meat',
+          'one, won',
+          'peek, peak',
+          'plane, plain',
+          'sale, sail',
+          'see, sea',
+          'would, wood',
           ];
-        navigation.navigate("MainMenu");
+        navigation.navigate("Q14M2");
       }
 
       //fills with random incorect
