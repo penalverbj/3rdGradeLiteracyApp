@@ -61,7 +61,7 @@ export default function Q17M1({navigation}) {
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
-    const question = "Which sentence contains a simile?";
+    const question = "Which sentence contains a metaphor?";
 
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
@@ -84,19 +84,15 @@ export default function Q17M1({navigation}) {
         //resets quiz before going to mode 2
         correctPairs =
           [
-            'end finish',
-            'evening dusk',
-            'fix mend',
-            'hard difficult',
-            'morning dawn',
-            'sad unhappy',
-            'begin start',
-            'shut close',
-            'easy simple',
-            'shove push',
-            'stop halt',
-            'yell shout',
-            'small little',
+            "His nose was an elephant trunk.",
+            "When she’s angry she’s a bear.",
+            "The policeman was a clown.",
+            "Her fingers were icicles.",
+            "When he opened his mouth he was an alligator.",
+            "She had roses in her cheeks.",
+            "When he eats he turns into a wolf.",
+            "She seems nice but is a sneaky snake.",
+            "When he proposed she was on cloud 9.",
           ];
         navigation.navigate("L17");
       }

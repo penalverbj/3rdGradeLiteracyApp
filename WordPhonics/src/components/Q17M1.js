@@ -84,19 +84,15 @@ export default function Q17M1({navigation}) {
         //resets quiz before going to mode 2
         correctPairs =
           [
-            'end finish',
-            'evening dusk',
-            'fix mend',
-            'hard difficult',
-            'morning dawn',
-            'sad unhappy',
-            'begin start',
-            'shut close',
-            'easy simple',
-            'shove push',
-            'stop halt',
-            'yell shout',
-            'small little',
+            "He had a nose like an elephant trunk.",
+            "When she’s angry she’s like a bear.",
+            "The policeman acted like a clown.",
+            "Her fingers were as cold as icicles.",
+            "When he opened his mouth he looked like an alligator.",
+            "She seemed to have roses in her cheeks.",
+            "He eats like a wolf.",
+            "She seems nice but is sneaky as a snake.",
+            "When he proposed she felt like she was on cloud 9.",
           ];
         navigation.navigate("L17");
       }

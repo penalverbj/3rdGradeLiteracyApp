@@ -21,19 +21,50 @@ import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
 
 // list of correct answers
+//odd index = similie
+//even index = metaphor
 var correctPairs =
   [
+    "His nose was an elephant trunk.",
     "He had a nose like an elephant trunk.",
+    "When she’s angry she’s a bear.",
     "When she’s angry she’s like a bear.",
+    "The policeman was a clown.",
     "The policeman acted like a clown.",
+    "Her fingers were icicles.",
     "Her fingers were as cold as icicles.",
+    "When he opened his mouth he was an alligator.",
     "When he opened his mouth he looked like an alligator.",
+    "She had roses in her cheeks.",
     "She seemed to have roses in her cheeks.",
+    "When he eats he turns into a wolf.",
     "He eats like a wolf.",
+    "She seems nice but is a sneaky snake.",
     "She seems nice but is sneaky as a snake.",
+    "When he proposed she was on cloud 9.",
     "When he proposed she felt like she was on cloud 9.",
   ];
 
+  const questions = [
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+    "Which sentence contains a metaphor?",
+    "Which sentence contains a simile?",
+  ];
 // list of incorrect answers
 const incorrectPairs =
   [
@@ -51,6 +82,19 @@ const incorrectPairs =
     "I’m confused.",
     "It’s nice to get a kiss.",
     "No one is sitting here.",
+    "Why did you fall?",
+    "Who let the balloon go?",
+    "Which one won?",
+    "Where is he riding?",
+    "What does the doctor say?",
+    "This is not an invisible dog.",
+    "We love to ride on a moped.",
+    "They’re his secret tickle spots.",
+    "The top light is red.",
+    "The boy acts funny.",
+    "The boxer dog is big.",
+    "She walks to go home.",
+    "Our little girl is tough.",
   ];
 
 export default function Q17M1({navigation}) {
@@ -61,7 +105,7 @@ export default function Q17M1({navigation}) {
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
-    const question = "Which sentence contains a simile?";
+    const [question, setQuestion] = useState("");
 
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
@@ -84,19 +128,44 @@ export default function Q17M1({navigation}) {
         //resets quiz before going to mode 2
         correctPairs =
           [
-            'end finish',
-            'evening dusk',
-            'fix mend',
-            'hard difficult',
-            'morning dawn',
-            'sad unhappy',
-            'begin start',
-            'shut close',
-            'easy simple',
-            'shove push',
-            'stop halt',
-            'yell shout',
-            'small little',
+            "His nose was an elephant trunk.",
+            "He had a nose like an elephant trunk.",
+            "When she’s angry she’s a bear.",
+            "When she’s angry she’s like a bear.",
+            "The policeman was a clown.",
+            "The policeman acted like a clown.",
+            "Her fingers were icicles.",
+            "Her fingers were as cold as icicles.",
+            "When he opened his mouth he was an alligator.",
+            "When he opened his mouth he looked like an alligator.",
+            "She had roses in her cheeks.",
+            "She seemed to have roses in her cheeks.",
+            "When he eats he turns into a wolf.",
+            "He eats like a wolf.",
+            "She seems nice but is a sneaky snake.",
+            "She seems nice but is sneaky as a snake.",
+            "When he proposed she was on cloud 9.",
+            "When he proposed she felt like she was on cloud 9.",
+          ];
+          questions = [
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
+            "Which sentence contains a metaphor?",
+            "Which sentence contains a simile?",
           ];
         navigation.navigate("L17");
       }
@@ -120,6 +189,8 @@ export default function Q17M1({navigation}) {
       //removes the asked pairs from the array so there arent repeats and the quiz can end
       var index = correctPairs.indexOf(answer);
       correctPairs.splice(index, 1);
+      setQuestion(questions[index]);
+      questions.splice(index,1);
 
       // randomizes the location of random pair and picks a random answer
       currentPairs[pickRandom(0,4)] = answer;
