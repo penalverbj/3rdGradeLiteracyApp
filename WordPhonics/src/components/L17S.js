@@ -247,8 +247,10 @@ export default function L17S({navigation}) {
           <Text style={styles.words}>{words1[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
+          <TouchableOpacity
+            onPress={() => {navigation.navigate("Q17M1")}} 
+            style={styles.quizButton}>
+            <Text style={styles.quiz}>Q1</Text>
           </TouchableOpacity>
         </View>
         </>
