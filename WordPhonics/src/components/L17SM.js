@@ -401,7 +401,9 @@ export default function L17SM({navigation}) {
           <Text style={styles.words}>{words1[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
+          <TouchableOpacity
+            onPress={() => {navigation.navigate("Q17M3")}} 
+            style={styles.quizButton}>
             <Text style={styles.quiz}>?</Text>
           </TouchableOpacity>
         </View>
