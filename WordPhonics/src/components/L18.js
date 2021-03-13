@@ -439,9 +439,12 @@ export default function L18({navigation}) {
           <Text style={styles.words}>{words2[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
-            <Text style={styles.quiz}>?</Text>
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Q18M1")} style={styles.quizButton}>
+          <Text style={styles.quiz}>Q1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Q18M2")} style={styles.quizButton}>
+          <Text style={styles.quiz}>Q2</Text>
+        </TouchableOpacity>
         </View>
         </>
     );
@@ -503,7 +506,7 @@ const styles = StyleSheet.create({
   quizContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     backgroundColor: '#FFFAF0',
     paddingBottom: 50,
     flexDirection: 'row',
