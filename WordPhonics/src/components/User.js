@@ -20,8 +20,8 @@ export default function User() {
   const navigation = useNavigation();
   return(
     <View style={styles.startContainer}>
-      <Text> Coins: </Text>
-      <Text> Units Completed: </Text>
+      <Text style={styles.section}> Coins </Text>
+      <Text style={styles.section}> Units Completed</Text>
     </View>
   );
 }
@@ -31,8 +31,13 @@ User.navigationOptions = () => {(
 )}
 const styles = StyleSheet.create({
   startContainer: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
+  },
+  section: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
   },
 });
