@@ -20,14 +20,22 @@ import {useNavigation} from '@react-navigation/native';
 export default function NavigationBar() {
   const navigation = useNavigation();
   return(
-    <TouchableOpacity
-      style={styles.startContainer}
-      onPress={() => navigation.navigate("MainMenu")}>
-        <Image
-          source={require('../assets/home.png')}
-          style={styles.image}
-        />
-    </TouchableOpacity>
+    <View style={styles.startContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("MainMenu")}>
+          <Image
+            source={require('../assets/home.png')}
+            style={styles.image}
+          />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("MainMenu")}>
+          <Image
+            source={require('../assets/user.png')}
+            style={styles.image}
+          />
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -35,7 +43,7 @@ const styles = StyleSheet.create({
   startContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   image: {
     width: 27,
