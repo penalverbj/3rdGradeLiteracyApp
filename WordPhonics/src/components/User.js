@@ -21,10 +21,11 @@ import {useNavigation} from '@react-navigation/native';
 export default function User() {
   const navigation = useNavigation();
   const [coins, setCoins] = useState(0);
-  
+
   /*
   Keeps track of what lessons have been completed
-  based on the quizzes.
+  based on the quizzes. A lesson is complete when
+  both of the quizzes are set to 1
   0 = false, 1 = true
   lessonQs[0][0] = Lesson 12 Quiz 1
   */
