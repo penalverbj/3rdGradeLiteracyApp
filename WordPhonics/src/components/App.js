@@ -19,6 +19,7 @@ import {
 import LoginScreen from './LoginScreen';
 import MainMenuScreen from './MainMenuScreen';
 import NavigationBar from './NavigationBar';
+import User from './User';
 import L12 from './L12';
 import L13 from './L13';
 import L14 from './L14';
@@ -191,6 +192,22 @@ export default function App({navigation}) {
                       />
                     </TouchableOpacity>
                   )
+                }}
+              />
+              <Stack.Screen
+                name="User"
+                component={User}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
                 }}
               />
               <Stack.Screen

@@ -29,7 +29,7 @@ export default function NavigationBar() {
           />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate("MainMenu")}>
+        onPress={() => navigation.navigate("User")}>
           <Image
             source={require('../assets/user.png')}
             style={styles.image}
