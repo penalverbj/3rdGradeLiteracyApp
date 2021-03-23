@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import {addGold, addSilver, markQuizDone, markQuizBlank} from "./User"
 
 import Sound from 'react-native-sound';
 
@@ -135,6 +136,7 @@ export default function Q12M1({navigation}) {
     const checkAnswer = (string) => {
         // just sets message for now
         if (string == correctAnswer) {
+          addGold();
           if(correctPairs.length == 0) {
             if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
               setScore(score + 1);
