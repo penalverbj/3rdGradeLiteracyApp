@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import {addGold, addSilver, markQuizDone, markQuizBlank} from "./User"
 
 import Sound from 'react-native-sound';
 
@@ -67,6 +68,7 @@ export default function Q15({navigation}) {
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
     const [question, setQuestion] = useState("");
+    const [tries, setTry] = useState(0);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -87,7 +89,7 @@ export default function Q15({navigation}) {
     const generateQuestion = () => {
       // clears message
       setMessage("");
-
+      setTry(0);
       if(correctPairs.length == 0) {
         //resets quiz before going to mode 2
         correctPairs =
@@ -151,6 +153,11 @@ export default function Q15({navigation}) {
     const checkAnswer = (string) => {
         // just sets message for now
         if (string == correctAnswer) {
+          if(tries == 0) {
+            addGold();
+          } else if(tries == 1) {
+            addSilver();
+          }
           if(correctPairs.length == 0) {
             if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
               setScore(score + 1);
@@ -163,6 +170,7 @@ export default function Q15({navigation}) {
             setMessage("Correct! Click next to continue!");
           }
         } else {
+          setTry(tries + 1);
           setMessage("Incorrect, please try again.");
         }
     }
