@@ -148,6 +148,7 @@ const styles = StyleSheet.create({
   image: {
     width: 90,
     height: 50,
+    resizeMode: "stretch", 
   },
   lessonContainer: {
     flexDirection: 'row',
