@@ -64,6 +64,8 @@ export default function Q13M1({navigation}) {
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
     const [tries, setTry] = useState(0);
+    const [gold, setGold] = useState(false);
+    const [silver, setSilver] = useState(false);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -97,6 +99,8 @@ export default function Q13M1({navigation}) {
       // clears message
       setMessage("");
       setTry(0);
+      setGold(false);
+      setSilver(false);
       if(correctPairs.length == 0) {
         //resets quiz before going back to main menu
         correctPairs =
@@ -151,8 +155,10 @@ export default function Q13M1({navigation}) {
         if (string == correctAnswer) {
           if(tries == 0) {
             addGold();
+            setGold(true);
           } else if(tries == 1) {
             addSilver();
+            setSilver(true);
           }
           if(correctPairs.length == 0) {
             setMessage("Correct! You are done with this quiz! Click to go back to the Main Menu");
@@ -174,6 +180,42 @@ export default function Q13M1({navigation}) {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
         //The maximum is exclusive and the minimum is inclusive
+    }
+
+    function Info(props) {
+      if (gold == true) {
+        return (
+          <View style={styles.messageContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Q12M1")}
+            style={styles.quizButton}>
+              <Text style={styles.message}>{message}</Text>
+          </TouchableOpacity>
+            <Image source={require("../assets/gold.png")} style={styles.coin}/>
+          </View>
+        );
+      } else if (silver == true) {
+        return (
+          <View style={styles.messageContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Q12M1")}
+              style={styles.quizButton}>
+                <Text style={styles.message}>{message}</Text>
+            </TouchableOpacity>
+            <Image source={require("../assets/silver.png")} style={styles.coin}/>
+          </View>
+        );
+      } else {
+        return (
+          <View style={styles.messageContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Q12M1")}
+              style={styles.quizButton}>
+                <Text style={styles.message}>{message}</Text>
+            </TouchableOpacity>
+          </View>
+        );
+      }
     }
 
     return (
@@ -242,11 +284,7 @@ export default function Q13M1({navigation}) {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.messageContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Q12M2")} style={styles.quizButton}>
-            <Text style={styles.message}>{message}</Text>
-          </TouchableOpacity>
-        </View>
+        <Info/>
 
         </>
 
@@ -263,6 +301,11 @@ const styles = StyleSheet.create({
     flex: 3,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
+  },
+  coin: {
+    height: 25,
+    width: 25,
+    resizeMode: "stretch",
   },
   subContainer: {
     alignItems: 'flex-start',

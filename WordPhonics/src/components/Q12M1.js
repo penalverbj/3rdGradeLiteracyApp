@@ -291,6 +291,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
+  coin: {
+    height: 25,
+    width: 25,
+    resizeMode: "stretch",
+  },
   subContainer: {
     alignItems: 'flex-start',
     justifyContent: 'space-around',
@@ -375,9 +380,4 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
     textAlign: 'center',
   },
-  coin: {
-    height: 25,
-    width: 25,
-    resizeMode: "stretch",
-  }
 });
