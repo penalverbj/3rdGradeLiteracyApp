@@ -59,6 +59,14 @@ export default function Q12M1({navigation}) {
     const [correctAnswer, setCorrectAnswer] = useState("null");
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
+    const [star1, setStar1] = useState(require('../assets/Blank-Star.png'));
+    const [star2, setStar2] = useState(require('../assets/Blank-Star.png'));
+    const [star3, setStar3] = useState(require('../assets/Blank-Star.png'));
+    const [star4, setStar4] = useState(require('../assets/Blank-Star.png'));
+    const [star5, setStar5] = useState(require('../assets/Blank-Star.png'));
+    const [tries, setTries] = useState(0);
+    const [numGold, setGold] = useState(0);
+    const [numSilver, setSilver] = useState(0);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -80,6 +88,7 @@ export default function Q12M1({navigation}) {
     const generateQuestion = () => {
       // clears message
       setMessage("");
+      // setStar1("");
 
       if(correctPairs.length == 0) {
         //resets quiz before going to mode 2
@@ -126,8 +135,8 @@ export default function Q12M1({navigation}) {
       currentPairs[pickRandom(0,4)] = answer;
       setCorrectAnswer(answer);
 
+      setTries(0);
       setAnswerPair(currentPairs);
-
 
       return currentPairs;
     }
@@ -135,6 +144,31 @@ export default function Q12M1({navigation}) {
     const checkAnswer = (string) => {
         // just sets message for now
         if (string == correctAnswer) {
+          if (tries == 0) {
+            if (star1 != require('../assets/check_mark.png')) {
+              if(star5 == require('../assets/Gold-Star-Blank.png')) {
+                setStar1(require('../assets/check_mark.png'));
+                setStar2(require('../assets/Blank-Star.png'));
+                setStar3(require('../assets/Blank-Star.png'));
+                setStar4(require('../assets/Blank-Star.png'));
+                setStar5(require('../assets/Blank-Star.png'));
+              }
+              else if(star4 == require('../assets/Gold-Star-Blank.png')) {
+                setStar5(require('../assets/Gold-Star-Blank.png'));
+              }
+              else if(star3 == require('../assets/Gold-Star-Blank.png')) {
+                setStar4(require('../assets/Gold-Star-Blank.png'));
+              }
+              else if(star2 == require('../assets/Gold-Star-Blank.png')) {
+                setStar3(require('../assets/Gold-Star-Blank.png'));
+              }
+              else if(star1 == require('../assets/Gold-Star-Blank.png')) {
+                setStar2(require('../assets/Gold-Star-Blank.png'));
+              } else {
+                setStar1(require('../assets/Gold-Star-Blank.png'));
+              }
+            }
+          }
           if(correctPairs.length == 0) {
             if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
               setScore(score + 1);
@@ -146,7 +180,27 @@ export default function Q12M1({navigation}) {
             }
             setMessage("Correct! Click next to continue!");
           }
+
         } else {
+          setTries(tries + 1);
+          if (star1 == require('../assets/Gold-Star-Blank.png')) {
+            setStar1(require('../assets/Silver-Star-Blank.png'));
+          }
+          if (star2 == require('../assets/Gold-Star-Blank.png')) {
+            setStar2(require('../assets/Silver-Star-Blank.png'));
+          }
+          if (star3 == require('../assets/Gold-Star-Blank.png')) {
+            setStar3(require('../assets/Silver-Star-Blank.png'));
+          }
+          if (star4 == require('../assets/Gold-Star-Blank.png')) {
+            setStar4(require('../assets/Silver-Star-Blank.png'));
+          }
+          if (star5 == require('../assets/Gold-Star-Blank.png')) {
+            setStar5(require('../assets/Silver-Star-Blank.png'));
+          }
+          if (star1 == '') {
+            setStar1(require('../assets/Silver-Star-Blank.png'));
+          }
           setMessage("Incorrect, please try again.");
         }
     }
@@ -160,6 +214,29 @@ export default function Q12M1({navigation}) {
 
     return (
         <>
+        <View style={styles.starContainer}>
+          <Image
+            source={star4}
+            style={styles.arrow}
+          />
+          <Image
+            source={star2}
+            style={styles.arrow}
+          />
+          <Image
+            source={star1}
+            style={styles.arrow}
+          />
+          <Image
+            source={star3}
+            style={styles.arrow}
+          />
+          <Image
+            source={star5}
+            style={styles.arrow}
+          />
+        </View>
+
         <View style={styles.startContainer}>
             <TouchableOpacity onPress = {() => {generateQuestion();}}>
                 <Text style={styles.subtitle}>
@@ -237,6 +314,13 @@ Q12M1.navigationOptions = () => {(
 )}
 
 const styles = StyleSheet.create({
+  starContainer: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    justifyContent: 'center',
+    backgroundColor: '#FFFAF0',
+    flexDirection: 'row',
+  },
   startContainer: {
     justifyContent: 'center',
     flex: 2.5,
