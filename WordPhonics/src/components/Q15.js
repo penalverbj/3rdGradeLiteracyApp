@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import {addGold, addSilver, markQuizDone, markQuizBlank} from "./User"
 
 import Sound from 'react-native-sound';
 
@@ -67,6 +68,9 @@ export default function Q15({navigation}) {
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
     const [question, setQuestion] = useState("");
+    const [tries, setTry] = useState(0);
+    const [gold, setGold] = useState(false);
+    const [silver, setSilver] = useState(false);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -87,7 +91,9 @@ export default function Q15({navigation}) {
     const generateQuestion = () => {
       // clears message
       setMessage("");
-
+      setTry(0);
+      setGold(false);
+      setSilver(false);
       if(correctPairs.length == 0) {
         //resets quiz before going to mode 2
         correctPairs =
@@ -151,6 +157,13 @@ export default function Q15({navigation}) {
     const checkAnswer = (string) => {
         // just sets message for now
         if (string == correctAnswer) {
+          if(tries == 0) {
+            addGold();
+            setGold(true);
+          } else if(tries == 1) {
+            addSilver();
+            setSilver(true);
+          }
           if(correctPairs.length == 0) {
             if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
               setScore(score + 1);
@@ -163,6 +176,7 @@ export default function Q15({navigation}) {
             setMessage("Correct! Click next to continue!");
           }
         } else {
+          setTry(tries + 1);
           setMessage("Incorrect, please try again.");
         }
     }
@@ -172,6 +186,42 @@ export default function Q15({navigation}) {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
         //The maximum is exclusive and the minimum is inclusive
+    }
+
+    function Info(props) {
+      if (gold == true) {
+        return (
+          <View style={styles.messageContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Q12M1")}
+            style={styles.quizButton}>
+              <Text style={styles.message}>{message}</Text>
+          </TouchableOpacity>
+            <Image source={require("../assets/gold.png")} style={styles.coin}/>
+          </View>
+        );
+      } else if (silver == true) {
+        return (
+          <View style={styles.messageContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Q12M1")}
+              style={styles.quizButton}>
+                <Text style={styles.message}>{message}</Text>
+            </TouchableOpacity>
+            <Image source={require("../assets/silver.png")} style={styles.coin}/>
+          </View>
+        );
+      } else {
+        return (
+          <View style={styles.messageContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Q12M1")}
+              style={styles.quizButton}>
+                <Text style={styles.message}>{message}</Text>
+            </TouchableOpacity>
+          </View>
+        );
+      }
     }
 
     return (
@@ -240,11 +290,7 @@ export default function Q15({navigation}) {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.messageContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Q12M1")} style={styles.quizButton}>
-            <Text style={styles.message}>{message}</Text>
-          </TouchableOpacity>
-        </View>
+        <Info/>
 
         </>
 
@@ -261,6 +307,11 @@ const styles = StyleSheet.create({
     flex: 2.5,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
+  },
+  coin: {
+    height: 25,
+    width: 25,
+    resizeMode: "stretch",
   },
   subContainer: {
     alignItems: 'flex-start',
