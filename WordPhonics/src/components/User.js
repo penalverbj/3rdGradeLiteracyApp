@@ -75,6 +75,27 @@ export default function User() {
         <View style={styles.lessonContainer}>
           <Text style={styles.lesson}> {props.text} </Text>
           <Text style={[styles.check, {backgroundColor: "green"}]}></Text>
+          <Text style={[styles.check, {backgroundColor: "green"}]}></Text>
+        </View>
+      );
+    }
+    else if (lessonQs[props.num - 12][0] == 0 &&
+      lessonQs[props.num - 12][1] == 1) {
+      return(
+        <View style={styles.lessonContainer}>
+          <Text style={styles.lesson}> {props.text} </Text>
+          <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
+          <Text style={[styles.check, {backgroundColor: "green"}]}></Text>
+        </View>
+      );
+    }
+    else if (lessonQs[props.num - 12][0] == 1 &&
+      lessonQs[props.num - 12][1] == 0) {
+      return(
+        <View style={styles.lessonContainer}>
+          <Text style={styles.lesson}> {props.text} </Text>
+          <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
+          <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
         </View>
       );
     }
@@ -84,13 +105,16 @@ export default function User() {
         <View style={styles.lessonContainer}>
           <Text style={styles.lesson}> {props.text} </Text>
           <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
+          <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
         </View>
       );
     }
   }
   return(
     <View style={styles.startContainer}>
-      <Text style={styles.section}> Coins </Text>
+      <View style={styles.subContainer}>
+        <Text style={styles.section}> Coins </Text>
+      </View>
       <View style={styles.subContainer}>
         <Image
           source={require('../assets/gold.png')}
@@ -98,7 +122,9 @@ export default function User() {
         />
         <Text style={styles.subsection}> : {coins} </Text>
       </View>
-      <Text style={styles.section}> Units Completed</Text>
+      <View style={styles.subContainer}>
+        <Text style={styles.section}> Units Completed</Text>
+      </View>
       <SafeAreaView style={styles.subContainer}>
         <ScrollView>
           <Lesson num={12} text={"12: synonyms"}/>
@@ -133,7 +159,8 @@ const styles = StyleSheet.create({
   section: {
     fontSize: 35,
     fontWeight: 'bold',
-    margin: 10,
+    margin: 15,
+    marginVertical: 20,
     borderBottomWidth: 1,
   },
   subsection: {
@@ -142,25 +169,29 @@ const styles = StyleSheet.create({
   subContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    padding: 10,
+    justifyContent: 'space-evenly',
+    //padding: 10,
+    marginTop: 15,
+    marginBottom: 15,
   },
   image: {
     width: 90,
     height: 50,
-    resizeMode: "stretch", 
+    resizeMode: "stretch",
+    margin: 10,
   },
   lessonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 5,
-    paddingTop: 0,
+    justifyContent: 'flex-end',
+    marginHorizontal: 15,
   },
   lesson: {
     fontSize: 20,
+    textAlign: "center",
   },
   check: {
     width: 20,
+    margin: 5,
   },
 });
