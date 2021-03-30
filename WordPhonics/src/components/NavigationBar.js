@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   startContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   image: {
     width: 27,
