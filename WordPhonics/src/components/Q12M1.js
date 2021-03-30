@@ -68,6 +68,7 @@ export default function Q12M1({navigation}) {
     const [tries, setTry] = useState(0);
     const [gold, setGold] = useState(false);
     const [silver, setSilver] = useState(false);
+    const [right, setRight] = useState(false);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -93,6 +94,7 @@ export default function Q12M1({navigation}) {
       setTry(0);
       setGold(false);
       setSilver(false);
+      setRight(false);
       if(correctPairs.length == 0) {
         //resets quiz before going to mode 2
         correctPairs =
@@ -146,7 +148,9 @@ export default function Q12M1({navigation}) {
 
     const checkAnswer = (string) => {
         // just sets message for now
+        if(right) {return;}
         if (string == correctAnswer) {
+          setRight(true);
           if (tries == 0) {
             addGold();
             setGold(true);
