@@ -287,7 +287,7 @@ export default function Q12M1({navigation}) {
         </View>
 
         <View style={styles.startContainer}>
-            <TouchableOpacity onPress = {() => {generateQuestion();}}>
+            <TouchableOpacity onPress = {null}>
                 <Text style={styles.subtitle}>
                   {question}
                 </Text>
