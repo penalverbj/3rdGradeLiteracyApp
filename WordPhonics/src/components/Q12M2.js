@@ -106,6 +106,7 @@ export default function Q12M2({navigation}) {
       setTry(0);
       setGold(false);
       setSilver(false);
+      setRight(false);
       if(correctPairs.length == 0) {
         //resets quiz before going back to main menu
         correctPairs =
@@ -157,6 +158,7 @@ export default function Q12M2({navigation}) {
 
     const checkAnswer = (string) => {
         // just sets message for now
+        if(right) {return;}
         if (string == correctAnswer) {
           if(tries == 0) {
             addGold();
