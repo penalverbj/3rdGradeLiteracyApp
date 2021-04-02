@@ -68,9 +68,15 @@ export default function Q15({navigation}) {
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
     const [question, setQuestion] = useState("");
+    const [star1, setStar1] = useState(require('../assets/Blank-Star.png'));
+    const [star2, setStar2] = useState(require('../assets/Blank-Star.png'));
+    const [star3, setStar3] = useState(require('../assets/Blank-Star.png'));
+    const [star4, setStar4] = useState(require('../assets/Blank-Star.png'));
+    const [star5, setStar5] = useState(require('../assets/Blank-Star.png'));
     const [tries, setTry] = useState(0);
     const [gold, setGold] = useState(false);
     const [silver, setSilver] = useState(false);
+    const [right, setRight] = useState(false);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -94,6 +100,7 @@ export default function Q15({navigation}) {
       setTry(0);
       setGold(false);
       setSilver(false);
+      setRight(false);
       if(correctPairs.length == 0) {
         //resets quiz before going to mode 2
         correctPairs =
@@ -155,30 +162,73 @@ export default function Q15({navigation}) {
     }
 
     const checkAnswer = (string) => {
-        // just sets message for now
-        if (string == correctAnswer) {
-          if(tries == 0) {
-            addGold();
-            setGold(true);
-          } else if(tries == 1) {
-            addSilver();
-            setSilver(true);
-          }
-          if(correctPairs.length == 0) {
-            if(message != "Correct! You are done with this quiz! Click to go to the next quiz!") {
-              setScore(score + 1);
+      // just sets message for now
+      if(right) {return;}
+      if (string == correctAnswer) {
+        if(tries == 0) {
+          addGold();
+          setGold(true);
+          if (star1 != require('../assets/check_mark.png')) {
+            if(star5 == require('../assets/Gold-Star-Blank.png')) {
+              setStar1(require('../assets/check_mark.png'));
+              setStar2(require('../assets/Blank-Star.png'));
+              setStar3(require('../assets/Blank-Star.png'));
+              setStar4(require('../assets/Blank-Star.png'));
+              setStar5(require('../assets/Blank-Star.png'));
+              markQuizDone(15, 1);
+              markQuizDone(15, 2);
             }
-            setMessage("Correct! You are done with this quiz! Click to go to the next quiz!");
-          } else {
-            if (message != "Correct! Click next to continue!") {
-              setScore(score + 1);
+            else if(star4 == require('../assets/Gold-Star-Blank.png')) {
+              setStar5(require('../assets/Gold-Star-Blank.png'));
             }
-            setMessage("Correct! Click next to continue!");
+            else if(star3 == require('../assets/Gold-Star-Blank.png')) {
+              setStar4(require('../assets/Gold-Star-Blank.png'));
+            }
+            else if(star2 == require('../assets/Gold-Star-Blank.png')) {
+              setStar3(require('../assets/Gold-Star-Blank.png'));
+            }
+            else if(star1 == require('../assets/Gold-Star-Blank.png')) {
+              setStar2(require('../assets/Gold-Star-Blank.png'));
+            } else {
+              setStar1(require('../assets/Gold-Star-Blank.png'));
+            }
           }
-        } else {
-          setTry(tries + 1);
-          setMessage("Incorrect, please try again.");
         }
+        else if(tries == 1) {
+          addSilver();
+          setSilver(true);
+        }
+        if(correctPairs.length == 0) {
+          setMessage("Correct! You are done with this quiz! Click to go back to the Main Menu");
+        } else {
+          if (message != "Correct! Click next to continue!") {
+            setScore(score + 1);
+          }
+          setMessage("Correct! Click next to continue!");
+        }
+
+      } else {
+        if (star1 == require('../assets/Gold-Star-Blank.png')) {
+          setStar1(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star2 == require('../assets/Gold-Star-Blank.png')) {
+          setStar2(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star3 == require('../assets/Gold-Star-Blank.png')) {
+          setStar3(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star4 == require('../assets/Gold-Star-Blank.png')) {
+          setStar4(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star5 == require('../assets/Gold-Star-Blank.png')) {
+          setStar5(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star1 == '') {
+          setStar1(require('../assets/Silver-Star-Blank.png'));
+        }
+        setTry(tries + 1);
+        setMessage("Incorrect, please try again.");
+      }
     }
 
     const pickRandom =  (min, max) => {
@@ -226,8 +276,30 @@ export default function Q15({navigation}) {
 
     return (
         <>
+        <View style={styles.starContainer}>
+          <Image
+            source={star4}
+            style={styles.arrow}
+          />
+          <Image
+            source={star2}
+            style={styles.arrow}
+          />
+          <Image
+            source={star1}
+            style={styles.arrow}
+          />
+          <Image
+            source={star3}
+            style={styles.arrow}
+          />
+          <Image
+            source={star5}
+            style={styles.arrow}
+          />
+        </View>
         <View style={styles.startContainer}>
-            <TouchableOpacity onPress = {() => {generateQuestion();}}>
+            <TouchableOpacity onPress = {null}>
                 <Text style={styles.subtitle}>
                   {title}
                 </Text>
@@ -308,6 +380,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
+  starContainer: {
+    paddingTop: 7,
+    paddingBottom: 7,
+    justifyContent: 'center',
+    backgroundColor: '#FFFAF0',
+    flexDirection: 'row',
+  },
   coin: {
     height: 25,
     width: 25,
@@ -316,15 +395,14 @@ const styles = StyleSheet.create({
   subContainer: {
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    flex: 10,
+    flex: 9.5,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     flexWrap: 'wrap',
   },
   subtitle: {
-    flex: 1,
     flexDirection: 'row',
-    fontSize: 25,
+    fontSize: 22,
     marginHorizontal: 5,
     fontWeight: '800',
     fontStyle: 'italic',
@@ -353,7 +431,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   question: {
-    fontSize: 25,
+    fontSize: 22,
     margin: 5,
     fontWeight: 'bold',
     color: "black",
@@ -376,7 +454,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   messageContainer: {
-    flex: 2,
+    flex: 2.5,
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -392,7 +470,7 @@ const styles = StyleSheet.create({
 
   },
   scoreContainer: {
-    flex: 2,
+    flex: 3.5,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFAF0',
