@@ -147,7 +147,7 @@ export default function Q12M1({navigation}) {
     }
 
     const checkAnswer = (string) => {
-        // just sets message for now
+        // if question answered correctly, checkAnswer does nothing to prevent bugs
         if(right) {return;}
         if (string == correctAnswer) {
           setRight(true);
@@ -161,6 +161,7 @@ export default function Q12M1({navigation}) {
                 setStar3(require('../assets/Blank-Star.png'));
                 setStar4(require('../assets/Blank-Star.png'));
                 setStar5(require('../assets/Blank-Star.png'));
+                markQuizDone(12, 1);
               }
               else if(star4 == require('../assets/Gold-Star-Blank.png')) {
                 setStar5(require('../assets/Gold-Star-Blank.png'));

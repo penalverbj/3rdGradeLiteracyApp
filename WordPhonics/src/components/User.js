@@ -94,7 +94,7 @@ export default function User() {
       return(
         <View style={styles.lessonContainer}>
           <Text style={styles.lesson}> {props.text} </Text>
-          <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
+          <Text style={[styles.check, {backgroundColor: "green"}]}></Text>
           <Text style={[styles.check, {backgroundColor: "red"}]}></Text>
         </View>
       );
