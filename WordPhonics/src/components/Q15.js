@@ -357,9 +357,6 @@ export default function Q15({navigation}) {
             style={styles.arrow}
           />
         </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Q12M1")} style={styles.quizButton}>
-            <Text style={styles.score}>Score: {score}</Text>
-          </TouchableOpacity>
         </View>
 
         <Info/>
@@ -376,7 +373,7 @@ Q15.navigationOptions = () => {(
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 2.5,
+    flex: 3,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
@@ -395,7 +392,7 @@ const styles = StyleSheet.create({
   subContainer: {
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    flex: 9.5,
+    flex: 12,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     flexWrap: 'wrap',
@@ -454,7 +451,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   messageContainer: {
-    flex: 2.5,
+    flex: 3,
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -470,7 +467,7 @@ const styles = StyleSheet.create({
 
   },
   scoreContainer: {
-    flex: 3.5,
+    flex: 2.5,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFAF0',

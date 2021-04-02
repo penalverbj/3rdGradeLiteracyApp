@@ -66,13 +66,19 @@ const incorrectPairs =
   const asked = []
 
 export default function Q16M2({navigation}) {
-    const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
-    const [correctAnswer, setCorrectAnswer] = useState("null");
-    const [message, setMessage] = useState("");
-    const [score, setScore] = useState(0);
-    const [tries, setTry] = useState(0);
-    const [gold, setGold] = useState(false);
-    const [silver, setSilver] = useState(false);
+  const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
+  const [correctAnswer, setCorrectAnswer] = useState("null");
+  const [message, setMessage] = useState("");
+  const [score, setScore] = useState(0);
+  const [star1, setStar1] = useState(require('../assets/Blank-Star.png'));
+  const [star2, setStar2] = useState(require('../assets/Blank-Star.png'));
+  const [star3, setStar3] = useState(require('../assets/Blank-Star.png'));
+  const [star4, setStar4] = useState(require('../assets/Blank-Star.png'));
+  const [star5, setStar5] = useState(require('../assets/Blank-Star.png'));
+  const [tries, setTry] = useState(0);
+  const [gold, setGold] = useState(false);
+  const [silver, setSilver] = useState(false);
+  const [right, setRight] = useState(false);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -108,6 +114,7 @@ export default function Q16M2({navigation}) {
       setTry(0);
       setGold(false);
       setSilver(false);
+      setRight(false);
       if(correctPairs.length == 0) {
         //resets quiz before going back to main menu
         correctPairs =
@@ -158,28 +165,72 @@ export default function Q16M2({navigation}) {
     }
 
     const checkAnswer = (string) => {
-        // just sets message for now
-        if (string == correctAnswer) {
-          if(tries == 0) {
-            addGold();
-            setGold(true);
-          } else if(tries == 1) {
-            addSilver();
-            setSilver(true);
-          }
-          if(correctPairs.length == 0) {
-            setMessage("Correct! You are done with this quiz! Click to go back to the Main Menu");
-          } else {
-            if (message != "Correct! Click next to continue!") {
-              setScore(score + 1);
+      // just sets message for now
+      if(right) {return;}
+      if (string == correctAnswer) {
+        if(tries == 0) {
+          addGold();
+          setGold(true);
+          if (star1 != require('../assets/check_mark.png')) {
+            if(star5 == require('../assets/Gold-Star-Blank.png')) {
+              setStar1(require('../assets/check_mark.png'));
+              setStar2(require('../assets/Blank-Star.png'));
+              setStar3(require('../assets/Blank-Star.png'));
+              setStar4(require('../assets/Blank-Star.png'));
+              setStar5(require('../assets/Blank-Star.png'));
+              markQuizDone(16, 2);
             }
-            setMessage("Correct! Click next to continue!");
+            else if(star4 == require('../assets/Gold-Star-Blank.png')) {
+              setStar5(require('../assets/Gold-Star-Blank.png'));
+            }
+            else if(star3 == require('../assets/Gold-Star-Blank.png')) {
+              setStar4(require('../assets/Gold-Star-Blank.png'));
+            }
+            else if(star2 == require('../assets/Gold-Star-Blank.png')) {
+              setStar3(require('../assets/Gold-Star-Blank.png'));
+            }
+            else if(star1 == require('../assets/Gold-Star-Blank.png')) {
+              setStar2(require('../assets/Gold-Star-Blank.png'));
+            } else {
+              setStar1(require('../assets/Gold-Star-Blank.png'));
+            }
           }
-
-        } else {
-          setTry(tries + 1);
-          setMessage("Incorrect, please try again.");
         }
+        else if(tries == 1) {
+          addSilver();
+          setSilver(true);
+        }
+        if(correctPairs.length == 0) {
+          setMessage("Correct! You are done with this quiz! Click to go back to the Main Menu");
+        } else {
+          if (message != "Correct! Click next to continue!") {
+            setScore(score + 1);
+          }
+          setMessage("Correct! Click next to continue!");
+        }
+
+      } else {
+        if (star1 == require('../assets/Gold-Star-Blank.png')) {
+          setStar1(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star2 == require('../assets/Gold-Star-Blank.png')) {
+          setStar2(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star3 == require('../assets/Gold-Star-Blank.png')) {
+          setStar3(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star4 == require('../assets/Gold-Star-Blank.png')) {
+          setStar4(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star5 == require('../assets/Gold-Star-Blank.png')) {
+          setStar5(require('../assets/Silver-Star-Blank.png'));
+        }
+        if (star1 == '') {
+          setStar1(require('../assets/Silver-Star-Blank.png'));
+        }
+        setTry(tries + 1);
+        setMessage("Incorrect, please try again.");
+      }
     }
 
     const pickRandom =  (min, max) => {
@@ -227,11 +278,30 @@ export default function Q16M2({navigation}) {
 
     return (
         <>
+        <View style={styles.starContainer}>
+          <Image
+            source={star4}
+            style={styles.arrow}
+          />
+          <Image
+            source={star2}
+            style={styles.arrow}
+          />
+          <Image
+            source={star1}
+            style={styles.arrow}
+          />
+          <Image
+            source={star3}
+            style={styles.arrow}
+          />
+          <Image
+            source={star5}
+            style={styles.arrow}
+          />
+        </View>
         <View style={styles.startContainer}>
-            <TouchableOpacity onPress = {() => {
-              generateQuestion();
-              playDef();
-              }}>
+            <TouchableOpacity onPress = {null}>
                 <Text style={styles.subtitle}>
                   {question}
                 </Text>
@@ -285,11 +355,6 @@ export default function Q16M2({navigation}) {
               />
             </TouchableOpacity>
         </View>
-        <View style={styles.scoreContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Q12M2")} style={styles.quizButton}>
-            <Text style={styles.score}>Score: {score}</Text>
-          </TouchableOpacity>
-        </View>
 
         <Info/>
 
@@ -309,6 +374,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
+  starContainer: {
+    paddingTop: 7,
+    paddingBottom: 7,
+    justifyContent: 'center',
+    backgroundColor: '#FFFAF0',
+    flexDirection: 'row',
+  },
   coin: {
     height: 25,
     width: 25,
@@ -317,7 +389,7 @@ const styles = StyleSheet.create({
   subContainer: {
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    flex: 9,
+    flex: 8,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
     flexWrap: 'wrap',
@@ -356,7 +428,7 @@ const styles = StyleSheet.create({
   answer: {
     fontSize: 30,
     margin: 5,
-    marginHorizontal: 60,
+    marginHorizontal: 70,
     backgroundColor: "#bfe54e",
     borderWidth: 1,
     borderRadius: 30,
@@ -368,7 +440,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   messageContainer: {
-    flex: 3,
+    flex: 2.5,
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -381,7 +453,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginHorizontal: 50,
     textAlign: 'center',
-
   },
   scoreContainer: {
     flex: 1,

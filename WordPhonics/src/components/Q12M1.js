@@ -342,11 +342,6 @@ export default function Q12M1({navigation}) {
               />
             </TouchableOpacity>
         </View>
-        <View style={styles.scoreContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Q12M1")} style={styles.quizButton}>
-            <Text style={styles.score}>Score: {score}</Text>
-          </TouchableOpacity>
-        </View>
 
         <Info/>
 
