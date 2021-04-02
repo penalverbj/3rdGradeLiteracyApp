@@ -243,7 +243,7 @@ export default function Q15({navigation}) {
         return (
           <View style={styles.messageContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Q12M1")}
+            onPress={null}
             style={styles.quizButton}>
               <Text style={styles.message}>{message}</Text>
           </TouchableOpacity>
@@ -254,7 +254,7 @@ export default function Q15({navigation}) {
         return (
           <View style={styles.messageContainer}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Q12M1")}
+              onPress={null}
               style={styles.quizButton}>
                 <Text style={styles.message}>{message}</Text>
             </TouchableOpacity>
@@ -265,7 +265,7 @@ export default function Q15({navigation}) {
         return (
           <View style={styles.messageContainer}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Q12M1")}
+              onPress={null}
               style={styles.quizButton}>
                 <Text style={styles.message}>{message}</Text>
             </TouchableOpacity>
