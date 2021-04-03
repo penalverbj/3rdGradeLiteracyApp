@@ -55,9 +55,7 @@ export default function MainMenuScreen(props) {
   var goToScreen = (num) => {
     if (num == 15) {
       navigation.navigate("Q15");
-    }
-    if (num == 19) {
-      navigation.navigate("L19");
+      return;
     }
     else {
       navigation.navigate(`L${num}`);

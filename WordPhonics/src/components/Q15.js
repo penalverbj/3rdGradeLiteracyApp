@@ -13,6 +13,8 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {addGold, addSilver, markQuizDone, markQuizBlank} from "./User"
@@ -307,7 +309,8 @@ export default function Q15({navigation}) {
         </View>
 
 
-        <View style={styles.subContainer}>
+        <SafeAreaView style={styles.subContainer}>
+          <ScrollView>
           <TouchableOpacity onPress = {() => {
             }}>
               <Text style={styles.question}>
@@ -346,7 +349,8 @@ export default function Q15({navigation}) {
                   {answerPair[3]}
                 </Text>
             </TouchableOpacity>
-        </View>
+          </ScrollView>
+        </SafeAreaView>
         <View style={styles.scoreContainer}>
         <TouchableOpacity
           onPress={() => {generateQuestion()}}
