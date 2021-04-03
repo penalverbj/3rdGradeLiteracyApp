@@ -24,16 +24,24 @@ import Sound from 'react-native-sound';
 // list of correct answers
 var correctPairs =
   [
-    "I’m so happy I tried to learn to roller skate.",
-    "At last he found someone he can win an argument against.",
-    "Of course I’m glad the teacher gave a pop test.",
-    "She seems so pleased to have found a cockroach in her shoe.",
-    "Her hair is always perfect.",
-    "His family must be so proud.",
-    "He’s extremely lucky to have found such a good job.",
-    "His mother will be so thrilled when he gets home.",
-    "She’s been on so many diets that she’s an expert on losing weight.",
-    "He’d be the perfect coach to teach you how to skateboard.",
+    "That cookie is calling my name.",
+    "The phone keeps trying to slip out of his hand.",
+    "The snowflakes danced across the sky.",
+    "Vegetables keep trying to choke me.",
+    "The car door groans every time I open it.",
+    "She thinks that phone is her best friend.",
+    "The glass keeps trying to slip out of his hand.",
+    "This math test wants me to fail.",
+    "Those balloons keep tempting him to fly high.",
+    "The stars winked at the moon all night long.",
+    "Those shoes keep trying to trip him.",
+    "His ice cream escaped the cone.",
+    "No one loves her more than her mirror.",
+    "Those cookies keep begging her to eat them.",
+    "That skateboard keeps trying to break his other arm.",
+    "The money in his pocket keeps nagging him to spend it.",
+    "The wind howled at me all night long.",
+    "The hot chili bit his tongue.",
   ];
 
 // list of incorrect answers
@@ -55,7 +63,7 @@ const incorrectPairs =
     "No one is sitting here.",
   ];
 
-export default function Q19M1({navigation}) {
+export default function Q20M1({navigation}) {
   const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
   const [correctAnswer, setCorrectAnswer] = useState("null");
   const [message, setMessage] = useState("");
@@ -72,7 +80,7 @@ export default function Q19M1({navigation}) {
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
-    const question = "Which sentence contains irony or sarcasm?";
+    const question = "Which sentence contains an example of personification?";
 
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
@@ -98,16 +106,24 @@ export default function Q19M1({navigation}) {
         //resets quiz before going to mode 2
         correctPairs =
           [
-            "I’m so happy I tried to learn to roller skate.",
-            "At last he found someone he can win an argument against.",
-            "Of course I’m glad the teacher gave a pop test.",
-            "She seems so pleased to have found a cockroach in her shoe.",
-            "Her hair is always perfect.",
-            "His family must be so proud.",
-            "He’s extremely lucky to have found such a good job.",
-            "His mother will be so thrilled when he gets home.",
-            "She’s been on so many diets that she’s an expert on losing weight.",
-            "He’d be the perfect coach to teach you how to skateboard.",
+            "That cookie is calling my name.",
+            "The phone keeps trying to slip out of his hand.",
+            "The snowflakes danced across the sky.",
+            "Vegetables keep trying to choke me.",
+            "The car door groans every time I open it.",
+            "She thinks that phone is her best friend.",
+            "The glass keeps trying to slip out of his hand.",
+            "This math test wants me to fail.",
+            "Those balloons keep tempting him to fly high.",
+            "The stars winked at the moon all night long.",
+            "Those shoes keep trying to trip him.",
+            "His ice cream escaped the cone.",
+            "No one loves her more than her mirror.",
+            "Those cookies keep begging her to eat them.",
+            "That skateboard keeps trying to break his other arm.",
+            "The money in his pocket keeps nagging him to spend it.",
+            "The wind howled at me all night long.",
+            "The hot chili bit his tongue.",
           ];
         navigation.navigate("MainMenu");
       }
@@ -156,8 +172,8 @@ export default function Q19M1({navigation}) {
               setStar3(require('../assets/Blank-Star.png'));
               setStar4(require('../assets/Blank-Star.png'));
               setStar5(require('../assets/Blank-Star.png'));
-              markQuizDone(19, 1);
-              markQuizDone(19, 2);
+              markQuizDone(20, 1);
+              markQuizDone(20, 2);
             }
             else if(star4 == require('../assets/Gold-Star-Blank.png')) {
               setStar5(require('../assets/Gold-Star-Blank.png'));
@@ -344,8 +360,8 @@ export default function Q19M1({navigation}) {
         );
 }
 
-Q19M1.navigationOptions = () => {(
-    title:'Q19M1'
+Q20M1.navigationOptions = () => {(
+    title:'Q20M1'
 )}
 
 const styles = StyleSheet.create({

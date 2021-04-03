@@ -76,6 +76,7 @@ import Q17M3 from './Q17M3';
 import Q18M1 from './Q18M1';
 import Q18M2 from './Q18M2';
 import Q19M1 from './Q19M1';
+import Q20M1 from './Q20M1';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -1094,6 +1095,22 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="Q19M1"
                 component={Q19M1}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Q20M1"
+                component={Q20M1}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
