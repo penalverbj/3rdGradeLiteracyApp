@@ -24,6 +24,21 @@ import Sound from 'react-native-sound';
 // list of correct answers
 var correctPairs =
   [
+    "The puppy had an accident on the rug.",
+    "He doesn't make friends easily.",
+    "She had an unusual hair style.",
+    "The boys had a disagreement.",
+    'She made a daring fashion choice.',
+    'He was displeased.',
+    "He doesn't use his study time wisely.",
+    'He seems to forget the rules about snacks.',
+    "He's not an expert driver.",
+    "Perhaps her best days as an acrobat are behind her.",
+  ];
+
+// list of incorrect answers
+const incorrectPairs =
+  [
     "A dog has a ball.",
     "A guitar can make music.",
     "But I ordered chocolate.",
@@ -40,28 +55,7 @@ var correctPairs =
     "No one is sitting here.",
   ];
 
-// list of incorrect answers
-const incorrectPairs =
-  [
-    "I don’t have anything to wear",
-    "She studies all the time",
-    "You’re so loud I can’t hear myself think",
-    "He’ll never grow up",
-    "He was already old before the dinosaurs died.",
-    "Nobody likes me.",
-    "You smell worse than a skunk.",
-    "You break every toy I give you.",
-    "She never loses a race.",
-    "He can make anything out of a balloon.",
-    "You’re never on time.",
-    "The pain in my foot is killing me.",
-    "I’m hungry enough to eat a horse.",
-    "He couldn’t tell an ink pen from a pig pen.",
-    "He couldn’t fight his way out of a paper bag.",
-    "Her hair is always perfect.",
-  ];
-
-export default function Q21M2({navigation}) {
+export default function Q22M1({navigation}) {
   const [answerPair, setAnswerPair] = useState(["null", "null", "null", "null"]);
   const [correctAnswer, setCorrectAnswer] = useState("null");
   const [message, setMessage] = useState("");
@@ -78,7 +72,7 @@ export default function Q21M2({navigation}) {
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
-    const question = "Which sentence does NOT contain an example of hyperbole?";
+    const question = "Which sentence contains a euphemism?";
 
     React.useEffect(() => {
       const unsubscribe = navigation.addListener('focus', () => {
@@ -104,20 +98,16 @@ export default function Q21M2({navigation}) {
         //resets quiz before going to mode 2
         correctPairs =
           [
-            "A dog has a ball.",
-            "A guitar can make music.",
-            "But I ordered chocolate.",
-            "Did you light the candle?",
-            "He is being very impolite.",
-            "He looks like a friendly dragon.",
-            "He needs a new skateboard.",
-            "I don’t have anything to do.",
-            "I can see the sea from here.",
-            "I stuck my finger in my eye.",
-            "I’d love some.",
-            "I’m confused.",
-            "It’s nice to get a kiss.",
-            "No one is sitting here.",
+            "The puppy had an accident on the rug.",
+            "He doesn't make friends easily.",
+            "She had an unusual hair style.",
+            "The boys had a disagreement.",
+            'She made a daring fashion choice.',
+            'He was displeased.',
+            "He doesn't use his study time wisely.",
+            'He seems to forget the rules about snacks.',
+            "He's not an expert driver.",
+            "Perhaps her best days as an acrobat are behind her.",
           ];
         navigation.navigate("MainMenu");
       }
@@ -166,7 +156,8 @@ export default function Q21M2({navigation}) {
               setStar3(require('../assets/Blank-Star.png'));
               setStar4(require('../assets/Blank-Star.png'));
               setStar5(require('../assets/Blank-Star.png'));
-              markQuizDone(21, 2);
+              markQuizDone(22, 1);
+              markQuizDone(22, 2);
             }
             else if(star4 == require('../assets/Gold-Star-Blank.png')) {
               setStar5(require('../assets/Gold-Star-Blank.png'));
@@ -353,14 +344,14 @@ export default function Q21M2({navigation}) {
         );
 }
 
-Q21M2.navigationOptions = () => {(
-    title:'Q21M2'
+Q22M1.navigationOptions = () => {(
+    title:'Q22M1'
 )}
 
 const styles = StyleSheet.create({
   startContainer: {
     justifyContent: 'center',
-    flex: 2.5,
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
