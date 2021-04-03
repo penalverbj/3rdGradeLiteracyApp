@@ -56,6 +56,9 @@ export default function MainMenuScreen(props) {
     if (num == 15) {
       navigation.navigate("Q15");
     }
+    if (num == 19) {
+      navigation.navigate("L19");
+    }
     else {
       navigation.navigate(`L${num}`);
     }

@@ -262,7 +262,7 @@ export default function L19({navigation}) {
           <Text style={styles.words}>{words1[example - 1]}</Text>
         </View>
         <View style={styles.quizContainer}>
-          <TouchableOpacity onPress={null} style={styles.quizButton}>
+          <TouchableOpacity onPress={() => {navigation.navigate("Q19M1")}} style={styles.quizButton}>
             <Text style={styles.quiz}>?</Text>
           </TouchableOpacity>
         </View>
