@@ -228,14 +228,14 @@ export default function L24(props) {
           <View style={styles.subContainer}>
           <TouchableOpacity
             style={styles.quiz}
-            onPress={() => {}}>
+            onPress={() => {navigation.navigate("Q24M1")}}>
             <Text style={styles.section}>
               Which Words Rhyme
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quiz}
-            onPress={() => {}}>
+            onPress={() => {navigation.navigate("Q24M2")}}>
             <Text style={styles.section}>
               Which Words Don't Rhyme
             </Text>

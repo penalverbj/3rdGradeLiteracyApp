@@ -83,6 +83,8 @@ import Q21M2 from './Q21M2';
 import Q22M1 from './Q22M1';
 import Q23M1 from './Q23M1';
 import Q23M2 from './Q23M2';
+import Q24M1 from './Q24M1';
+import Q24M2 from './Q24M2';
 import Q25M1 from './Q25M1';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -1230,6 +1232,38 @@ export default function App({navigation}) {
               <Stack.Screen
                 name="L25"
                 component={L25}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Q24M1"
+                component={Q24M1}
+                options={{
+                  headerTitle: props => <NavigationBar {...props} />, //Logo
+                  headerStyle: {backgroundColor: '#a7d8e8'},
+                  headerRight: () => ( //log out button
+                    <TouchableOpacity onPress={() => authContext.signOut()}>
+                      <Image
+                        source={require('../assets/log-out.png')}
+                        style={styles.image}
+                      />
+                    </TouchableOpacity>
+                  ),
+                }}
+              />
+              <Stack.Screen
+                name="Q24M2"
+                component={Q24M2}
                 options={{
                   headerTitle: props => <NavigationBar {...props} />, //Logo
                   headerStyle: {backgroundColor: '#a7d8e8'},
