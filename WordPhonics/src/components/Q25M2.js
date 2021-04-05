@@ -63,7 +63,10 @@ var questions =
     require("../assets/25/13.png"),
     require("../assets/25/14.png"),
     require("../assets/25/1516.png"),
+    require("../assets/25/1516.png"),
     require("../assets/25/1718.png"),
+    require("../assets/25/1718.png"),
+    require("../assets/25/1920.png"),
     require("../assets/25/1920.png"),
   ];
 
@@ -91,7 +94,7 @@ export default function Q25M2({navigation}) {
     const [correctAnswer, setCorrectAnswer] = useState("null");
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
-    const [question, setQuestion] = useState(require("../assets/25/7.png"));
+    const [question, setQuestion] = useState(null);
     const [star1, setStar1] = useState(require('../assets/Blank-Star.png'));
     const [star2, setStar2] = useState(require('../assets/Blank-Star.png'));
     const [star3, setStar3] = useState(require('../assets/Blank-Star.png'));
