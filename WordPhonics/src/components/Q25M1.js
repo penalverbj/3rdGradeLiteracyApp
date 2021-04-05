@@ -157,6 +157,7 @@ export default function Q25M1({navigation}) {
       // just sets message for now
       if(right) {return;}
       if (string == correctAnswer) {
+        setRight(true);
         if(tries == 0) {
           addGold();
           setGold(true);

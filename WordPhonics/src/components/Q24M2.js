@@ -181,6 +181,7 @@ export default function Q24M2({navigation}) {
       // just sets message for now
       if(right) {return;}
       if (string == correctAnswer) {
+        setRight(true);
         if(tries == 0) {
           addGold();
           setGold(true);

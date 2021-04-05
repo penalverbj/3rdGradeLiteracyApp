@@ -20,7 +20,20 @@ import PropTypes from 'prop-types';
 import {addGold, addSilver, markQuizDone, markQuizBlank} from "./User"
 
 import Sound from 'react-native-sound';
-
+var sounds =
+  [
+    require("../assets/25/7.mp3"),
+    require("../assets/25/8.mp3"),
+    require("../assets/25/9.mp3"),
+    require("../assets/25/10.mp3"),
+    require("../assets/25/11.mp3"),
+    require("../assets/25/12.mp3"),
+    require("../assets/25/13.mp3"),
+    require("../assets/25/14.mp3"),
+    require("../assets/25/1516.mp3"),
+    require("../assets/25/1718.mp3"),
+    require("../assets/25/1920.mp3"),
+  ];
 // list of correct answers
 var correctPairs =
   [
@@ -78,7 +91,7 @@ export default function Q25M2({navigation}) {
     const [correctAnswer, setCorrectAnswer] = useState("null");
     const [message, setMessage] = useState("");
     const [score, setScore] = useState(0);
-    const [question, setQuestion] = useState("");
+    const [question, setQuestion] = useState(require("../assets/25/7.png"));
     const [star1, setStar1] = useState(require('../assets/Blank-Star.png'));
     const [star2, setStar2] = useState(require('../assets/Blank-Star.png'));
     const [star3, setStar3] = useState(require('../assets/Blank-Star.png'));
@@ -88,6 +101,7 @@ export default function Q25M2({navigation}) {
     const [gold, setGold] = useState(false);
     const [silver, setSilver] = useState(false);
     const [right, setRight] = useState(false);
+    const [index, setIndex] = useState(0);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -169,7 +183,7 @@ export default function Q25M2({navigation}) {
       let answer = correctPairs[pickRandom(0, correctPairs.length)];
       setCorrectAnswer(answer);
       //removes the asked pairs from the array so there arent repeats and the quiz can end
-      var index = correctPairs.indexOf(answer);
+      setIndex(correctPairs.indexOf(answer));
       correctPairs.splice(index, 1);
       setQuestion(questions[index]);
       questions.splice(index,1);
@@ -195,10 +209,23 @@ export default function Q25M2({navigation}) {
       return currentPairs;
     }
 
+    var playSound = () => {
+      var sound1 = new Sound(sounds[index], (error, sound) => {
+          if (error) {
+            alert('error' + error.message);
+            return;
+          }
+          sound1.play(() => {
+            sound1.release();
+          });
+        });
+    };
+
     const checkAnswer = (string) => {
       // just sets message for now
       if(right) {return;}
       if (string == correctAnswer) {
+        setRight(true);
         if(tries == 0) {
           addGold();
           setGold(true);
@@ -342,11 +369,11 @@ export default function Q25M2({navigation}) {
 
         <SafeAreaView style={styles.subContainer}>
           <ScrollView>
-          <TouchableOpacity onPress = {() => {
-            }}>
-              <Text style={styles.question}>
-                {question}
-              </Text>
+          <TouchableOpacity onPress = {() => {playSound()}}>
+            <Image
+            style={styles.picture}
+            source={question}
+            />
           </TouchableOpacity>
             <TouchableOpacity onPress = {() => {
                 checkAnswer(answerPair[0]);
@@ -412,6 +439,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#FFFAF0',
   },
+  picture: {
+    //alignSelf: 'center',
+    width: 400,
+    height: 400,
+    resizeMode: 'stretch',
+  },
   starContainer: {
     paddingTop: 7,
     paddingBottom: 7,
@@ -425,7 +458,7 @@ const styles = StyleSheet.create({
     resizeMode: "stretch",
   },
   subContainer: {
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
     flex: 12,
     flexDirection: 'row',
