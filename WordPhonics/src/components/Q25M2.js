@@ -397,7 +397,7 @@ export default function Q25M2({navigation}) {
 
         <SafeAreaView style={styles.subContainer}>
           <ScrollView>
-          <TouchableOpacity onPress = {() => {playSound()}}>
+          <TouchableOpacity onPress = {() => {playSound()}} style={styles.image}>
             <Image
             style={styles.picture}
             source={question}
@@ -468,10 +468,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFAF0',
   },
   picture: {
-    //alignSelf: 'center',
-    width: 400,
-    height: 400,
+    alignSelf: 'center',
+    width: 700,
+    height: 500,
     resizeMode: 'stretch',
+  },
+  image: {
+    alignItems: 'center',
   },
   starContainer: {
     paddingTop: 7,
