@@ -31,7 +31,10 @@ var sounds =
     require("../assets/25/13.mp3"),
     require("../assets/25/14.mp3"),
     require("../assets/25/1516.mp3"),
+    require("../assets/25/1516.mp3"),
     require("../assets/25/1718.mp3"),
+    require("../assets/25/1718.mp3"),
+    require("../assets/25/1920.mp3"),
     require("../assets/25/1920.mp3"),
   ];
 // list of correct answers
@@ -104,7 +107,6 @@ export default function Q25M2({navigation}) {
     const [gold, setGold] = useState(false);
     const [silver, setSilver] = useState(false);
     const [right, setRight] = useState(false);
-    const [index, setIndex] = useState(0);
 
     // question to be asked at top -- maybe we could generalize this
     // quiz screen
@@ -159,7 +161,10 @@ export default function Q25M2({navigation}) {
             require("../assets/25/13.png"),
             require("../assets/25/14.png"),
             require("../assets/25/1516.png"),
+            require("../assets/25/1516.png"),
             require("../assets/25/1718.png"),
+            require("../assets/25/1718.png"),
+            require("../assets/25/1920.png"),
             require("../assets/25/1920.png"),
           ];
 
@@ -181,17 +186,37 @@ export default function Q25M2({navigation}) {
             ["g", "p", "sw"],
             ["sn", "b", "f"],
           ];
+
+          sounds =
+            [
+              require("../assets/25/7.mp3"),
+              require("../assets/25/8.mp3"),
+              require("../assets/25/9.mp3"),
+              require("../assets/25/10.mp3"),
+              require("../assets/25/11.mp3"),
+              require("../assets/25/12.mp3"),
+              require("../assets/25/13.mp3"),
+              require("../assets/25/14.mp3"),
+              require("../assets/25/1516.mp3"),
+              require("../assets/25/1516.mp3"),
+              require("../assets/25/1718.mp3"),
+              require("../assets/25/1718.mp3"),
+              require("../assets/25/1920.mp3"),
+              require("../assets/25/1920.mp3"),
+            ];
         navigation.navigate("MainMenu");
       }
       let answer = correctPairs[pickRandom(0, correctPairs.length)];
       setCorrectAnswer(answer);
       //removes the asked pairs from the array so there arent repeats and the quiz can end
-      setIndex(correctPairs.indexOf(answer));
+      var index = correctPairs.indexOf(answer);
       correctPairs.splice(index, 1);
       setQuestion(questions[index]);
       questions.splice(index,1);
       let filler = incorrectPairs[index];
       incorrectPairs.splice(index, 1);
+      playSound(index);
+      sounds.splice(index,1);
 
       // randomizes the location of random pair and picks a random answer
       let rand = pickRandom(0,4);
@@ -212,8 +237,8 @@ export default function Q25M2({navigation}) {
       return currentPairs;
     }
 
-    var playSound = () => {
-      var sound1 = new Sound(sounds[index], (error, sound) => {
+    var playSound = (num) => {
+      var sound1 = new Sound(sounds[num], (error, sound) => {
           if (error) {
             alert('error' + error.message);
             return;
